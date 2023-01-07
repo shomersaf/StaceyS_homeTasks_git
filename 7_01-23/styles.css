@@ -1,0 +1,84 @@
+* {
+    margin:0;
+    padding: 0;
+}
+body {
+    background: #000;
+}
+.container {
+   background-color: rgb(46, 45, 45);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:rgb(235, 203, 145);
+    min-height: 100%;
+}
+header {
+    margin-top: 40px;
+    width: 100%;
+    text-align: center;
+    background-color: rgb(79, 82, 77);
+}
+h1 {
+ text-transform: uppercase;
+}
+h2 {
+    margin-top: 20px;
+    color:rgb(219, 221, 220);
+    text-align: center;
+}
+h5 {
+    color: rgba(190, 189, 187, 0.616);
+    text-align: center;
+    margin-top: 20px;
+}
+main {
+    padding-top: 5px;
+    width: 90%;
+    background-color: rgb(79, 82, 77);
+    margin: 20px auto;
+    border-radius: 25px;
+}
+footer {
+    width: 100%;
+    background-color: rgb(79, 82, 77);
+    margin: 10px auto;
+    height: 40px;
+    position : fixed;
+    height : 50px;
+    bottom : 0;
+}
+form {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input {
+    width: 50%;
+    height: 50px;
+    color: aliceblue;
+    background-color: #000;
+    font-size: 22px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    padding-left: 10px;
+}
+.consoleLink a {
+ text-decoration: none;
+}
+.consoleLink {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+a:link,
+a:visited,
+a:active,
+a:hover {
+    color: #fff;
+}
+a:hover {
+    text-transform: uppercase;
+}
