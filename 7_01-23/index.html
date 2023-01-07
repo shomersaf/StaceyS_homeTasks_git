@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <script src="output.js"></script>
     <title>Distance Calculator</title>
   </head>
   <body>
@@ -16,25 +15,43 @@
       <main>
         <h2>Enter the Velocity in meters per second, please:</h2>
 
-        <form action="#">
-          <input
+        <form action="/" method="Post" id="form">
+          <div class="inputs">
+            <label>
+            <input
             type="text"
             name="velocity"
-            volume="velocity"
             placeholder="velocity..."
           />
+            </label>
+           
+            <label>
+              <input
+            type="text"
+            name="time"
+            placeholder="time..."
+          />
+            </label>
+          
+          </div>
+          <div class="btns">
+           <input type="submit" value="calculate">
+           <input type="reset" value="reset">
+          </div>
+          
         </form>
         <div class="consoleLink">
             <div>
                 <p>Additional:</p>
             </div>
             
-            <a href="console.html">distance calculator made for console only </a>
+            <a href="console.html">Velocity Calculator without UI</a>
         </div>
       </main>
       <footer>
         <h5>&copy;StaceyS 2023</h5>
       </footer>
     </div>
+    <script src="output.js"></script>
   </body>
 </html>
