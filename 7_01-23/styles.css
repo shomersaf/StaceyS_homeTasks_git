@@ -123,5 +123,11 @@ label {
     align-items: center;
     font-weight: 600;
     font-size: 25px;
-    height:300px;
+    height:100px;
+}
+.task {
+    margin:20px;
+}
+.task div:last-of-type {
+    margin-bottom: 40px;
 }
