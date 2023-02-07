@@ -6,9 +6,14 @@ function getOrder() {
   let numberOfSeats = document.getElementById("numberOfSeats");
   let additionalComments = document.getElementById("additionalComments");
   let outside = document.getElementById("outside");
-  let allergens = document.getElementById("allergens");
-  const ordersList = document.getElementById("ordersList");
-  //const orderHeader = document.getElementById("orderHeader");
+  let allergens = document.querySelectorAll(".allergens")
+ 
+
+  const orderBlock = document.querySelector(".orderBlock");
+  let ordersList = document.createElement("ul");
+  ordersList.className = "ordersList";
+  orderBlock.append(ordersList);
+  
   let orderNumber = `${counter++}`;
 
   let orderHeadline = document.createElement("h3");
@@ -26,10 +31,26 @@ function getOrder() {
   orderCreditLine.innerHTML = `<b>Credit:</b> ${credit.value}`;
   orderSeatsLine.innerHTML = `<b>Number of Seats:</b> ${numberOfSeats.value}`;
   orderCommentsLine.innerHTML = `<b>Comments:</b> ${additionalComments.value}`;
-  orderOutsideLine.innerHTML = `<b>Outside:</b> ${outside.value}`;
+  
+  if(outside.checked==true){
+    orderOutsideLine.innerHTML = `<b>Place:</b> Outside`;
+  } else {
+    orderOutsideLine.innerHTML = `<b>Place:</b> Inside`;
+  }
+
   orderDateLine.innerHTML = `<b>Date:</b> ${date.value}`;
   orderTimeLine.innerHTML = `<b>Time:</b> ${time.value}`;
-  orderAllergensLine.innerHTML = `<b>Allergens:</b> ${allergens.value }`;
+ 
+ let allergensString = " ";
+   for (let i=0; i<allergens.length; i++){
+    if(allergens[i].selected){
+      allergensString = allergensString + " " + allergens[i].value +",";
+    }
+   }
+  
+  allergensString = allergensString.slice(0, -1);
+  allergensString = allergensString.concat(".");
+   orderAllergensLine.innerHTML = `<b>Allergens:</b> ${allergensString}`
   
   orderEmailLine.className = "orderClass";
   orderCreditLine.className = "orderClass";
@@ -42,15 +63,30 @@ function getOrder() {
 
   orderHeadline.innerHTML = `<b>Order N#</b>${orderNumber}:`;
 
+
+  const removeButton = document.createElement("img");
+  removeButton.src =
+    "xmark-solid.svg";
+    removeButton.height = 50;
+    removeButton.width = 50;
+    removeButton.onclick = function () {
+      this.parentElement.remove(); 
+      //document.getElementsByClassName("orderClass").remove();
+    };
+
+
   ordersList.append(orderHeadline);
   ordersList.append(orderEmailLine);
   ordersList.append(orderCreditLine);
   ordersList.append(orderSeatsLine);
   ordersList.append(orderCommentsLine);
-  ordersList.append(orderOutsideLine);
   ordersList.append(orderDateLine);
   ordersList.append(orderTimeLine);
   ordersList.append(orderAllergensLine);
+  ordersList.append(orderOutsideLine);
+  ordersList.append(removeButton);
+  
+  
 }
 
 
