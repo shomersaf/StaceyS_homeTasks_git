@@ -1,3 +1,5 @@
+# 6_02 homework update - I understood an idea of constractor function, but can't apply it at the code I've made.
+# m.b. I should think of it before I started coding
 # 5-02 hw update: I didn't have time to do the removing function!
 # 31_01 the new home work is in its folder up to date. Hadn't time to make the advanced
 # 29_01 the new home work is in its folder up to date
