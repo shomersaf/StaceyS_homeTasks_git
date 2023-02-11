@@ -108,8 +108,12 @@ function draw(ordersArray) {
     const tdActions = document.createElement('td')
     const buttonDelete = document.createElement('button')
     buttonDelete.classList.add('btn', 'btn-danger')
+    const buttonEdit = document.createElement('button')
+    buttonEdit.classList.add('btn', 'btn-success')
     buttonDelete.innerText = 'X'
+    buttonEdit.innerText = 'edit'
     tdActions.append(buttonDelete)
+    tdActions.append(buttonEdit)
     buttonDelete.addEventListener('click', function () {
       orders.splice(index, 1)
       draw(orders)
