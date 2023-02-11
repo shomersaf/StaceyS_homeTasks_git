@@ -3,20 +3,20 @@ function Order(
     numberOfSeats,
     allergens = [],
     credit,
-    comments = "No Comments",
+    comments,
     outside,
     date,
     time
   ) {
     this.orderNumber = `order_${Math.ceil(Math.random() * 99999999999)}`;
-    this.email = email;
-    this.numberOfSeats = +numberOfSeats;
-    this.allergens = allergens;
-    this.credit = credit;
-    this.comments = comments;
+    this.email = email || "Enter your email";
+    this.numberOfSeats = +numberOfSeats || 1;
+    this.allergens = allergens || "No allergens";
+    this.credit = credit || "Enter the credit";
+    this.comments = comments || "No Comments";
     this.outside = outside;
-    this.date = date;
-    this.time = time;
+    this.date = date || "Enter the date";
+    this.time = time || "Enter the time";
     
   }
   

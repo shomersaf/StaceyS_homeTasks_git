@@ -83,9 +83,45 @@ function draw(ordersArray) {
     // create allergens column
     const tdAllergens = document.createElement("td");
     tdAllergens.innerText = currentOrder.allergens+" ";
-    const imgEggs = document.createElement("i");
-    imgEggs.className = "bi bi-egg";
-    tdAllergens.append(imgEggs);
+    const allergenIcon = document.createElement("img");
+
+    
+    switch(currentOrder.allergens){
+      case 'Eggs':
+        allergenIcon.src = "img/egg.svg";
+        allergenIcon.width = 20;
+        allergenIcon.height = 20;
+        allergenIcon.className = "allergenIcon";
+        break;
+      break;
+      case 'Gluten':
+      allergenIcon.src = "img/gluten.svg";
+      allergenIcon.width = 20;
+      allergenIcon.height = 20;
+      allergenIcon.className = "allergenIcon";
+      break;
+      case 'Milk':
+        allergenIcon.src = "img/milk.svg";
+        allergenIcon.width = 20;
+        allergenIcon.height = 20;
+        allergenIcon.className = "allergenIcon";
+        break;
+      case 'Nuts':
+        allergenIcon.src = "img/peanuts.svg";
+        allergenIcon.width = 20;
+        allergenIcon.height = 20;
+        allergenIcon.className = "allergenIcon";
+        break;
+      break;
+      case 'Сashew':
+        allergenIcon.src = "img/cashew.svg";
+        allergenIcon.width = 20;
+        allergenIcon.height = 20;
+        allergenIcon.className = "allergenIcon";
+        break;
+    }
+
+    tdAllergens.append(allergenIcon);
     // create credit column
     const tdCredit = document.createElement("td");
     tdCredit.innerText = currentOrder.credit;
@@ -112,9 +148,9 @@ function draw(ordersArray) {
     const buttonDelete = document.createElement("button");
     buttonDelete.classList.add("btn", "btn-danger");
     const buttonEdit = document.createElement("button");
-    buttonEdit.classList.add("btn", "btn-success");
+    buttonEdit.classList.add("btn", "btn-success", "editButton");
     buttonDelete.innerText = "X";
-    buttonEdit.innerText = "edit";
+    buttonEdit.innerHTML = `<i class="bi bi-pencil-square"></i>`;
     tdActions.append(buttonDelete);
     tdActions.append(buttonEdit);
     buttonDelete.addEventListener("click", function () {

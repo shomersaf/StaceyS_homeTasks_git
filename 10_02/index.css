@@ -8,3 +8,13 @@
     background-color: pink !important;
     border: 3px solid green !important;
   }
+
+  .editButton {
+    margin-left:5px;
+  }
+  .allergenIcon {
+    margin-left:5px;
+    margin-right: 20px;
+    color: white;
+    float: right;
+  }
