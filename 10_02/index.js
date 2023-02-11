@@ -8,27 +8,27 @@ const DOM = {
   date: null,
   time: null,
   ordersTableBody: null,
-}
+};
 
-let orders = []
+let orders = [];
 
 function init() {
-  DOM.emailInput = document.querySelector('#orderEmail')
-  DOM.numberOfSeats = document.querySelector('#numberOfSeats')
-  DOM.allergens = document.querySelector('#allergens')
-  DOM.credit = document.querySelector('#credit')
-  DOM.comments = document.querySelector('#additionalComments')
-  DOM.outside = document.querySelector('#outside')
-  DOM.date = document.querySelector('#date')
-  DOM.time = document.querySelector('#time')
-  DOM.ordersTableBody = document.querySelector('#ordersTable tbody')
+  DOM.emailInput = document.querySelector("#orderEmail");
+  DOM.numberOfSeats = document.querySelector("#numberOfSeats");
+  DOM.allergens = document.querySelector("#allergens");
+  DOM.credit = document.querySelector("#credit");
+  DOM.comments = document.querySelector("#additionalComments");
+  DOM.outside = document.querySelector("#outside");
+  DOM.date = document.querySelector("#date");
+  DOM.time = document.querySelector("#time");
+  DOM.ordersTableBody = document.querySelector("#ordersTable tbody");
   //   making onclick="addNNewOrder()" from JS:
   //   const addNewOrderButton = document.getElementById("addNewOrderButton");
-  const addNewOrderButton = document.querySelector('#addNewOrderButton')
-  addNewOrderButton.addEventListener('click', addNewOrderFn)
+  const addNewOrderButton = document.querySelector("#addNewOrderButton");
+  addNewOrderButton.addEventListener("click", addNewOrderFn);
 
-  const clearTableButton = document.querySelector('#clearTable')
-  clearTableButton.addEventListener('click', clearTableFn)
+  const clearTableButton = document.querySelector("#clearTable");
+  clearTableButton.addEventListener("click", clearTableFn);
 
   function addNewOrderFn(event) {
     // console.log(event); // event
@@ -42,82 +42,85 @@ function init() {
         DOM.comments.value,
         DOM.outside.value,
         DOM.date.value,
-        DOM.time.value,
-      ),
-    )
-    draw(orders)
-    clearForm()
+        DOM.time.value
+      )
+    );
+    draw(orders);
+    clearForm();
   }
 }
 function clearForm() {
-  DOM.emailInput.value = ''
-  DOM.numberOfSeats.value = ''
-  DOM.allergens.value = ''
-  DOM.credit.value = ''
-  DOM.comments.value = ''
-  DOM.outside.value = ''
-  DOM.date.value = ''
-  DOM.time.value = ''
+  DOM.emailInput.value = "";
+  DOM.numberOfSeats.value = "";
+  DOM.allergens.value = "";
+  DOM.credit.value = "";
+  DOM.comments.value = "";
+  DOM.outside.value = "";
+  DOM.date.value = "";
+  DOM.time.value = "";
 }
 function clearTableFn() {
-  DOM.ordersTableBody.innerHTML = ''
+  DOM.ordersTableBody.innerHTML = "";
 }
 function draw(ordersArray) {
-  if (Array.isArray(ordersArray) === false) return
+  if (Array.isArray(ordersArray) === false) return;
   // document.createElement!
   // DOM.ordersTableBody.append
   // DOM.ordersTableBody > tr > td,td,td,td
-  clearTableFn()
+  clearTableFn();
   for (let index = 0; index < ordersArray.length; index++) {
-    const currentOrder = ordersArray[index]
+    const currentOrder = ordersArray[index];
     // create row
-    const tableRow = document.createElement('tr')
+    const tableRow = document.createElement("tr");
     // create orderNumber column
-    const tdOrderId = document.createElement('td')
-    tdOrderId.innerText = currentOrder.orderNumber
+    const tdOrderId = document.createElement("td");
+    tdOrderId.innerText = currentOrder.orderNumber;
     // create email column
-    const tdEmail = document.createElement('td')
-    tdEmail.innerText = currentOrder.email
+    const tdEmail = document.createElement("td");
+    tdEmail.innerText = currentOrder.email;
     // create numberOfSeats column
-    const tdNumberOfSeats = getNumberOfSeatsTD(currentOrder.numberOfSeats)
+    const tdNumberOfSeats = getNumberOfSeatsTD(currentOrder.numberOfSeats);
     // create allergens column
-    const tdAllergens = document.createElement('td')
-    tdAllergens.innerText = currentOrder.allergens
+    const tdAllergens = document.createElement("td");
+    tdAllergens.innerText = currentOrder.allergens+" ";
+    const imgEggs = document.createElement("i");
+    imgEggs.className = "bi bi-egg";
+    tdAllergens.append(imgEggs);
     // create credit column
-    const tdCredit = document.createElement('td')
-    tdCredit.innerText = currentOrder.credit
+    const tdCredit = document.createElement("td");
+    tdCredit.innerText = currentOrder.credit;
     // create comments column
-    const tdComments = document.createElement('td')
-    tdComments.innerText = currentOrder.comments
+    const tdComments = document.createElement("td");
+    tdComments.innerText = currentOrder.comments;
     // create outside column
-    const tdOutside = document.createElement('td')
+    const tdOutside = document.createElement("td");
     //checking up the placement and entering data
     if (currentOrder.outside.checked == true) {
-      tdOutside.innerText = `Outside`
+      tdOutside.innerText = `Outside`;
     } else {
-      tdOutside.innerHTML = `Inside`
+      tdOutside.innerHTML = `Inside`;
     }
 
     // create date column
-    const tdDate = document.createElement('td')
-    tdDate.innerText = currentOrder.date
+    const tdDate = document.createElement("td");
+    tdDate.innerText = currentOrder.date;
     // create time column
-    const tdTime = document.createElement('td')
-    tdTime.innerText = currentOrder.time
+    const tdTime = document.createElement("td");
+    tdTime.innerText = currentOrder.time;
     // create Button column
-    const tdActions = document.createElement('td')
-    const buttonDelete = document.createElement('button')
-    buttonDelete.classList.add('btn', 'btn-danger')
-    const buttonEdit = document.createElement('button')
-    buttonEdit.classList.add('btn', 'btn-success')
-    buttonDelete.innerText = 'X'
-    buttonEdit.innerText = 'edit'
-    tdActions.append(buttonDelete)
-    tdActions.append(buttonEdit)
-    buttonDelete.addEventListener('click', function () {
-      orders.splice(index, 1)
-      draw(orders)
-    })
+    const tdActions = document.createElement("td");
+    const buttonDelete = document.createElement("button");
+    buttonDelete.classList.add("btn", "btn-danger");
+    const buttonEdit = document.createElement("button");
+    buttonEdit.classList.add("btn", "btn-success");
+    buttonDelete.innerText = "X";
+    buttonEdit.innerText = "edit";
+    tdActions.append(buttonDelete);
+    tdActions.append(buttonEdit);
+    buttonDelete.addEventListener("click", function () {
+      orders.splice(index, 1);
+      draw(orders);
+    });
 
     tableRow.append(
       tdOrderId,
@@ -129,20 +132,20 @@ function draw(ordersArray) {
       tdOutside,
       tdDate,
       tdTime,
-      tdActions,
-    ) // tr>td,td,td,td
-    DOM.ordersTableBody.append(tableRow) //table > tbody > tr
+      tdActions
+    ); // tr>td,td,td,td
+    DOM.ordersTableBody.append(tableRow); //table > tbody > tr
   }
   function getNumberOfSeatsTD(numberOfSeats) {
-    if (typeof numberOfSeats !== 'number') return
-    const numberOfSeatsTd = document.createElement('td')
+    if (typeof numberOfSeats !== "number") return;
+    const numberOfSeatsTd = document.createElement("td");
     for (let index = 0; index < numberOfSeats; index++) {
-      const person = document.createElement('i')
-      person.className = 'bi-person'
-      numberOfSeatsTd.append(person)
+      const person = document.createElement("i");
+      person.className = "bi-person";
+      numberOfSeatsTd.append(person);
     }
-    numberOfSeatsTd.append(`(${numberOfSeats})`)
-    return numberOfSeatsTd
+    numberOfSeatsTd.append(`(${numberOfSeats})`);
+    return numberOfSeatsTd;
   }
 }
-init()
+init();
