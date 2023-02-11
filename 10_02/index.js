@@ -78,42 +78,42 @@ function draw(ordersArray) {
     // create email column
     const tdEmail = document.createElement("td");
     tdEmail.innerText = currentOrder.email;
+
     // create numberOfSeats column
     const tdNumberOfSeats = getNumberOfSeatsTD(currentOrder.numberOfSeats);
     // create allergens column
     const tdAllergens = document.createElement("td");
-    tdAllergens.innerText = currentOrder.allergens+" ";
+    tdAllergens.innerText = currentOrder.allergens + " ";
     const allergenIcon = document.createElement("img");
 
-    
-    switch(currentOrder.allergens){
-      case 'Eggs':
+    switch (currentOrder.allergens) {
+      case "Eggs":
         allergenIcon.src = "img/egg.svg";
         allergenIcon.width = 20;
         allergenIcon.height = 20;
         allergenIcon.className = "allergenIcon";
         break;
-      break;
-      case 'Gluten':
-      allergenIcon.src = "img/gluten.svg";
-      allergenIcon.width = 20;
-      allergenIcon.height = 20;
-      allergenIcon.className = "allergenIcon";
-      break;
-      case 'Milk':
+        break;
+      case "Gluten":
+        allergenIcon.src = "img/gluten.svg";
+        allergenIcon.width = 20;
+        allergenIcon.height = 20;
+        allergenIcon.className = "allergenIcon";
+        break;
+      case "Milk":
         allergenIcon.src = "img/milk.svg";
         allergenIcon.width = 20;
         allergenIcon.height = 20;
         allergenIcon.className = "allergenIcon";
         break;
-      case 'Nuts':
+      case "Nuts":
         allergenIcon.src = "img/peanuts.svg";
         allergenIcon.width = 20;
         allergenIcon.height = 20;
         allergenIcon.className = "allergenIcon";
         break;
-      break;
-      case 'Сashew':
+        break;
+      case "Сashew":
         allergenIcon.src = "img/cashew.svg";
         allergenIcon.width = 20;
         allergenIcon.height = 20;
@@ -153,6 +153,22 @@ function draw(ordersArray) {
     buttonEdit.innerHTML = `<i class="bi bi-pencil-square"></i>`;
     tdActions.append(buttonDelete);
     tdActions.append(buttonEdit);
+
+    buttonEdit.addEventListener("click", function () {
+      editOrder(
+        tdEmail,
+        tdNumberOfSeats,
+        tdAllergens,
+        tdCredit,
+        tdComments,
+        tdOutside,
+        tdDate,
+        tdTime,
+        tdActions,
+        buttonEdit
+      );
+    });
+
     buttonDelete.addEventListener("click", function () {
       orders.splice(index, 1);
       draw(orders);
@@ -183,5 +199,7 @@ function draw(ordersArray) {
     numberOfSeatsTd.append(`(${numberOfSeats})`);
     return numberOfSeatsTd;
   }
+
 }
+
 init();
