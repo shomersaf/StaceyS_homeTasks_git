@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ex2.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ex 2</h1>
+        <h2>Enter the data:</h2>
+        <div class="userFormDiv" id="userFormDiv">
+            <form action="#">
+                <div class="inputDiv">
+                    <label for="#firstName">First name:</label>
+                    <input type="text" class="firstName" id ="firstName">
+                </div>
+           
+                <div class="inputDiv">
+                    <label for="#lastName">Last name:</label>
+                <input type="text" class="lastName" id ="lastName">
+                </div>
+                
+                <div class="inputDiv">
+                    <label for="#age">Age:</label>
+                    <input type="number" class="age" id ="age">
+                </div>
+               
+                <div class="inputDiv">
+                    <label for="#numberOfChildren">Number of children:</label>
+                <input type="number" class="numberOfChildren" id ="numberOfChildren">
+                </div>
+                
+            </form>
+            <div class="buttons">
+                <button class="sendButton" id = "sendButton">Send</button>
+                <button class="clearButton" id = "clearButton">Clear</button>
+            </div>
+           
+<table id="outputTable">
+    <thead>
+     <th>First name:</th>
+     <th>Last name:</th>
+     <th>Age:</th>
+     <th>Children:</th>
+     <th></th>
+     <th></th>
+
+    </thead>
+    <tbody class="tBody">
+     
+    </tbody>
+</table>
+
+        </div>
+    </div>
+    <script src="PrintForm.js"></script>
+    <script src="ex2.js"></script>
+</body>
+</html>

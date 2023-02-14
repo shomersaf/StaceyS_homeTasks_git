@@ -1,0 +1,28 @@
+.container{
+    margin:0 auto;
+    width: 800px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.userFormDiv{
+   
+   width: fit-content;
+   margin: 0 auto;
+}
+.inputDiv, .newDivClass{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   margin-top: 10px;
+}
+.buttons{
+    display: flex; 
+   justify-content: flex-end;
+   align-items: right;
+   margin-top: 20px;
+}
+button:nth-of-type(2){
+    margin-left: 5px;
+}
