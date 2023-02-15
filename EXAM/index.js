@@ -1,13 +1,21 @@
+const CART = {
+    productName:null,
+    productPrice:null,
+    category:null,
+    pictureLink:null,
+}
+
 const container = document.querySelector(".container");
-const productName = document.querySelector("#productName");
-const productPrice = document.querySelector("#productPrice");
-const category = document.querySelector("#category");
-const pictureLink = document.querySelector("#pictureLink");
+CART.productName = document.querySelector("#productName");
+CART.productPrice = document.querySelector("#productPrice");
+CART.category = document.querySelector("#category");
+CART.pictureLink = document.querySelector("#pictureLink");
 const addProduct = document.querySelector(".addProduct");
 addProduct.addEventListener("click", generateTable);
 const cartHeadline = document.querySelector("h2");
 const tBody = document.querySelector("tbody");
 const tHead = document.querySelector("thead");
+
 
 function generateTable(event) {
     cartHeadline.className = "cartHeadline";
@@ -25,16 +33,16 @@ function generateTable(event) {
     tableRow.append(tableData1, tableData2, tableData3, tableData4);
     tableData4.appendChild(pickIMG);
     
-    tableData1.innerText = productName.value;
-    tableData2.innerText = productPrice.value;
-    tableData3.innerText = category.value;
+    tableData1.innerText = CART.productName.value;
+    tableData2.innerText = CART.productPrice.value;
+    tableData3.innerText = CART.category.value;
     
     clearForm ();
 }
 
 function clearForm (){
-    productName.value ="";
-    productPrice.value ="";
-    category.value ="";
-    pictureLink.value ="";
+    CART.productName.value ="";
+    CART.productPrice.value ="";
+    CART.category.value ="";
+   CART.pictureLink.value ="";
 }
