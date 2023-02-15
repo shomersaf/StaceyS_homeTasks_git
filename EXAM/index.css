@@ -7,8 +7,12 @@ body{
 }
 .container {
    
-    width:30%;
+    width:40%;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 input {
     height: 30px;
@@ -40,11 +44,15 @@ form {
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
+    width:fit-content;
     
 }
 h1 {
     margin:20px auto;
     width:fit-content;
+}
+h2, thead  {
+    display:none;
 }
 .addProduct {
     padding: 10px;
@@ -57,4 +65,16 @@ h1 {
     font-size: large;
     font-weight: 400;
     margin-top: 20px;
+}
+.cartHeadline{
+    margin:20px auto;
+    width:fit-content;
+    display: inline;
+}
+.tHeadVisible{
+    display:table-header-group;
+}
+.pickIMG {
+    width: 80px;
+ 
 }
