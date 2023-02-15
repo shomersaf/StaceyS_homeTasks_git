@@ -48,7 +48,8 @@ function init() {
 
 
   function showAllOrdersFn (event){
-    localStorage.setItem("orders", JSON.stringify(orders));
+  
+   let orders = JSON.parse(localStorage.getItem('orders'));
     draw(orders);  
   }
 
@@ -78,8 +79,11 @@ function init() {
       )
     );
     localStorage.setItem("orders", JSON.stringify(orders));
+    orders = JSON.parse(localStorage.getItem('orders'));
     draw(orders);
+    
     clearForm();
+   
   }
 }
 function clearForm(event) {
@@ -93,13 +97,13 @@ function clearForm(event) {
   DOM.date.value = "";
   DOM.time.value = ""; 
  
-  //localStorage.setItem('orders','');
+ 
 }
 
 
 function clearTableFn() {
   DOM.ordersTableBody.innerHTML = "";
- // localStorage.setItem('orders','');
+
 }
 function draw(ordersArray) {
   if (Array.isArray(ordersArray) === false) return;
@@ -210,15 +214,16 @@ function draw(ordersArray) {
 
     buttonDelete.addEventListener("click", function () {
     
-     orders.splice(index, 1);
-      const orders = JSON.parse(localStorage.getItem("orders"));
-      for(let i=0; i<orders.length; i++){
-        orders.includes()
-        orders.splice(index, 1);
-      }
-      localStorage.setItem("orders", JSON.stringify(orders));
+      
+      let orders = JSON.parse(localStorage.getItem('orders'));
+      
+      orders.splice(index, 1);
 
-      //draw(orders);
+      localStorage.setItem('orders', JSON.stringify(orders));
+      //orders = JSON.parse(localStorage.getItem('orders'));
+      
+      draw(orders);
+
     });
 
     tableRow.append(

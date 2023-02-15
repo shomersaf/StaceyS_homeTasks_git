@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Courses</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Courses:</h1>
+    </header>
+    <div class="container">
+      <form action="#">
+        <label
+          >Course name:
+          <input
+            type="text"
+            placeholder="course name"
+            class="courseName"
+            id="courseName"
+          />
+        </label>
+        <label
+          >Price:
+          <input type="number" placeholder="price" class="price" id="price" />
+        </label>
+        <label
+          >Start date:
+          <input
+            type="date"
+            placeholder="start date"
+            class="startDate"
+            id="startDate"
+          />
+        </label>
+        <label
+          >End date:
+          <input
+            type="date"
+            placeholder="end date"
+            class="endDate"
+            id="endDate"
+          />
+        </label>
+        <div class="lectureDiv">
+          <label
+            >Lecture:
+            <textarea name="lecture" id="lecture" cols="30" rows="5"></textarea>
+          </label>
+        </div>
+        <button class="publishButton" id="publishButton">Publish</button>
+      </form>
+    </div>
+   <table>
+    <thead><tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Start Date</th>
+      <th>End date</th>
+      <th>Lecture</th>
+      <th>Actions</th>
+      
+    </tr></thead>
+    <tbody class="tBody">
+      <tr class="editInputs">
+        <td> 
+          <div><input
+            type="text"
+            placeholder="course name"
+            class="edit"
+            id="courseNameP"
+          /></div>
+          </td>
+        <td>
+          <div>
+            <input type="number" placeholder="price" class="edit" id="priceP" />
+          </div></td>
+        <td>
+          <div>
+            <input
+          type="date"
+          placeholder="start date"
+          class="edit"
+          id="startDateP"
+        />
+          </div> </td>
+        <td>
+          <div><input
+            type="date"
+            placeholder="end date"
+            class="edit"
+            id="endDateP"
+          /></div>
+        </td>
+        <td> 
+          <div><textarea name="lecture" id="lectureP" cols="30" rows="5" class="edit"></textarea></div>
+        </td>
+        <td>
+        <button class = "saveButton">Save</button>
+            </div>
+        </td>
+        
+      </tr>
+      <tr class="outputRow">
+        <td class="nameTd"> 
+          
+          </td>
+        <td class="priceTd">
+          </td>
+        <td class="startTd">
+          <div>
+            
+          </div> </td>
+        <td class="endTd">
+          <div></div>
+        </td>
+        <td class="lectureTd"> 
+          <div></div>
+        </td>
+        <td>
+          <div><button class ="editButton">Edit</button>
+            <button>Delete</button></div>
+        </td>
+        
+      </tr>
+    </tbody>
+   </table>
+
+    
+
+    <script src="index.js"></script>
+  </body>
+</html>
