@@ -213,17 +213,18 @@ function draw(ordersArray) {
     });
 
     buttonDelete.addEventListener("click", function () {
-    
-      
-      let orders = JSON.parse(localStorage.getItem('orders'));
-      
-      orders.splice(index, 1);
-
-      localStorage.setItem('orders', JSON.stringify(orders));
-      //orders = JSON.parse(localStorage.getItem('orders'));
-      
-      draw(orders);
-
+      const indexToDelete = orders.findIndex(function (co) {
+        return currentOrder.orderNumber === co.orderNumber;
+      });
+      orders.splice(indexToDelete, 1);
+      localStorage.setItem("orders", JSON.stringify(orders));
+         const idToDelete = currentOrder.orderNumber;
+         for (let index = 0; index < orders.length; index++) {
+          if (orders[index].orderNumber === idToDelete) {
+            orders.splice(index, 1);
+          }
+        }
+draw(orders);
     });
 
     tableRow.append(
