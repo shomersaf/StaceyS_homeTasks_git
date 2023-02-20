@@ -208,7 +208,8 @@ function draw(ordersArray) {
         tdDate,
         tdTime,
         tdActions,
-        buttonEdit
+        buttonEdit,
+        orders
       );
     });
 

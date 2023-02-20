@@ -34,8 +34,8 @@ function publish(event){
    // courses = JSON.parse(localStorage.getItem('courses'));
     //console.log(courses);
     outputRow = document.createElement("tr");
-    nameTd = cdocument.reateElement("td");
-    nameTd.innerText = "fuck!!!!!!!!!";
+    nameTd = cdocument.createElement("td");
+    nameTd.innerText = "444444444444444444444444";
     outputRow.append(nameTd);
     tBody.append(outputRow);
 }

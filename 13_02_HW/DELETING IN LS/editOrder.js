@@ -101,13 +101,49 @@ function editOrder(
      tdTime.className = "inputToEdit";
 
      buttonEdit.remove();
+     
      const buttonSave = document.createElement("button");
      buttonSave.classList.add("btn", "btn-success", "buttonSave");
      buttonSave.innerHTML = "save";
      tdActions.append(buttonSave);
 
      
-    buttonSave.addEventListener("click", addNewOrderFn);
-
+    buttonSave.addEventListener("click", saveNewOrder);
+   
+  }
+  saveNewOrder( DOM.emailInput.value,
+    DOM.numberOfSeats.value,
+    DOM.allergens.value,
+    DOM.credit.value,
+    DOM.comments.value,
+    DOM.outside.value,
+    DOM.date.value,
+    DOM.time.value,
+    orders)
+  {
+    if(DOM.outside.checked == true){
+      DOM.outside.value = "Outside";
+    
+    }else{
+      DOM.outside.value = "Inside";
+    
+    }
+    orders.push(
+      new Order(
+        DOM.emailInput.value,
+        DOM.numberOfSeats.value,
+        DOM.allergens.value,
+        DOM.credit.value,
+        DOM.comments.value,
+        DOM.outside.value,
+        DOM.date.value,
+        DOM.time.value
+      )
+    );
+    localStorage.setItem("orders", JSON.stringify(orders));
+    orders = JSON.parse(localStorage.getItem('orders'));
+    draw(orders);
+    
+    clearForm();
   }
   

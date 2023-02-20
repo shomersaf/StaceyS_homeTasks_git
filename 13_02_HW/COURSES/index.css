@@ -1,0 +1,98 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: #2a2541;
+    color: rgb(216, 182, 224);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.container{
+    margin: auto;
+    display: flex;
+    flex-direction:column;
+   justify-content: center;
+   align-items: center;
+    width:80%;
+}
+form {
+    background: #0b6b56;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    border:none;
+    border-radius: 30px;
+    font-weight: 400;
+    font-size: 22px;
+    color:#a1f7eb;
+    padding:30px;
+}
+input{
+    margin-bottom: 10px;
+    background: #a1f7eb;
+}
+form span {
+margin-right: 10px;
+}
+input{
+    height: 30px;
+    width: 227px;
+    border: none;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+textarea {
+    border: none;
+    border-radius: 10px;
+    background: #a1f7eb;
+}
+.sendButton {
+    padding:10px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 10px;
+    color: aliceblue;
+    background-color: rgb(10, 33, 48);
+    margin-top: 10px;
+    cursor: pointer;
+}
+.clearButton {
+    padding:10px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 10px;
+    color: aliceblue;
+    background-color: rgb(107, 18, 30);
+    margin-top: 10px;
+    cursor: pointer;
+}
+label:last-of-type{
+    display: flex;
+}
+.formDiv{
+    background: #17886f;
+    width: fit-content;
+    padding:30px;
+    border:none;
+    border-radius: 30px;
+    text-align: right;
+}
+.delRowButton{
+    background: rgb(107, 18, 30);
+    color: white;
+    border: none;
+    padding: 5px 10px 5px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.editButton  {
+    background: rgb(18, 107, 54);
+    color: white;
+    border: none;
+    padding: 5px 10px 5px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+

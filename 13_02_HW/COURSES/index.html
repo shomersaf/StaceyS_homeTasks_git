@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COURSES</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Courses</h1>
+    <div class="formDiv">
+    <form name="myForm">
+      <label><span>Name</span>
+        <input type="text" placeholder="name" name = "courseName">
+      </label>
+      <label><span>Price</span>
+        <input type="number" placeholder="price" id = "coursePrice">
+      </label>
+      <label><span>Start date</span>
+        <input type="date" id = "startDate">
+      </label>
+      <label><span>End date</span>
+        <input type="date" id = "endDate">
+      </label>
+      <label><span>Lecture</span>
+        <textarea name="lecture" id="lecture" cols="30" rows="5" class="edit"></textarea>
+      </label>
+
+    </form>
+    <div class="buttons">
+      <button class="clearButton">Clear</button>
+      <button class="sendButton">Send</button>
+    </div>
+  </div>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
