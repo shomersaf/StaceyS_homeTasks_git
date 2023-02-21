@@ -30,17 +30,18 @@ form {
 input{
     margin-bottom: 10px;
     background: #a1f7eb;
-}
-form span {
-margin-right: 10px;
-}
-input{
     height: 30px;
     width: 227px;
     border: none;
     border-radius: 10px;
     padding-left: 10px;
 }
+
+form span {
+margin-right: 10px;
+}
+
+    
 textarea {
     border: none;
     border-radius: 10px;
@@ -95,4 +96,16 @@ label:last-of-type{
     margin-left: 5px;
 }
 
-
+.newInput{
+    margin-bottom: 10px;
+    background: #a1f7eb;
+    height: 30px;
+    width: 100px;
+    border: none;
+    border-radius: 10px;
+    
+}
+.saveButton {
+    width: 75px;
+    margin-left: 0;
+}
