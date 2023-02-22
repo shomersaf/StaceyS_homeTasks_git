@@ -78,7 +78,7 @@ label:last-of-type{
     border-radius: 30px;
     text-align: right;
 }
-.delRowButton{
+.redRowButton{
     background: rgb(107, 18, 30);
     color: white;
     border: none;
@@ -86,7 +86,7 @@ label:last-of-type{
     border-radius: 8px;
     cursor: pointer;
 }
-.editButton  {
+.greenButton  {
     background: rgb(18, 107, 54);
     color: white;
     border: none;
@@ -108,4 +108,30 @@ label:last-of-type{
 .saveButton {
     width: 75px;
     margin-left: 0;
+}
+th {
+    background: #a9c5c1;
+    color: #042f25;
+    padding:10px;
+ 
+}
+th:first-of-type{
+    border:none;
+    border-top-left-radius: 15px;
+    
+}
+th:last-of-type{
+    border:none;
+    border-top-right-radius: 15px;
+    
+}
+table {
+    margin-top: 20px;
+    border: none;
+    border-radius: 10px;
+}
+td{
+    padding:10px;
+    background:rgb(10, 33, 48);
+    color: rgb(123, 206, 166);
 }

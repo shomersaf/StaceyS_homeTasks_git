@@ -1,185 +1,172 @@
-var CURRENT = {
-  courseNum: null,
-  courseName: null,
-  coursePrice: null,
-  startDate: null,
-  endDate: null,
-  lecture: null,
-};
-let courses = [];
-let counter = 1;
-let index = 0;
-const container = document.querySelector(".container");
-const table = document.createElement("table");
-container.appendChild(table);
-const tHead = document.createElement("thead");
-table.appendChild(tHead);
-
-const th1 = document.createElement("th");
-th1.innerText = "N#";
-
-const th2 = document.createElement("th");
-th2.innerText = "Name";
-
-const th3 = document.createElement("th");
-th3.innerText = "Price";
-
-const th4 = document.createElement("th");
-th4.innerText = "Start Date";
-
-const th5 = document.createElement("th");
-th5.innerText = "End Date";
-
-const th6 = document.createElement("th");
-th6.innerText = "Lecture";
-
-const th7 = document.createElement("th");
-th7.innerText = "Action";
-
-tHead.append(th1, th2, th3, th4, th5, th6, th7);
-const tBody = document.createElement("tbody");
-table.appendChild(tBody);
-table.style.display = "none";
-
+//declaring
+let courses =[];
+let CURRENT ={
+  cName:null,
+  cPrice:null,
+}
+let counter = 0;
 const sendButton = document.querySelector(".sendButton");
-sendButton.addEventListener("click", generateTBody);
-
+sendButton.addEventListener("click", goGoText);
 const clearButton = document.querySelector(".clearButton");
 clearButton.addEventListener("click", clearForm);
+const container = document.querySelector(".container");
+//getting
+const form = document.forms["myForm"];
+//creating
+const table = document.createElement("table");
+const tHead = document.createElement("thead");
+const tHName = document.createElement("th");
+const tHPrice = document.createElement("th");
+const tHActions = document.createElement("th");
+const tBody = document.createElement("tbody");
+//appending
+container.append(table);
+//naming
+tHName.innerText = "Name";
+tHPrice.innerText = "Price";
+tHActions.innerText = "Actions";
 
+//functions
+function goGoText(){
+//declaring 
+tHead.append(tHName, tHPrice, tHActions);
+table.append(tHead, tBody);
+const tRow = document.createElement("tr");
+const tdName = document.createElement("td");
+const tdPrice = document.createElement("td");
+const tdActions = document.createElement("td");
+//getting
 
-CURRENT.courseNum = counter;
-CURRENT.courseName = document.querySelector("#courseName");
-CURRENT.coursePrice = document.querySelector("#coursePrice");
-CURRENT.startDate = document.querySelector("#startDate");
-CURRENT.endDate = document.querySelector("#endDate");
-CURRENT.lecture = document.querySelector("#lecture");
- 
-  
- 
-  courses.push(
-      
-    CURRENT.courseNum,
-    CURRENT.courseName.value,
-    CURRENT.coursePrice.value,
-    CURRENT.startDate.value,
-    CURRENT.endDate.value,
-    CURRENT.lecture.value
-  );
+CURRENT.cName = form.elements["courseName"];
 
-function generateTBody() {
-  //if (
-    /*CURRENT.courseName.value &&
-    CURRENT.coursePrice.value &&
-    CURRENT.startDate.value &&
-    CURRENT.endDate.value &&
-    CURRENT.lecture.value */
- // ) {
-    table.style.display = "table";
-     
-     
-    
-    drawRow();
-    clearForm();
-  }
-//}
+CURRENT.cPrice = form.elements["coursePrice"];
+courses.push({
+  cName: CURRENT.cName.value,
+  cPrice: CURRENT.cPrice.value,
+});
 
-function clearForm(event) {
-  CURRENT.courseNum = 0;
-  CURRENT.courseName.value = "";
-  CURRENT.coursePrice.value = "";
-  CURRENT.startDate.value = "";
-  CURRENT.endDate.value = "";
-  CURRENT.lecture.value = "";
+tdName.innerText = courses[counter].cName;
+tdPrice.innerText = courses[counter].cPrice;
+
+//buttons
+const delButton = document.createElement("button");
+delButton.innerText = " X ";
+delButton.className = "delRowButton";
+delButton.addEventListener("click", delCourse)
+tdActions.append(delButton);
+//-------
+const editButton = document.createElement("button");
+  editButton.className = "editButton";
+  editButton.innerText = " edit ";
+  editButton.addEventListener("click", editCourse)
+  tdActions.append(editButton);
+//appending
+tRow.append(tdName, tdPrice, tdActions);
+tBody.append(tRow);
+counter++;
+tRow.id = counter;
+//cleaning form inputs
+CURRENT.cName.value = "";
+CURRENT.cPrice.value = "";
+
 }
 
+function clearForm(){
+  CURRENT.cName = form.elements["courseName"];
+  CURRENT.cPrice = form.elements["coursePrice"];
+CURRENT.cName.value = "";
+CURRENT.cPrice.value = "";
+}
 
+function delCourse(){
+ const toDelete =  this.closest('tr');
+ let perem =  toDelete.childNodes[0].innerText;
+ toDelete.remove();
+// CURRENT.cName = form.elements["courseName"];
+for (let i = 0; i<courses.length; i++){
+  if(courses[i].cName == perem){
+    courses.splice(i,1);
+    break;
+  }
+}
+}
 
-function drawRow() {
-  var tRow = document.createElement("tr");
+function editCourse(event){
+  const toEdit =  this.closest('tr');
+  let perem =  toEdit.childNodes[0].innerText;
+
+  toEdit.innerHTML =" ";
+  const newTdName = document.createElement("td");
+  const newTdPrice = document.createElement("td");
+  const newTdActions = document.createElement("td");
+
+  const newNameInput = document.createElement("input");
+  newNameInput.className = "newInput";
+  newNameInput.type = "text";
+  newNameInput.id = "enteredName_" + toEdit.id;
+  newNameInput.value = courses[toEdit.id-1].cName
+
+  const newPriceInput = document.createElement("input");
+  newPriceInput.className = "newInput";
+  newPriceInput.type = "text";
+  newPriceInput.id = "enteredPrice_" + toEdit.id;
+  newPriceInput.value = courses[toEdit.id-1].cPrice
+
+  //button
+  const saveButton = document.createElement("button");
+  saveButton.type="submit";
+  saveButton.innerText ="save";
+  saveButton.classList.add("editButton", "saveButton");
+  saveButton.addEventListener("click", saveEntered);
+  newTdName.append(newNameInput);
+  newTdPrice.append(newPriceInput);
+  newTdActions.append(saveButton);
+  toEdit.append(newTdName, newTdPrice, newTdActions);
+  inputText = document.querySelector("#enteredName");
+
   
-  const tData1 = document.createElement("td");
-  const tData1Div1 = document.createElement("div");
-  tData1Div1.className = "visibility1";
-  const tData1Div2 = document.createElement("div");
-  tData1Div2.className = "visibility2";
-  tData1.append(tData1Div1, tData1Div2);
+  for (let i = 0; i<courses.length; i++){
+    if(courses[i].cName == perem){
+      courses[i].cName = inputText;
+      break;
+    }
+  }
+  //courses.splice[counter,1];
+  //courses.push(cName);
+  //counter++;
+}
+function saveEntered(){
+ 
+  
+  const toEdit =  this.closest('tr');
+  let inputNameHtml = document.querySelector("#enteredName_"+toEdit.id)
+  courses[toEdit.id-1].cName =  inputNameHtml.value;
+  let inputPriceHtml = document.querySelector("#enteredPrice_"+toEdit.id)
+  courses[toEdit.id-1].cPrice =  inputPriceHtml.value;
+  toEdit.innerHTML =" ";
+  
+ 
+ 
+  
+  const newTdName = document.createElement("td");
+  const newTdPrice = document.createElement("td");
+  const newTdActions = document.createElement("td");
 
-  const tData2 = document.createElement("td");
-  const tData2Div1 = document.createElement("div");
-  tData2Div1.className = "visibility1";
-  const tData2Div2 = document.createElement("div");
-  tData2Div2.className = "visibility2";
-  tData2.append(tData2Div1, tData2Div2);
+  newTdName.innerText = courses[toEdit.id-1].cName;
+  newTdPrice.innerText = courses[toEdit.id-1].cPrice;
+ 
+  const delButton = document.createElement("button");
+  delButton.innerText = " X ";
+  delButton.className = "delRowButton";
+  delButton.addEventListener("click", delCourse)
 
-  const tData3 = document.createElement("td");
-  const tData3Div1 = document.createElement("div");
-  tData3Div1.className = "visibility1";
-  const tData3Div2 = document.createElement("div");
-  tData3Div2.className = "visibility2";
-  tData3.append(tData3Div1, tData3Div2);
-
-  const tData4 = document.createElement("td");
-  const tData4Div1 = document.createElement("div");
-  tData4Div1.className = "visibility1";
-  const tData4Div2 = document.createElement("div");
-  tData4Div2.className = "visibility2";
-  tData4.append(tData4Div1, tData4Div2);
-
-  const tData5 = document.createElement("td");
-  const tData5Div1 = document.createElement("div");
-  tData5Div1.className = "visibility1";
-  const tData5Div2 = document.createElement("div");
-  tData5Div2.className = "visibility2";
-  tData5.append(tData5Div1, tData5Div2);
-
-  const tData6 = document.createElement("td");
-  const tData6Div1 = document.createElement("div");
-  tData6Div1.className = "visibility1";
-  const tData6Div2 = document.createElement("div");
-  tData6Div2.className = "visibility2";
-  tData6.append(tData6Div1, tData6Div2);
-
-  const tData7 = document.createElement("td");
-  const tData7Div1 = document.createElement("div");
-  tData7Div1.className = "visibility1";
-  const tData7Div2 = document.createElement("div");
-  tData7Div2.className = "visibility2";
-  tData7.append(tData7Div1, tData7Div2);
-
-
-  const delRowButton = document.createElement("button");
-  delRowButton.className = "delRowButton";
-  delRowButton.innerText = " X ";
-  delRowButton.addEventListener("click", deleteRow);
-  tData7Div1.append(delRowButton);
   const editButton = document.createElement("button");
   editButton.className = "editButton";
   editButton.innerText = " edit ";
-  tData7Div1.append(editButton);
+  editButton.addEventListener("click", editCourse)
+  newTdActions.append(delButton, editButton);
  
-  tData1Div1.innerText = counter++;  
-  tData2Div1.innerText = CURRENT.courseName.value;
-  tData3Div1.innerText = CURRENT.coursePrice.value;
-  tData4Div1.innerText = CURRENT.startDate.value;
-  tData5Div1.innerText = CURRENT.endDate.value;
-  tData6Div1.innerText = CURRENT.lecture.value;
+  toEdit.append(newTdName, newTdPrice, newTdActions);
 
- 
-  tRow.append(tData1, tData2, tData3, tData4, tData5, tData6, tData7);
-  let currentRow =[];
-  currentRow.push(tRow);
-  tBody.append(tRow);
-  //tBody.append(currentRow[index]);
-  index++;
-  return tRow;
-  
 }
 
-function deleteRow(tRow) { 
-
-courses.splice(counter-1, 5);
-tRow.innerHTML = "";
-//tBody.remove(tRow);
-drawRow();
-}

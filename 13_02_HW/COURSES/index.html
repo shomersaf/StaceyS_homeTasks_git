@@ -13,16 +13,16 @@
     <div class="formDiv">
     <form name="myForm">
       <label><span>Name</span>
-        <input type="text" placeholder="name" name = "courseName">
+        <input type="text" placeholder="name" name = "courseName" id = "courseName">
       </label>
       <label><span>Price</span>
-        <input type="number" placeholder="price" id = "coursePrice">
+        <input type="number" placeholder="price" name = "coursePrice">
       </label>
       <label><span>Start date</span>
-        <input type="date" id = "startDate">
+        <input type="date" name = "startDate">
       </label>
       <label><span>End date</span>
-        <input type="date" id = "endDate">
+        <input type="date" name = "endDate">
       </label>
       <label><span>Lecture</span>
         <textarea name="lecture" id="lecture" cols="30" rows="5" class="edit"></textarea>
@@ -30,7 +30,7 @@
 
     </form>
     <div class="buttons">
-      <button class="clearButton">Clear</button>
+      <button class="clearButton" id="clearButton">Clear</button>
       <button class="sendButton">Send</button>
     </div>
   </div>
