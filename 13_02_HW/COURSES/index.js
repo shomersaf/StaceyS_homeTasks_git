@@ -204,7 +204,8 @@ function editEntered() {
 }
 
 function saveEdited(){
-    /*
+        //getting tableRow
+        const currentRow = this.closest("tr");
     if (
         currentRow.querySelector(".nameInput").value != "" &&
         currentRow.querySelector(".priceInput").value != "" &&
@@ -212,9 +213,7 @@ function saveEdited(){
         currentRow.querySelector(".finishInput").value != "" &&
         currentRow.querySelector(".lectureInput").value != ""
       ) {
-    */
-        //getting tableRow
-    const currentRow = this.closest("tr");
+    
     //getting columns
      const tdName = currentRow.querySelector(".tdName");
      const tdPrice = currentRow.querySelector(".tdPrice");
@@ -266,11 +265,9 @@ function saveEdited(){
     editButton.addEventListener("click", editEntered);  
     //appending
     tdActions.append(deleteButton, editButton);
-      /*
       }else{
         alert("EVERY field of the form is necessary to fill!"); 
       }
-      */
     
 }
   

@@ -85,6 +85,9 @@ label:last-of-type{
     padding: 5px 10px 5px 10px;
     border-radius: 8px;
     cursor: pointer;
+    margin-bottom: 5px;
+    margin-top: 5px;
+
 }
 .greenButton  {
     background: rgb(18, 107, 54);
@@ -94,6 +97,8 @@ label:last-of-type{
     border-radius: 8px;
     cursor: pointer;
     margin-left: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
 }
 
 .newInput{
@@ -140,4 +145,7 @@ td{
 .startInput,
 .finishInput{
     width: 100px;
+}
+td:last-of-type{
+    text-align: center;
 }
