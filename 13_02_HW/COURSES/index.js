@@ -160,13 +160,13 @@ function deleteRow(){
 
 function editEntered() {
     //getting
-    const currentCol = this.closest("tr");
-    const tdName = currentCol.querySelector(".tdName");
-    const tdPrice = currentCol.querySelector(".tdPrice");
-    const tdStart = currentCol.querySelector(".tdStart");
-    const tdFinish = currentCol.querySelector(".tdFinish");
-    const tdLecture = currentCol.querySelector(".tdLecture");
-    const tdActions = currentCol.querySelector(".tdActions");
+    const currentRow = this.closest("tr");
+    const tdName = currentRow.querySelector(".tdName");
+    const tdPrice = currentRow.querySelector(".tdPrice");
+    const tdStart = currentRow.querySelector(".tdStart");
+    const tdFinish = currentRow.querySelector(".tdFinish");
+    const tdLecture = currentRow.querySelector(".tdLecture");
+    const tdActions = currentRow.querySelector(".tdActions");
     //cleaning
     tdName.innerText ="";
     tdPrice.innerText ="";
@@ -174,11 +174,12 @@ function editEntered() {
     tdFinish.innerText ="";
     tdLecture.innerText ="";
     tdActions.innerText ="";
-    //creating
+    //creating button
     const saveButton = document.createElement("button");
     saveButton.innerText = "save";
     saveButton.className = "greenButton";
-    //creating row inputs
+    saveButton.addEventListener("click", saveEdited);
+    //creating new inputs
     const nameInput = document.createElement("input");
     nameInput.classList.add("nameInput");
     nameInput.type = "text";
@@ -201,3 +202,76 @@ function editEntered() {
     tdLecture.append(lectureInput);
     tdActions.append(saveButton);
 }
+
+function saveEdited(){
+    /*
+    if (
+        currentRow.querySelector(".nameInput").value != "" &&
+        currentRow.querySelector(".priceInput").value != "" &&
+        currentRow.querySelector(".startInput").value != "" &&
+        currentRow.querySelector(".finishInput").value != "" &&
+        currentRow.querySelector(".lectureInput").value != ""
+      ) {
+    */
+        //getting tableRow
+    const currentRow = this.closest("tr");
+    //getting columns
+     const tdName = currentRow.querySelector(".tdName");
+     const tdPrice = currentRow.querySelector(".tdPrice");
+     const tdStart = currentRow.querySelector(".tdStart");
+     const tdFinish = currentRow.querySelector(".tdFinish");
+     const tdLecture = currentRow.querySelector(".tdLecture");
+     const tdActions = currentRow.querySelector(".tdActions");
+
+   //cleaning object
+    COURSE.cName = "";
+    COURSE.cPrice = "";
+    COURSE.cStart = "";
+    COURSE.cFinish = "";
+    COURSE.cLecture = "";
+
+    //pushing input values into the object
+    COURSE.cName = currentRow.querySelector(".nameInput");
+    COURSE.cPrice = currentRow.querySelector(".priceInput");
+    COURSE.cStart = currentRow.querySelector(".startInput");
+    COURSE.cFinish = currentRow.querySelector(".finishInput");
+    COURSE.cLecture = currentRow.querySelector(".lectureInput");
+
+    //pushing the OBJECT into the ARRAY:
+    courses.push(COURSE);
+    //cleaning columns
+    tdName.innerText = "";
+    tdName.innerText = "";
+    tdPrice.innerText = "";
+    tdStart.innerText = "";
+    tdFinish.innerText = "";
+    tdLecture.innerText = "";
+    tdActions.innerText = "";
+    //entering new values
+    tdName.innerText = courses[index].cName.value;
+    tdName.innerText = courses[index].cName.value;
+    tdPrice.innerText = courses[index].cPrice.value;
+    tdStart.innerText = courses[index].cStart.value;
+    tdFinish.innerText = courses[index].cFinish.value;
+    tdLecture.innerText = courses[index].cLecture.value;
+
+    //row buttons:
+    const deleteButton = document.createElement("button");
+    deleteButton.innerText = " X ";
+    deleteButton.className = "redRowButton";
+    deleteButton.addEventListener("click", deleteRow);
+    const editButton = document.createElement("button");
+    editButton.innerText = "edit";
+    editButton.className = "greenButton";
+    editButton.addEventListener("click", editEntered);  
+    //appending
+    tdActions.append(deleteButton, editButton);
+      /*
+      }else{
+        alert("EVERY field of the form is necessary to fill!"); 
+      }
+      */
+    
+}
+  
+
