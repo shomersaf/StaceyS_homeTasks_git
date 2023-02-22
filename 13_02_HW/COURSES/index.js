@@ -33,7 +33,7 @@ tHead.append(
 container.append(table);
 
 //creating data variables
-const index = 0;
+let index = 0;
 const courses = [];
 const COURSE = {
   cNumber: null,
@@ -64,6 +64,7 @@ function createRow() {
     tdNumber.className = "tdNumber";
     const tdName = document.createElement("td");
     tdName.className = "tdName";
+    tdName.name = "tdName";
     const tdPrice = document.createElement("td");
     tdPrice.className = "tdPrice";
     const tdStart = document.createElement("td");
@@ -78,9 +79,11 @@ function createRow() {
     const deleteButton = document.createElement("button");
     deleteButton.innerText = " X ";
     deleteButton.className = "redRowButton";
+    deleteButton.addEventListener("click", deleteRow);
     const editButton = document.createElement("button");
     editButton.innerText = "edit";
     editButton.className = "greenButton";
+    editButton.addEventListener("click", editEntered);
     //appending:
     table.append(tHead, tBody);
     tdActions.append(deleteButton, editButton);
@@ -96,11 +99,12 @@ function createRow() {
     tBody.append(tRow);
     //getting from form into OBJECT:
     COURSE.cNumber = `id_${Math.ceil(Math.random() * 99999999999)}`;
-    COURSE.cName = cForm.elements["courseName"];
-    COURSE.cPrice = cForm.elements["coursePrice"];
-    COURSE.cStart = cForm.elements["startDate"];
-    COURSE.cFinish = cForm.elements["endDate"];
-    COURSE.cLecture = cForm.elements["lecture"];
+    //COURSE.cName = cForm.elements["courseName"];
+    COURSE.cName = document.querySelector("#courseName");
+    COURSE.cPrice = document.querySelector("#coursePrice");
+    COURSE.cStart = document.querySelector("#startDate");
+    COURSE.cFinish = document.querySelector("#endDate");
+    COURSE.cLecture = document.querySelector("#lecture");
     //pushing the OBJECT into ARRAY:
     courses.push(COURSE);
     tdNumber.innerText = courses[index].cNumber;
@@ -109,7 +113,8 @@ function createRow() {
     tdStart.innerText = courses[index].cStart.value;
     tdFinish.innerText = courses[index].cFinish.value;
     tdLecture.innerText = courses[index].cLecture.value;
-    clearForm();
+    cleanForm();
+   //clearObjCOURSE();
     index++;
   } else {
     alert("EVERY field of the form is necessary to fill!");
@@ -128,37 +133,71 @@ function publishHeadings() {
     thActions.innerText = "Actions";
   }
 
-function clearForm() {
-  COURSE.cName.value = "";
-  COURSE.cPrice.value = " ";
-  COURSE.cStart.value = " ";
-  COURSE.cFinish.value = " ";
-  COURSE.cLecture.value = " ";
-}
-
-
 function cleanForm() {
-  cForm.elements["courseName"].value = "";
-  cForm.elements["coursePrice"].value = "";
-  cForm.elements["startDate"].value = "";
-  cForm.elements["endDate"].value = "";
-  cForm.elements["lecture"].value = "";
+    COURSE.cNumber.value = "";
+    COURSE.cName.value = "";
+    COURSE.cPrice.value = "";
+    COURSE.cStart.value = "";
+    COURSE.cFinish.value = "";
+    COURSE.cLecture.value = "";
 }
 
+function clearObjCOURSE() {
+    COURSE.cNumber = "";
+    COURSE.cName = "";
+    COURSE.cPrice = "";
+    COURSE.cStart = "";
+    COURSE.cFinish = "";
+    COURSE.cLecture = "";
+  }
+
+function deleteRow(){
+    const currentRow = this.closest("tr");
+    currentRow.innerText = "";
+    courses.splice(index-1,1);
+    index--;  
+}
 
 function editEntered() {
-  const saveButton = document.createElement("button");
-  saveButton.innerText = "save";
-  saveButton.className = "greenButton";
-  //creating row inputs
-  const nameInput = document.createElement("input");
-  nameInput.classList.add("nameInput");
-  const priceInput = document.createElement("input");
-  priceInput.classList.add("priceInput");
-  const startInput = document.createElement("input");
-  startInput.classList.add("startInput");
-  const finishInput = document.createElement("input");
-  finishInput.classList.add("finishInput");
-  const lectureInput = document.createElement("input");
-  lectureInput.classList.add("lectureInput");
+    //getting
+    const currentCol = this.closest("tr");
+    const tdName = currentCol.querySelector(".tdName");
+    const tdPrice = currentCol.querySelector(".tdPrice");
+    const tdStart = currentCol.querySelector(".tdStart");
+    const tdFinish = currentCol.querySelector(".tdFinish");
+    const tdLecture = currentCol.querySelector(".tdLecture");
+    const tdActions = currentCol.querySelector(".tdActions");
+    //cleaning
+    tdName.innerText ="";
+    tdPrice.innerText ="";
+    tdStart.innerText ="";
+    tdFinish.innerText ="";
+    tdLecture.innerText ="";
+    tdActions.innerText ="";
+    //creating
+    const saveButton = document.createElement("button");
+    saveButton.innerText = "save";
+    saveButton.className = "greenButton";
+    //creating row inputs
+    const nameInput = document.createElement("input");
+    nameInput.classList.add("nameInput");
+    nameInput.type = "text";
+    const priceInput = document.createElement("input");
+    priceInput.classList.add("priceInput");
+    priceInput.type = "number";
+    const startInput = document.createElement("input");
+    startInput.classList.add("startInput");
+    startInput.type = "date";
+    const finishInput = document.createElement("input");
+    finishInput.classList.add("finishInput");
+    finishInput.type = "date";
+    const lectureInput = document.createElement("textarea");
+    lectureInput.classList.add("lectureInput");
+    //appending
+    tdName.append(nameInput);
+    tdPrice.append(priceInput);
+    tdStart.append(startInput);
+    tdFinish.append(finishInput);
+    tdLecture.append(lectureInput);
+    tdActions.append(saveButton);
 }

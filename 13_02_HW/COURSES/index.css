@@ -135,3 +135,9 @@ td{
     background:rgb(10, 33, 48);
     color: rgb(123, 206, 166);
 }
+.nameInput,
+.priceInput,
+.startInput,
+.finishInput{
+    width: 100px;
+}
