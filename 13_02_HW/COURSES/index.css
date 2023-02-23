@@ -65,6 +65,7 @@ textarea {
     color: aliceblue;
     background-color: rgb(107, 18, 30);
     margin-top: 10px;
+    margin-right: 10px;
     cursor: pointer;
 }
 label:last-of-type{
@@ -73,7 +74,7 @@ label:last-of-type{
 .formDiv{
     background: #17886f;
     width: fit-content;
-    padding:30px;
+    padding:30px 30px 15px 30px;
     border:none;
     border-radius: 30px;
     text-align: right;
@@ -149,3 +150,50 @@ td{
 td:last-of-type{
     text-align: center;
 }
+#filter {
+    width:150px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    height:32px;
+}
+.underFormFooter{
+    padding-top: 10px;
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    width:95%;
+    margin:auto;
+}
+.buttons{
+    display: flex;
+    height: 60px;
+    justify-content:center;
+    align-items: center;
+    padding-top:0;
+    padding-bottom: 0;
+    margin: 0;
+}
+.search{
+    display: flex;
+    height: 60px;
+    justify-content:center;
+    align-items: center;
+    padding-top:0;
+    padding-bottom: 0;
+    margin-top: 19px;
+}
+.searchGlass{
+    
+    background:  #0b6b56;
+    color: white;
+    border: none;
+    padding: 10px 15px 10px 15px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 9px;
+
+}
+
