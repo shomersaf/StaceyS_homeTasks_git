@@ -12,6 +12,7 @@ SearchButton.addEventListener("click", filterCourses);
 let filterInput = document.querySelector("#filter");
 filterInput.addEventListener("input", filterCourses);
 
+
 //table declaring
 const table = document.createElement("table");
 const tHead = document.createElement("thead");
@@ -51,23 +52,61 @@ const COURSE = {
 let filteredCourses = [];
 //----------functions-----------
 
+
+/*
+function filterOrdersFn(filterValue) {
+  if (!filterValue) return draw(orders);
+  let filteredOrders = [];
+  for (let index = 0; index < orders.length; index++) {
+    if (orders[index].email.includes(filterValue)) {
+      filteredOrders.push(orders[index]);
+    }
+  }
+  draw(filteredOrders);
+}
+
+*/
+
 let resultsTR = [];
 let resultsTD = [];
 //filtering
-function filterCourses() {
+function filterCourses(){
   let filterInput = document.querySelector("#filter");
   //alert(filterInput.value);
   resultsTR = tBody.children;
-  for (i = 0; i < resultsTR.length; i++) {
+   for(i = 0; i < resultsTR.length; i++){
     let tdName = resultsTR[i].querySelector(".tdName");
-    if (tdName.innerText.includes(filterInput.value)) {
-      resultsTR[i].style.cssText = "display: table-row;";
-    } else if (filterInput.value == "") {
-      resultsTR[i].style.cssText = "display: table-row;";
-    } else {
-      resultsTR[i].style.cssText = "display: none;";
+    if(tdName.innerText.includes(filterInput.value)){
+      resultsTR[i].style.cssText = 'display: table-row;'
+    }else if(filterInput.value == ""){
+      resultsTR[i].style.cssText = 'display: table-row;'
+    }else{
+      resultsTR[i].style.cssText = 'display: none;'
     }
-  }
+   }
+    
+
+  // TODO: Now that we have 'filteredCourses' filled, we will have to to some workaround in HTML
+  // Like for example, how are we gonna do this?
+  // Delete unfiting element from 'table' in html? Or just hide them? Seems like a better option is to hide them
+  // Then if want to do new filtering action, we can unhide everthing before
+  // So by that logic we don't even ned to create 'filteredCourses'. Why you ask?
+  // Because we can just to do this simple logic:
+  //
+  // Get html object of 'table' +
+  // Start looping every child within it (it will be a 'tr' object)
+  // then will extract out of this 'tr' a 'tdName' and it's value name
+  // after that we compare our 'filterInputValue.value' with name value that we have extracted before
+  // if it's true: unhide it
+  // else: hide it
+  // 
+  // by this logic there will be no need to create another button 'Clear filtering'
+  // because if we want to clear it, we can just enter 'empty' input into filterInput form
+  // also that is mean that we will have to modify filter compare logic
+  // by now it's strict with no wildcard options
+  // try to modify it by using 'contains' check
+  // or we can be just a lazy ass and add another if statement into the loop that 
+  // if 'filterInputValue.value' is empty, unhide the 'tr' object
 }
 
 //----main fn --------
@@ -122,15 +161,15 @@ function createRow() {
     );
     tBody.append(tRow);
     //getting from form into OBJECT:
-
+    //
     let newCourse = {
-      cNumber: `id_${Math.ceil(Math.random() * 99999999999)}`,
-      cName: document.querySelector("#courseName").value,
-      cPrice: document.querySelector("#coursePrice").value,
-      cStart: document.querySelector("#startDate").value,
-      cFinish: document.querySelector("#endDate").value,
-      cLecture: document.querySelector("#lecture").value,
-    };
+      cNumber : `id_${Math.ceil(Math.random() * 99999999999)}`,
+      cName : document.querySelector("#courseName").value,
+      cPrice : document.querySelector("#coursePrice").value,
+      cStart : document.querySelector("#startDate").value,
+      cFinish : document.querySelector("#endDate").value,
+      cLecture : document.querySelector("#lecture").value
+    }
     courses.push(newCourse);
     tdNumber.innerText = newCourse.cNumber;
     tdName.innerText = newCourse.cName;
@@ -139,6 +178,8 @@ function createRow() {
     tdFinish.innerText = newCourse.cFinish;
     tdLecture.innerText = newCourse.cLecture;
     cleanForm();
+   
+    
   } else {
     alert("EVERY field of the form is necessary to fill!");
   }
@@ -147,87 +188,95 @@ function createRow() {
 //-----additional fns -------
 
 function publishHeadings() {
-  thNumber.innerText = "course id";
-  thName.innerText = "Name";
-  thPrice.innerText = "Price";
-  thStart.innerText = "Starts:";
-  thFinish.innerText = "Ends:";
-  thLecture.innerText = "Lecture";
-  thActions.innerText = "Actions";
-}
+    thNumber.innerText = "course id";
+    thName.innerText = "Name";
+    thPrice.innerText = "Price";
+    thStart.innerText = "Starts:";
+    thFinish.innerText = "Ends:";
+    thLecture.innerText = "Lecture";
+    thActions.innerText = "Actions";
+  }
 
 function cleanForm() {
+     
   cForm.elements["courseName"].value = "";
   cForm.elements["coursePrice"].value = "";
   cForm.elements["startDate"].value = "";
   cForm.elements["endDate"].value = "";
   cForm.elements["lecture"].value = "";
+   
 }
 
-function deleteRow() {
+
+function deleteRow(){
   //Deleting row from HTML
   const currentRow = this.closest("tr");
   const courceId = currentRow.querySelector(".tdNumber").innerText;
-  currentRow.innerText = "";
+  currentRow.innerText = ""; 
   currentRow.remove();
   // TODO: delete 'tr' from 'table' - is DONE
 
   //Deleting cource from the array cources
-
+  // TODO: Check if it's even working - it WORKS. DONE!
   for (let i = 0; i < courses.length; i++) {
     if (courses[i].cNumber == courceId) {
-      courses.splice(i, 1);
+      //alert(courses.length);
+      courses.splice(i,1);
+      //alert(courses.length);
       break;
-    }
+    }  
   }
+
+  //courses.splice(index-1,1);
+  //index--;  
 }
 
 function editEntered() {
-  //getting
-  const currentRow = this.closest("tr");
-  const tdName = currentRow.querySelector(".tdName");
-  const tdPrice = currentRow.querySelector(".tdPrice");
-  const tdStart = currentRow.querySelector(".tdStart");
-  const tdFinish = currentRow.querySelector(".tdFinish");
-  const tdLecture = currentRow.querySelector(".tdLecture");
-  const tdActions = currentRow.querySelector(".tdActions");
-  //cleaning
-  tdName.innerText = "";
-  tdPrice.innerText = "";
-  tdStart.innerText = "";
-  tdFinish.innerText = "";
-  tdLecture.innerText = "";
-  tdActions.innerText = "";
-  //creating button
-  const saveButton = document.createElement("button");
-  saveButton.innerText = "save";
-  saveButton.className = "greenButton";
-  saveButton.addEventListener("click", saveEdited);
-  //creating new inputs
-  const nameInput = document.createElement("input");
-  nameInput.classList.add("nameInput");
-  nameInput.type = "text";
-  const priceInput = document.createElement("input");
-  priceInput.classList.add("priceInput");
-  priceInput.type = "number";
-  const startInput = document.createElement("input");
-  startInput.classList.add("startInput");
-  startInput.type = "date";
-  const finishInput = document.createElement("input");
-  finishInput.classList.add("finishInput");
-  finishInput.type = "date";
-  const lectureInput = document.createElement("textarea");
-  lectureInput.classList.add("lectureInput");
-  //appending
-  tdName.append(nameInput);
-  tdPrice.append(priceInput);
-  tdStart.append(startInput);
-  tdFinish.append(finishInput);
-  tdLecture.append(lectureInput);
-  tdActions.append(saveButton);
+    //getting
+    const currentRow = this.closest("tr");
+    const tdName = currentRow.querySelector(".tdName");
+    const tdPrice = currentRow.querySelector(".tdPrice");
+    const tdStart = currentRow.querySelector(".tdStart");
+    const tdFinish = currentRow.querySelector(".tdFinish");
+    const tdLecture = currentRow.querySelector(".tdLecture");
+    const tdActions = currentRow.querySelector(".tdActions");
+    //cleaning
+    tdName.innerText ="";
+    tdPrice.innerText ="";
+    tdStart.innerText ="";
+    tdFinish.innerText ="";
+    tdLecture.innerText ="";
+    tdActions.innerText ="";
+    //creating button
+    const saveButton = document.createElement("button");
+    saveButton.innerText = "save";
+    saveButton.className = "greenButton";
+    saveButton.addEventListener("click", saveEdited);
+    //creating new inputs
+    const nameInput = document.createElement("input");
+    nameInput.classList.add("nameInput");
+    nameInput.type = "text";
+    const priceInput = document.createElement("input");
+    priceInput.classList.add("priceInput");
+    priceInput.type = "number";
+    const startInput = document.createElement("input");
+    startInput.classList.add("startInput");
+    startInput.type = "date";
+    const finishInput = document.createElement("input");
+    finishInput.classList.add("finishInput");
+    finishInput.type = "date";
+    const lectureInput = document.createElement("textarea");
+    lectureInput.classList.add("lectureInput");
+    //appending
+    tdName.append(nameInput);
+    tdPrice.append(priceInput);
+    tdStart.append(startInput);
+    tdFinish.append(finishInput);
+    tdLecture.append(lectureInput);
+    tdActions.append(saveButton);
 }
 
-function saveEdited() {
+function saveEdited(){
   //getting tableRow
   const currentRow = this.closest("tr");
   if (
@@ -256,9 +305,24 @@ function saveEdited() {
         courses[i].cFinish = currentRow.querySelector(".finishInput").value;
         courses[i].cLecture = currentRow.querySelector(".lectureInput").value;
         break;
-      }
+      }  
     }
+    //cleaning object
+    //COURSE.cName = "";
+    //COURSE.cPrice = "";
+    //COURSE.cStart = "";
+    //COURSE.cFinish = "";
+    //COURSE.cLecture = "";
 
+    //pushing input values into the object
+    //COURSE.cName = currentRow.querySelector(".nameInput");
+    //COURSE.cPrice = currentRow.querySelector(".priceInput");
+    //COURSE.cStart = currentRow.querySelector(".startInput");
+    //COURSE.cFinish = currentRow.querySelector(".finishInput");
+    //COURSE.cLecture = currentRow.querySelector(".lectureInput");
+
+    //pushing the OBJECT into the ARRAY:
+    //courses.push(COURSE);
     //cleaning columns
     tdName.innerText = "";
     tdName.innerText = "";
@@ -283,10 +347,13 @@ function saveEdited() {
     const editButton = document.createElement("button");
     editButton.innerText = "edit";
     editButton.className = "greenButton";
-    editButton.addEventListener("click", editEntered);
+    editButton.addEventListener("click", editEntered);  
     //appending
     tdActions.append(deleteButton, editButton);
-  } else {
-    alert("EVERY field of the form is necessary to fill!");
-  }
+  }else{
+    alert("EVERY field of the form is necessary to fill!"); 
+  }  
 }
+  
+
+
