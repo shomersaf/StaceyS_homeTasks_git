@@ -1,0 +1,87 @@
+<div class="cardRow">
+            <div class="card">
+              <img src="img/knopka.png" alt="pin" class="pin" />
+              <div class="note">
+                <div class="topicText">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam
+                  earum voluptatum corporis quis expedita repudiandae quasi cumque
+                  accusamus consequatur aliquid, deleniti quos mollitia. Itaque
+                  repellendus sint, quae non rem quia aperiam! Expedita iste cum
+                  asperiores deserunt, nesciunt itaque fuga eligendi repudiandae
+                </div>
+                <div class="dateTime">
+                  <div class="dateDiv">30.01.23</div>
+                  <div class="timeDiv">21:00</div>
+                </div>
+                
+              </div>
+            </div>
+  
+            <div class="card">
+              <img src="img/knopka.png" alt="pin" class="pin" />
+              <div class="note">
+                <div class="topicText"></div>
+                <div class="dateTime"></div>
+              </div>
+            </div>
+  
+            <div class="card">
+              <img src="img/knopka.png" alt="pin" class="pin" />
+              <div class="note">
+                <div class="topicText"></div>
+                <div class="dateTime"></div>
+              </div>
+            </div>
+  
+            <div class="card">
+              <img src="img/knopka.png" alt="pin" class="pin" />
+              <div class="note">
+                <div class="topicText"></div>
+                <div class="dateTime"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cardRow">
+            <div class="card">
+              <img src="img/knopka.png" alt="pin" class="pin" />
+              <div class="note">
+                <div class="topicText">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam
+                  earum voluptatum corporis quis expedita repudiandae quasi cumque
+                  accusamus consequatur aliquid, deleniti quos mollitia. Itaque
+                  repellendus sint, quae non rem quia aperiam! Expedita iste cum
+                  asperiores deserunt, nesciunt itaque fuga eligendi repudiandae
+                </div>
+                <div class="dateTime">
+                  <div class="dateDiv">30.01.23</div>
+                  <div class="timeDiv">21:00</div>
+                </div>
+                
+              </div>
+            </div>
+  
+            <div class="card">
+              <img src="img/knopka.png" alt="pin" class="pin" />
+              <div class="note">
+                <div class="topicText"></div>
+                <div class="dateTime"></div>
+              </div>
+            </div>
+  
+            <div class="card">
+              <img src="img/knopka.png" alt="pin" class="pin" />
+              <div class="note">
+                <div class="topicText"></div>
+                <div class="dateTime"></div>
+              </div>
+            </div>
+  
+            <div class="card">
+              <img src="img/knopka.png" alt="pin" class="pin" />
+              <div class="note">
+                <div class="topicText"></div>
+                <div class="dateTime"></div>
+              </div>
+            </div>
+          </div>
