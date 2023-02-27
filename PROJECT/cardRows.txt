@@ -1,87 +1,22 @@
-<div class="cardRow">
-            <div class="card">
-              <img src="img/knopka.png" alt="pin" class="pin" />
-              <div class="note">
-                <div class="topicText">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam
-                  earum voluptatum corporis quis expedita repudiandae quasi cumque
-                  accusamus consequatur aliquid, deleniti quos mollitia. Itaque
-                  repellendus sint, quae non rem quia aperiam! Expedita iste cum
-                  asperiores deserunt, nesciunt itaque fuga eligendi repudiandae
-                </div>
+    <!--card-->
+          <div class="card col">
+            <img src="img/knopka.png" alt="pin" class="pin" />
+            <div class="note">
+              <div class="topicText">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam
+                earum voluptatum corporis quis expedita repudiandae quasi cumque
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam
+                earum voluptatum corporis quis expedita repudiandae quasi cumque
+              </div>
+              <div class="cardFooter">
                 <div class="dateTime">
                   <div class="dateDiv">30.01.23</div>
                   <div class="timeDiv">21:00</div>
                 </div>
-                
-              </div>
-            </div>
-  
-            <div class="card">
-              <img src="img/knopka.png" alt="pin" class="pin" />
-              <div class="note">
-                <div class="topicText"></div>
-                <div class="dateTime"></div>
-              </div>
-            </div>
-  
-            <div class="card">
-              <img src="img/knopka.png" alt="pin" class="pin" />
-              <div class="note">
-                <div class="topicText"></div>
-                <div class="dateTime"></div>
-              </div>
-            </div>
-  
-            <div class="card">
-              <img src="img/knopka.png" alt="pin" class="pin" />
-              <div class="note">
-                <div class="topicText"></div>
-                <div class="dateTime"></div>
+                <button class="btn btn-danger cleaner">
+                  <i class="bi bi-x-circle"></i>
+                </button>
               </div>
             </div>
           </div>
-
-          <div class="cardRow">
-            <div class="card">
-              <img src="img/knopka.png" alt="pin" class="pin" />
-              <div class="note">
-                <div class="topicText">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam
-                  earum voluptatum corporis quis expedita repudiandae quasi cumque
-                  accusamus consequatur aliquid, deleniti quos mollitia. Itaque
-                  repellendus sint, quae non rem quia aperiam! Expedita iste cum
-                  asperiores deserunt, nesciunt itaque fuga eligendi repudiandae
-                </div>
-                <div class="dateTime">
-                  <div class="dateDiv">30.01.23</div>
-                  <div class="timeDiv">21:00</div>
-                </div>
-                
-              </div>
-            </div>
-  
-            <div class="card">
-              <img src="img/knopka.png" alt="pin" class="pin" />
-              <div class="note">
-                <div class="topicText"></div>
-                <div class="dateTime"></div>
-              </div>
-            </div>
-  
-            <div class="card">
-              <img src="img/knopka.png" alt="pin" class="pin" />
-              <div class="note">
-                <div class="topicText"></div>
-                <div class="dateTime"></div>
-              </div>
-            </div>
-  
-            <div class="card">
-              <img src="img/knopka.png" alt="pin" class="pin" />
-              <div class="note">
-                <div class="topicText"></div>
-                <div class="dateTime"></div>
-              </div>
-            </div>
-          </div>
+          <!--card-->
