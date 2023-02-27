@@ -83,5 +83,3 @@ function cleanForm() {
   noteForm.elements["dateInput"].value = "";
   noteForm.elements["timeInput"].value = "";
 }
-
-
