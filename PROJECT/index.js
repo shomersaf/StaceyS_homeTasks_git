@@ -18,6 +18,7 @@ function pinCard(){
     noteForm.elements["dateInput"].value != "" &&
     noteForm.elements["timeInput"].value != ""
   ){
+
     const card = document.createElement("div");
     card.style.animation = "fade-in 1s";
     card.classList.add("card", "col", "col-3");
@@ -82,4 +83,5 @@ function cleanForm() {
   noteForm.elements["dateInput"].value = "";
   noteForm.elements["timeInput"].value = "";
 }
+
 
