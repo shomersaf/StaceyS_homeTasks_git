@@ -39,7 +39,7 @@ function pinCard(){
     const iconDelete = document.createElement("i");
     iconDelete.classList.add("bi", "bi-x-circle");
     cleanerButton.append(iconDelete);
-    //cleanerButton.addEventListener("click", delCard);
+    cleanerButton.addEventListener("click", delCard);
     cardFooter.append(dateTime, cleanerButton);
     const dateDiv = document.createElement("div");
     dateDiv.className = "dateDiv";
@@ -109,7 +109,7 @@ function genCard(){
       const iconDelete = document.createElement("i");
       iconDelete.classList.add("bi", "bi-x-circle");
       cleanerButton.append(iconDelete);
-      //cleanerButton.addEventListener("click", delCard);
+      cleanerButton.addEventListener("click", delCard);
       cardFooter.append(dateTime, cleanerButton);
       const dateDiv = document.createElement("div");
       dateDiv.className = "dateDiv";
@@ -147,16 +147,14 @@ for(let index = 0; index < notes.length; index++){
     alert(notes[index].noteTopic);
     alert(currentTopic.innerText);
   notes.splice(index,1);
-  console.log(notes);
+   console.log(notes);
   }
  
-  if(notes.length = 1){
-    alert("the last one!");
-    
-  }
+  
 }
 localStorage.setItem("notes", JSON.stringify(notes));
 
 currentCard.remove();
 
 }
+//checking up what's happen if idon't clean the LS after deleting all
