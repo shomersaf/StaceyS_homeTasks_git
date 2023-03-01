@@ -143,18 +143,25 @@ notes.push(newNote);
 notes = JSON.parse(localStorage.getItem("notes"));
 
 for(let index = 0; index < notes.length; index++){
-  if(currentTopic.innerText == notes[index].noteTopic){
-    alert(notes[index].noteTopic);
-    alert(currentTopic.innerText);
+  if(currentTopic.innerText == notes[index].noteTopic &&
+    currentDate.innerText == notes[index].noteDate &&
+    currentTime.innerText == notes[index].noteTime){
   notes.splice(index,1);
-   console.log(notes);
+   
+if(notes.length == 0){
+  notes = [];
+  localStorage.removeItem('notes');
+}else{
+  localStorage.setItem("notes", JSON.stringify(notes));
+}
+
   }
  
   
 }
-localStorage.setItem("notes", JSON.stringify(notes));
+
 
 currentCard.remove();
 
 }
-//checking up what's happen if idon't clean the LS after deleting all
+
