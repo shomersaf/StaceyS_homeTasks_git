@@ -12,7 +12,7 @@ let notes = [];
 
 //functions
 function pinCard(){
- 
+  let i = 0;
   if(
     noteForm.elements["topicInput"].value != "" &&
     noteForm.elements["dateInput"].value != "" &&
@@ -60,7 +60,12 @@ function pinCard(){
       timeDiv.innerText = notes[i].noteTime;
       cleanForm();
     } 
-   
+   i++; 
+    if(i % 4 == 0){
+      const rowBreaker = document.createElement("div");
+      rowBreaker.classList.add("w-100", "d-none" , "d-md-block");
+      cardRow.appendChild(rowBreaker);
+    }
   }else{
     alert("Fill EVERY field of the form, please!");
   } 
@@ -75,9 +80,9 @@ function cleanForm() {
 
 
 function genCard(){
-
+ let i = 0;
  notes = JSON.parse(localStorage.getItem("notes")) || [];
-  if(notes.length > 0){
+  if(notes.length > 1){
     let newNote = {
       cNumber: null,
       noteTopic: null,
@@ -121,7 +126,12 @@ function genCard(){
       dateDiv.innerText = notes[i].noteDate;
       timeDiv.innerText = notes[i].noteTime;
     }
-  
+   i++;
+    if(i % 4 == 0){
+      const rowBreaker = document.createElement("div");
+      rowBreaker.classList.add("w-100", "d-none" , "d-md-block");
+      cardRow.appendChild(rowBreaker);
+    }
   }
 }
 
