@@ -1,4 +1,4 @@
-let startDay = prompt("There are countries, whic start their week on Sunday, Monday or Saturday, for example. Enter the start of the week");
+let startDay = prompt("There are countries, which start their week on Sunday, Monday or Saturday, for example. Enter the start of the week");
 
 function getCountriesBySOW(dataBase,sow){
     sow = sow.toLowerCase();
