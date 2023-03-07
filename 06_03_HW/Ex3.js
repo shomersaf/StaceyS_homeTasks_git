@@ -1,9 +1,9 @@
 let currencyCode = prompt("Enter a currency code of three symbols. For example ILS for israeli shekel or USD for US dollar");
 
-function gerCounriesByCurrency(dataBase,curC){
+function getCountriesByCurrency(dataBase,curC){
     curC = curC.toUpperCase();
     var selectedCountries = [];
-    document.write(`<h3> The countries, using ${curC} currency are:</h3>`);
+    document.write(`<h3> The countries, using ${curC} currency:</h3>`);
     dataBase.forEach( country => {
         if (country.currencies != null && country.currencies[curC] != null){
             selectedCountries.push(country) 
@@ -17,5 +17,5 @@ function gerCounriesByCurrency(dataBase,curC){
     
 }
 
-gerCounriesByCurrency(countries,currencyCode);
+getCountriesByCurrency(countries,currencyCode);
 
