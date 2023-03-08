@@ -21,3 +21,6 @@ function getCountriesAbovethePopulation(dataBase, numberEntered){
 
 
 getCountriesAbovethePopulation(countries,populationNumber);
+console.log(Object.entries(countries[0].maps));
+console.log(Object.keys(countries[0].maps));
+console.log(Object.values(countries[0].maps));
