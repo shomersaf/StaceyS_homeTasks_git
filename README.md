@@ -1,3 +1,5 @@
+# 11_03 HW is ready 
+# .... some HW were loaded
 # 10_02 HW is ready including advanced but without saving of edited because of time deficiency
 # 6_02 homework update - I understood an idea of constractor function, but can't apply it at the code I've made.
 # m.b. I should think of it before I started coding
