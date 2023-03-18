@@ -5,8 +5,6 @@ function loadUsers(callbackFn) {
 }
 
 
-
-
 const usersData =  [
       {
         gender: "male",

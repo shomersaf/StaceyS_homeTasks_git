@@ -4,7 +4,10 @@
    margin: 20px auto;
    width:200px;
   }
- 
+  #getUsers2 {
+    margin: 20px auto;
+    width:200px;
+   }
   html, body, .container{
     background-color: rgb(39, 43, 43) !important;
   }
@@ -35,9 +38,15 @@
   width:fit-content;
   }
 
-  img{
+  .blueBorder{
     margin: 5px;
     border: 2px solid rgb(68, 120, 198);
+    border-radius: 10px;
+    padding: 5px;
+  }
+  .roseBorder{
+    margin: 5px;
+    border: 2px solid rgb(210, 110, 180);
     border-radius: 10px;
     padding: 5px;
   }
