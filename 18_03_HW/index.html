@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>USERS</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Users Data Search</h1>
+        <div class="row myRow">
+           <button id="getUsers" class="btn btn-primary"> Get Male Users </button>
+           <div class="borderline"></div>
+           <div id="spinner" style="display:none">
+               <h3> Loading ...</h3>
+                <div class="spinner-border" role="status">
+               </div>
+           </div>
+             
+            <div id="content">
+
+            </div>
+        </div>
+        
+        <script src="./callbackUsers.js"></script>
+        <script src="./promise.js"></script>
+</body>
+</html>
