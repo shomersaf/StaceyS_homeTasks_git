@@ -16,6 +16,7 @@ function fetchCarsFromServer2(hp) {
     });
     
     document.querySelector("#getCars").addEventListener("click", function () {
+      
       document.querySelector("#spinner").style.display = "block";
       document.querySelector("#content").innerText = "";
       console.log("event listener");

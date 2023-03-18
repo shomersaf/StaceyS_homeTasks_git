@@ -7,46 +7,22 @@ function loadUsers(ug) {
       }, 2023)
     });
   }
-
-  
-/*
-  (function () {
-    document.querySelector("#getCars").addEventListener("click", function () {
-      document.querySelector("#spinner").style.display = "block";
-      document.querySelector("#content").innerText = "";
-      console.log("event listener");
-      fetchCarsFromServer2(220)
-        .then((carrrs) => {
-          document.querySelector("#content").innerText = JSON.stringify(carrrs);
-        })
-        .catch((err) => {
-          document.querySelector("#content").innerText = JSON.stringify(err);
-        })
-        .finally(() => {
-          document.querySelector("#spinner").style.display = "none";
-        });
-    });
-  })();
-*/
-
-
+  let count = 0;
   (function (){
     document.querySelector("#getUsers").addEventListener("click",()=>{
+        
+        count++;
+        document.querySelector("#counter").innerText = `Search counter: ${count}`;
         document.querySelector("#spinner").style.display = "flex";
         document.querySelector("#content").innerText = "";
-        console.log ("it reacts for button!");
+        console.log ("it reacts on button!");
         loadUsers("male")
-        .then((usersArray) => {
-           
+        .then((usersArray) => {   
           for(i=0; i<usersArray.length; i++){
-          
                const useriImg = document.createElement("img");
                useriImg.src = usersArray[i].picture.large;
-        
             document.querySelector("#content").append(useriImg);
           }
-            
-     
 
         })
         .catch((err) => {
@@ -57,6 +33,5 @@ function loadUsers(ug) {
             document.querySelector("#spinner").style.display = "none";
             console.log("Here");
         })
-
     })
   })();
