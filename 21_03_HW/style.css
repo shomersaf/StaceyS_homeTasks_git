@@ -3,11 +3,23 @@
     margin: 50px auto !important;
     display: flex;
     justify-content: center;
-   
+    border: 2px solid white;
+    border-radius: 15px;
+    padding:15px;
+    background: #999fad; 
 }
 h3 {
    text-align: center;
 }
 .container {
     width:400px !important;
+    min-height: 200px;
+    
+}
+body {
+    background: #474d59 !important;
+}
+.searchInput {
+ display: flex;
+ justify-content: center;
 }

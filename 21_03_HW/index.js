@@ -4,9 +4,10 @@ const DOM = {
     button: document.querySelector("#searchButton"),
     content: document.querySelector("#content"),
     list: document.querySelector("#pokemonsList"),
+    l_button: document.querySelector("#listButton"),
   };
 
-  window.addEventListener("load",  drawPokemonList);
+  DOM.l_button.addEventListener("click",  drawPokemonList);
 
   function init() {
     DOM.button.addEventListener("click", handleSearch);
