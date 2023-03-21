@@ -3,8 +3,10 @@ const DOM = {
     input: document.querySelector("#searchInput"),
     button: document.querySelector("#searchButton"),
     content: document.querySelector("#content"),
+    list: document.querySelector("#pokemonsList"),
   };
 
+  window.addEventListener("load",  drawPokemonList);
 
   function init() {
     DOM.button.addEventListener("click", handleSearch);
@@ -43,8 +45,10 @@ const DOM = {
     const h3 = document.createElement("h3");
     h3.innerText = pokemonToDraw?.name;
     DOM.content.append(img, h3);
+    
   }
-
+  
+ 
  
   async function searchPokemon(pokemonName) {
     let result = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
@@ -52,7 +56,18 @@ const DOM = {
     console.log(json);
     return json;
   }
-
+   
+  async function drawPokemonList() {
+    let result = await fetch(`https://pokeapi.co/api/v2/pokemon`);
+    const json = await result.json();
+    for (i=0; i<json?.results?.length; i++){
+      let li = document.createElement("li");
+      li.innerText = json?.results[i]?.name;
+      DOM.list.append(li);
+    }
+    
+    return json;
+  }
   
   {
     /* <div class="spinner-border" role="status"> */
@@ -73,4 +88,4 @@ const DOM = {
     }
   }
 
- 
+
