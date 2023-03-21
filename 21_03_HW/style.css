@@ -1,0 +1,13 @@
+.wrapper{
+    width: 660px;
+    margin: 50px auto !important;
+    display: flex;
+    justify-content: center;
+   
+}
+h3 {
+   text-align: center;
+}
+.container {
+    width:400px !important;
+}
