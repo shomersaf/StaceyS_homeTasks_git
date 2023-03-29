@@ -1,10 +1,10 @@
 html, body {
-    background-color:rgb(0, 0, 0) ;
-    color:rgb(189, 178, 167);
+    background-color:rgb(7, 7, 7) ;
+    color:rgb(2, 2, 2);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .wrapper {
-    background-color: rgb(93, 91, 89);
+    background-color: rgb(140, 166, 175);
     width: 80%;
     margin: 50px auto;
     padding:20px;
@@ -15,8 +15,9 @@ header, footer {
     margin-bottom: 10px;
     padding:15px;
     border-radius: 20px;
-    background-color: rgb(36, 34, 32);
+    background-color: rgb(20, 78, 70);
     text-align: center;
+    color:rgb(204, 235, 118);
 }
 h1 {
     text-align: center;
@@ -30,7 +31,7 @@ input {
     border-bottom: 1px solid rgb(57, 41, 41);
     border-radius: 10px;
     margin: 5px;
-    background-color: rgb(93, 91, 89);
+    background-color:  rgb(140, 166, 175);
 }
 form {
     width:fit-content;
@@ -47,13 +48,30 @@ legend {
 h3:hover {
     color:  rgb(35, 29, 29);
     /* text-decoration: underline; */
+    font-weight: bold;
 }
 .ref:hover:before {
-    content:">>>";
+    content:">>";
+}
+.ref:hover:after {
+    content:"<<";
 }
 .container{
    display: flex;
    justify-content: center;
    align-items: center;
    flex-direction: column;
+}
+img {
+    min-width:400px;
+    margin-bottom: 10px;
+    border: 8px solid rgb(130, 202, 130);
+    border-radius: 15px;
+}
+.movieDescDiv {
+ max-width: 400px;
+}
+span{
+    font-weight: bold;
+    text-transform: uppercase;
 }

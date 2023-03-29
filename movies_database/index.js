@@ -1,79 +1,113 @@
 const DOM = {
-    movieForm: document.querySelector("#movieForm"),
-    container: document.querySelector(".container"),
-    sendButton: document.querySelector("#sendButton"),
-    clearButton: document.querySelector("#clearButton"),
-  };
+  movieForm: document.querySelector("#movieForm"),
+  container: document.querySelector(".container"),
+  sendButton: document.querySelector("#sendButton"),
+  clearButton: document.querySelector("#clearButton"),
+};
 
-  function init() {
-    DOM.sendButton.addEventListener("click", function () {
-      let newSearch = {
-        title: movieForm["title"].value,
-      };
-      
-      getItemsHandler(newSearch);
-      return newSearch;
+function init() {
+  DOM.sendButton.addEventListener("click", function () {
+    let newSearch = {
+      title: movieForm["title"].value,
+    };
+    let url=`http://www.omdbapi.com/?s=${newSearch.title}&apikey=36699ccb`;
+    getItemsHandler(newSearch, url, getItems, draw);
+    return newSearch;
+  });
+  DOM.clearButton.addEventListener("click", function (newSearch) {
+    movieForm["title"].value = " ";
+    movieForm["year"].value = " ";
+  });
+}
+
+init();
+
+async function getItemsHandler(newData,url,getFn,drawFn) {
+  try {
+    showLoader();
+    const movies = await getFn(newData,url);
+    if (!(movies)) throw new Error("Api error");
+    drawFn(movies);
+  } catch (error) {
+    swal({
+      title: "Nothing found",
+      text: "Try again",
+      icon: "error",
     });
-    DOM.clearButton.addEventListener("click", function (newSearch) {
-      movieForm["title"].value = " ";
-      movieForm["year"].value = " ";
-    });
+  } finally {
+    removeLoader();
   }
+}
 
-  init();
+async function getItems(newData,url) {
+  const result = await fetch(url);
+    const json = await result.json();
+    return json;
+}
 
-  async function getItemsHandler(newSearch) {
-    try {
-      showLoader();
-      const movies = await getItems(newSearch);
-      //if (!Array.isArray(movies)) throw new Error("Api error");
-      if (!(movies)) throw new Error("Api error");
-      draw(movies);
-    } catch (error) {
-      swal({
-        title: "Nothing found",
-        text: "Try again",
-        icon: "error",
-      });
-    } finally {
-     removeLoader();
-    }
+function showLoader() {
+  DOM.container.innerHTML = "";
+  const loader = document.createElement("div");
+  loader.id = "searchLoader";
+  loader.classList.add("spinner-border");
+  DOM.container.append(loader);
+}
+
+function removeLoader() {
+  const loader = document.querySelector("#searchLoader");
+  if (loader) {
+    loader.remove();
   }
+}
 
-  async function getItems(newSearch) {
-    const result = await fetch(`http://www.omdbapi.com/?s=${newSearch.title}&page=20&apikey=36699ccb`);
-      const json = await result.json();
-      return json;
-  }
+function draw(items){
 
-  function showLoader() {
-    DOM.container.innerHTML = "";
-    const loader = document.createElement("div");
-    loader.id = "searchLoader";
-    loader.classList.add("spinner-border");
-    DOM.container.append(loader);
+  for (i=0; i<items.Search.length; i++){
+    let newH3 = document.createElement("h3");
+    newH3.innerText = items.Search[i].Title;
+    newH3.classList.add("ref");
+    DOM.container.append(newH3);
+    newH3.addEventListener("click", getMovie);
   }
   
-  function removeLoader() {
-    const loader = document.querySelector("#searchLoader");
-    if (loader) {
-      loader.remove();
-    }
-  }
+}
 
-  function draw(items){
+function getMovie(){
   
-    for (i=0; i<10; i++){
-      let newDiv = document.createElement("h3");
-      newDiv.innerText = items.Search[i].Title;
-      newDiv.classList.add("ref");
-      console.log(items.Search[i].Title);
-      DOM.container.append(newDiv);
-      newDiv.addEventListener("click", getMovie);
+  const movieTitle = this.innerText;
+  DOM.container.innerHTML = "";
+  
+  let movieUrl = `http://www.omdbapi.com/?t=${movieTitle}&apiKey=36699ccb`;
+  getItemsHandler(movieTitle,movieUrl,getItems, drawMovie);
+}
+
+function drawMovie(oneMovie){
+  const movieDescDiv = document.createElement("div");
+  movieDescDiv.classList.add("movieDescDiv");
+
+  for(movieProperty in oneMovie){
+    let newTitle = document.createElement("p");
+    if(movieProperty == "Ratings"){
+      newTitle.innerHTML = `<span>${movieProperty}:</span>`
+      oneMovie[movieProperty].forEach(rating => {
+        newTitle.innerHTML += ` ${rating.Source}: ${rating.Value}`
+      })
     }
-    
+    else if(movieProperty == "Poster"){
+      let newImg = document.createElement("img");
+      if(oneMovie.Poster){
+        newImg.src=oneMovie.Poster;
+        DOM.container.append(newImg);
+      }
+     
+    }
+    else if(movieProperty == "Response"){
+      continue
+    }
+    else{
+      newTitle.innerHTML =`<span>${movieProperty}:</span> ${oneMovie[movieProperty]}`;
+    }
+    movieDescDiv.append(newTitle);
   }
-  
-  function getMovie(){
-    alert("go!");
-  }
+  DOM.container.append(movieDescDiv);
+}
