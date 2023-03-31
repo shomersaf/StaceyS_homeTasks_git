@@ -1,0 +1,42 @@
+html,body {
+    background-color: rgb(4, 37, 55);
+    color:rgb(141, 213, 235);
+}
+.container {
+    margin-top: 20px;
+    padding-top: 20px;
+    background-color: rgb(106, 106, 143);
+    border: none;
+    border-top-left-radius: 105px;
+    border-top-right-radius: 105px;
+    min-width: 510px !important;
+}
+h1,h3 {
+    text-align: center;
+}
+#controllers {
+    text-align: center;
+}
+input{
+    height:45px;
+    border:none;
+    border-bottom: 1px solid white;
+    background-color: rgb(106, 106, 143);
+    margin-right: 5px;
+    padding-left: 10px;
+}
+
+button {
+    margin-left: 5px;
+}
+#content p {
+    text-align: center;
+}
+input::placeholder {
+color:rgb(151, 161, 161);
+}
+table {
+    overflow:visible;
+    max-width: inherit;
+    min-width: fit-content;
+}
