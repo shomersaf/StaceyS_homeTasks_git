@@ -8,7 +8,7 @@ async function searchInCountriesAPI(searchParam){
     clearInput();
     const countriesTable = generateTable(result);
     DOM.content.innerHTML = "";
-    console.log(result);
+   //console.log(result);
     DOM.content.append(countriesTable);
     return result;
 }else{

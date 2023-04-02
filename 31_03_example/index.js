@@ -81,8 +81,8 @@ const DOM = {
               const description = result.Plot;
               tdInner.innerText = description;
               trAdditionalInfo.append(tdInner);
-            } catch (error) {
-              trAdditionalInfo.innerText = "something went wrong";
+            } catch (error) {trAdditionalInfo.innerText = "something went wrong";
+              
             }
           });
           td.append(btn);
