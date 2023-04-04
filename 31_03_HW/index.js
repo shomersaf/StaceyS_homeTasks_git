@@ -37,6 +37,7 @@ async function getCountriesByRegion(value) {
 
 function clearInput() {
   DOM.searchInput.value = "";
+  DOM.content.innerHTML = " ";
 }
 
 function generateTable(data) {
@@ -79,22 +80,25 @@ function generateTable(data) {
       tdNameButton.classList.add("btn", "btn-secondary");
       tdName.append(tdNameButton);
       tdNameButton.innerText = currentItem[i].name.common;
+      tdNameButton.title = "get country on map";
+     
       tdNameButton.addEventListener("click", async function () {
-        const additionalTr = document.createElement("tr");
-        const additionalTd = document.createElement("td");
+        
+          const additionalTr = document.createElement("tr");
+          const additionalTd = document.createElement("td");
+          additionalTd.colSpan = 6;
+          additionalTr.append(additionalTd); 
+          const aReff = document.createElement("a");
+          aReff.href=currentItem[i].maps.googleMaps;
+          aReff.innerHTML = `${currentItem[i].maps.googleMaps}`;
+          additionalTd.innerText = "map refference: ";
+          additionalTd.append(aReff);
+          countryTr.after(additionalTr);
+          return countryTr;
+        
+       
+      },{ once: true });
       
-        additionalTd.colSpan = 6;
-        additionalTr.append(additionalTd); 
-        const aReff = document.createElement("a");
-        aReff.href=currentItem[i].maps.googleMaps;
-        aReff.innerHTML = `${currentItem[i].maps.googleMaps}`;
-        additionalTd.innerText = "map refference: ";
-        additionalTd.append(aReff);
-       
-       
-      countryTr.after(additionalTr);
-        return countryTr;
-      });
       const tdRegion = document.createElement("td");
       tdRegion.innerText = currentItem[i].region;
       const tdPopulation = document.createElement("td");
