@@ -1,8 +1,18 @@
+$(function(){
+  $('main').fadeOut().slideDown(1000);
+//   $('footer span').animate({
+//  fontSize: "24px",
+//  duration: 3000
+//   });
+  
+})
+
+
 const DOM = {
   movieForm: document.querySelector("#movieForm"),
   container: document.querySelector(".container"),
-  sendButton: document.querySelector("#sendButton"),
-  clearButton: document.querySelector("#clearButton"),
+  sendButton: document.querySelector("#sendMeButton"),
+  clearButton: document.querySelector("#clearMeButton"),
 };
 
 function init() {
@@ -14,9 +24,9 @@ function init() {
     getItemsHandler(newSearch, url, getItems, draw);
     return newSearch;
   });
-  DOM.clearButton.addEventListener("click", function (newSearch) {
+  DOM.clearButton.addEventListener("click", function () {
     movieForm["title"].value = " ";
-    movieForm["year"].value = " ";
+    DOM.container.innerHTML = " ";
   });
 }
 
@@ -98,6 +108,8 @@ function drawMovie(oneMovie){
       if(oneMovie.Poster){
         newImg.src=oneMovie.Poster;
         DOM.container.append(newImg);
+      }else{ alert("!!!");
+
       }
      
     }

@@ -5,19 +5,27 @@ html, body {
 }
 .wrapper {
     background-color: rgb(140, 166, 175);
-    width: 80%;
+    width: 60%;
     margin: 50px auto;
     padding:20px;
     border-radius: 20px;
     border: none;
 }
 header, footer {
-    margin-bottom: 10px;
     padding:15px;
-    border-radius: 20px;
+    border: none;
     background-color: rgb(20, 78, 70);
     text-align: center;
     color:rgb(204, 235, 118);
+}
+header {
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+footer {
+
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 h1 {
     text-align: center;
@@ -25,11 +33,11 @@ h1 {
 }
 
 input {
+    padding-left: 20px;
     height: 30px;
-    width: 220px;
+    width: 320px;
     border:none;
     border-bottom: 1px solid rgb(57, 41, 41);
-    border-radius: 10px;
     margin: 5px;
     background-color:  rgb(140, 166, 175);
 }
@@ -74,4 +82,12 @@ img {
 span{
     font-weight: bold;
     text-transform: uppercase;
+}
+.buttons {
+    width: fit-content;
+    margin: 10px auto;
+}
+
+.spinner-border {
+    margin-bottom: 15px;
 }
