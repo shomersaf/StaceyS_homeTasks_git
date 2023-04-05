@@ -1,5 +1,5 @@
 $(function(){
-  $('main').fadeOut().slideDown(1000);
+  $('main').hide().fadeOut().slideDown(1000);
 //   $('footer span').animate({
 //  fontSize: "24px",
 //  duration: 3000

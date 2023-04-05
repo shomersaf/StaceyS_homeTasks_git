@@ -56,3 +56,6 @@ table {
 table {
     padding: 10px !important;
 }
+canvas {
+    background-color: rgb(234, 239, 243);
+}
