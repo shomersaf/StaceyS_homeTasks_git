@@ -1,0 +1,71 @@
+
+.parallax,
+.parallax__layer {
+  height: 1000px;
+ 
+}
+.parallax__layer {
+    position: fixed;
+    background-position: bottom center;
+    background-size: auto 1038px;
+    background-repeat: repeat-x;
+    width: 100%;
+    z-index: 10;
+ 
+  }
+  .maincontent {
+    position: relative;
+    width: 100%;
+    min-height: 300vh;
+    z-index: 99;
+    background-color: #090f11;
+    background-image: url(./../../img/graph-paper.svg);
+    background-repeat: repeat;
+  }
+  #parallax-0 {
+    background-image: url(./../../img/setka.svg);
+    background-color: #161c1e;
+    // background-image: linear-gradient( rgb(176, 231, 199), rgb(1, 1, 1));
+  }
+  #parallax-1 {
+    background-image: url(./../../img/axes.svg);
+    background-position: bottom 10px right;
+  }
+  #parallax-2 {
+    background-image: url(./../../img/graph1.svg);
+    background-position: bottom 10px left;
+    opacity: 0.9;
+    z-index: 11;
+  }
+  #parallax-3 {
+    background-image: url(./../../img/graph2.svg);
+    background-position: bottom 10px left;
+    opacity: 0.6;
+  }
+  #parallax-4 {
+    background-image: url(./../../img/amudim.svg);
+    background-position: bottom 10px right;
+    opacity: 0.9;
+  }
+  #parallax-5 {
+    background-image: url(./../../img/logo.svg);
+    background-position: 1px 1px;
+  }
+  #parallax-6 h1{
+ color:#709e88;
+ float:right;
+ margin-right: 20%;
+ margin-top: 90px;
+ text-transform: uppercase;
+  }
+  #parallax-7 div{
+    color:#cbcdce;
+    font-size: 25em;
+    opacity: 0.03;
+    margin-top: 10px;
+ }
+#parallax-7{
+  display: flex;
+  justify-content:space-around;
+  align-items:stretch;
+}
