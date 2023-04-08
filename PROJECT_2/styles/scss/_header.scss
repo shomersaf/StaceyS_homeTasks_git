@@ -13,23 +13,15 @@
     z-index: 10;
  
   }
-  .maincontent {
-    position: relative;
-    width: 100%;
-    min-height: 300vh;
-    z-index: 99;
-    background-color: #090f11;
-    background-image: url(./../../img/graph-paper.svg);
-    background-repeat: repeat;
-  }
+
   #parallax-0 {
     background-image: url(./../../img/setka.svg);
     background-color: #161c1e;
-    // background-image: linear-gradient( rgb(176, 231, 199), rgb(1, 1, 1));
   }
   #parallax-1 {
     background-image: url(./../../img/axes.svg);
     background-position: bottom 10px right;
+    z-index: 11;
   }
   #parallax-2 {
     background-image: url(./../../img/graph1.svg);
@@ -48,16 +40,25 @@
     opacity: 0.9;
   }
   #parallax-5 {
-    background-image: url(./../../img/logo.svg);
+    background-image: url(./../../img/amudimBlue.svg);
     background-position: 1px 1px;
+    opacity: 0.2;
   }
-  #parallax-6 h1{
- color:#709e88;
- float:right;
- margin-right: 20%;
- margin-top: 90px;
+  #arrowDiv h1{
+ color:$headingsColor;
  text-transform: uppercase;
+
   }
+  #arrowDiv{
+    margin-top: 25px;
+    margin-left: 20px;
+    width: fit-content;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    align-items: flex-start;
+     }
+   
   #parallax-7 div{
     color:#cbcdce;
     font-size: 25em;
@@ -69,3 +70,39 @@
   justify-content:space-around;
   align-items:stretch;
 }
+#parallax-6{
+  display: flex;
+  justify-content:end;
+ padding-right: 20%;
+  align-items: start;
+   z-index: 90;
+  width: 100%;
+  opacity: 0.5;
+  background-image: url(./../../img/amudim2.svg);
+  background-position: bottom 10px left;
+  background-repeat: no-repeat;
+}
+#arrow {
+  color:$headingsColor;
+  font-size: 80px;
+  border: 3px solid $headingsColor;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  background-color: transparent !important;
+  margin-left: 15px;
+  //display: none;
+}
+#arrow:hover{
+  font-size: 100px;
+  border: 6px solid $headingsColor;
+}
+
+header a {
+  text-decoration: none;
+}
+

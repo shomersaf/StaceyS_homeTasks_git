@@ -6,12 +6,15 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-
+body,html{
+    background-color: black;
+}
  
 @import "_variables";
-@import "_container";
 @import "_header";
 @import "_main";
+@import "_nav";
+@import "_container";
 @import "_article";
 @import "_details";
 @import "_aside";

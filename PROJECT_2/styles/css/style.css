@@ -6,8 +6,8 @@
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
 
-.container {
-  width: 800px;
+body, html {
+  background-color: black;
 }
 
 .parallax,
@@ -24,16 +24,6 @@
   z-index: 10;
 }
 
-.maincontent {
-  position: relative;
-  width: 100%;
-  min-height: 300vh;
-  z-index: 99;
-  background-color: #090f11;
-  background-image: url(./../../img/graph-paper.svg);
-  background-repeat: repeat;
-}
-
 #parallax-0 {
   background-image: url(./../../img/setka.svg);
   background-color: #161c1e;
@@ -42,6 +32,7 @@
 #parallax-1 {
   background-image: url(./../../img/axes.svg);
   background-position: bottom 10px right;
+  z-index: 11;
 }
 
 #parallax-2 {
@@ -64,16 +55,32 @@
 }
 
 #parallax-5 {
-  background-image: url(./../../img/logo.svg);
+  background-image: url(./../../img/amudimBlue.svg);
   background-position: 1px 1px;
+  opacity: 0.2;
 }
 
-#parallax-6 h1 {
+#arrowDiv h1 {
   color: #709e88;
-  float: right;
-  margin-right: 20%;
-  margin-top: 90px;
   text-transform: uppercase;
+}
+
+#arrowDiv {
+  margin-top: 25px;
+  margin-left: 20px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-decoration: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 #parallax-7 div {
@@ -92,4 +99,134 @@
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
+}
+
+#parallax-6 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  padding-right: 20%;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  z-index: 90;
+  width: 100%;
+  opacity: 0.5;
+  background-image: url(./../../img/amudim2.svg);
+  background-position: bottom 10px left;
+  background-repeat: no-repeat;
+}
+
+#arrow {
+  color: #709e88;
+  font-size: 80px;
+  border: 3px solid #709e88;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  background-color: transparent !important;
+  margin-left: 15px;
+}
+
+#arrow:hover {
+  font-size: 100px;
+  border: 6px solid #709e88;
+}
+
+header a {
+  text-decoration: none;
+}
+
+.maincontent {
+  position: relative;
+  width: 100%;
+  min-height: 300vh;
+  z-index: 99;
+  background-color: #090f11;
+  background-image: url(./../../img/graph-paper.svg);
+  background-repeat: repeat;
+}
+
+nav {
+  width: 100%;
+  margin: auto;
+  background-color: rgba(25, 52, 54, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+nav button {
+  height: 50px !important;
+  width: 250px !important;
+  margin: 10px;
+  background-color: transparent !important;
+}
+
+nav button span {
+  opacity: 1;
+  color: #709e88;
+}
+
+.container {
+  width: 800px;
+}
+
+footer {
+  width: 100%;
+  min-height: 150px;
+  background-color: rgb(3, 45, 57);
+  position: sticky;
+  z-index: 100;
+  bottom: 0;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+  padding-top: 55px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+footer h5 {
+  text-align: center;
+  color: #709e88;
+  text-transform: uppercase;
+}
+
+footer h5 ~ h6 {
+  margin-top: 10px;
+  text-align: center;
+  color: #709e88;
+}
+
+.footerBack {
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  min-height: 220px;
+  position: fixed;
+  z-index: 12;
+  bottom: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #010101;
+  background-image: url(./../../img/graph-paper.svg);
+  background-repeat: repeat;
+  border-top-right-radius: 30%;
+  border-top-left-radius: 30%;
+  opacity: 0.5;
 }

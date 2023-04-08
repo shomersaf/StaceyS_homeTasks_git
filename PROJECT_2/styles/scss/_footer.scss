@@ -1,0 +1,37 @@
+footer {
+    width: 100%;
+    min-height: 150px;
+    background-color: rgb(3, 45, 57);
+    position: sticky; 
+    z-index: 100;
+    bottom: 0;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    padding-top: 55px;
+    box-sizing: border-box;
+}
+footer h5 {
+    text-align: center;
+    color:$headingsColor;
+    text-transform: uppercase;
+}
+footer h5 ~ h6 {
+    margin-top: 10px;
+    text-align: center;
+    color:$headingsColor;
+}
+.footerBack{
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    min-height: 220px;
+    position: fixed; 
+    z-index: 12;
+    bottom: 0;
+    box-sizing: border-box;
+    background-color: #010101;
+    background-image: url(./../../img/graph-paper.svg);
+    background-repeat: repeat;
+    border-top-right-radius: 30%;
+    border-top-left-radius: 30%;
+    opacity: 0.5;
+}

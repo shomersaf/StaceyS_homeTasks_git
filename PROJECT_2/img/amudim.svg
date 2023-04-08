@@ -4,32 +4,31 @@
 	 viewBox="0 0 1200 600" style="enable-background:new 0 0 1200 600;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#336666;}
+	.st1{fill:#006699;}
 </style>
-<g>
-	<rect x="292" y="448.6" class="st0" width="29" height="118.4"/>
-	<rect x="325.4" y="423" class="st0" width="29" height="144"/>
-	<rect x="358.9" y="499.1" class="st0" width="29" height="67.9"/>
-	<rect x="392.3" y="391" class="st0" width="29" height="176"/>
-	<rect x="425.7" y="484" class="st0" width="29" height="83"/>
-	<rect x="459.1" y="375.9" class="st0" width="29" height="191.1"/>
-	<rect x="492.6" y="423" class="st0" width="29" height="144"/>
-	<rect x="526" y="391" class="st0" width="29" height="176"/>
-	<rect x="559.4" y="484" class="st0" width="29" height="83"/>
-	<rect x="592.8" y="339" class="st0" width="29" height="228"/>
-	<rect x="626.3" y="484" class="st0" width="29" height="83"/>
-	<rect x="659.7" y="233" class="st0" width="29" height="334"/>
-	<rect x="693.1" y="282" class="st0" width="29" height="285"/>
-	<rect x="726.5" y="423" class="st0" width="29" height="144"/>
-	<rect x="760" y="391" class="st0" width="29" height="176"/>
-	<rect x="793.4" y="484" class="st0" width="29" height="83"/>
-	<rect x="826.8" y="391" class="st0" width="29" height="176"/>
-	<rect x="860.2" y="245" class="st0" width="29" height="322"/>
-	<rect x="893.7" y="391" class="st0" width="29" height="176"/>
-	<rect x="927.1" y="423" class="st0" width="29" height="144"/>
-	<rect x="960.5" y="391" class="st0" width="29" height="176"/>
-	<rect x="993.9" y="484" class="st0" width="29" height="83"/>
-	<rect x="1027.4" y="423" class="st0" width="29" height="144"/>
-	<rect x="1060.8" y="391" class="st0" width="29" height="176"/>
-	<rect x="1094.2" y="484" class="st0" width="29" height="83"/>
-</g>
+<rect x="1037.8" y="196" class="st0" width="29" height="371"/>
+<rect x="1004.3" y="301.7" class="st0" width="29" height="265.3"/>
+<rect x="937.5" y="410.1" class="st0" width="29" height="156.9"/>
+<rect x="904.1" y="248.2" class="st0" width="29" height="318.8"/>
+<rect x="870.6" y="326.8" class="st0" width="29" height="240.2"/>
+<rect x="837.2" y="183" class="st0" width="29" height="384"/>
+<rect x="770.4" y="219.2" class="st0" width="29" height="347.8"/>
+<rect x="736.9" y="428.5" class="st0" width="29" height="138.5"/>
+<rect x="703.5" y="202.9" class="st0" width="29" height="364.1"/>
+<rect x="636.7" y="326.8" class="st0" width="29" height="240.2"/>
+<rect x="603.2" y="160.3" class="st0" width="29" height="406.7"/>
+<rect x="569.8" y="428.5" class="st0" width="29" height="138.5"/>
+<rect x="503" y="216" class="st0" width="29" height="351"/>
+<rect x="469.5" y="273.4" class="st0" width="29" height="293.6"/>
+<rect x="402.7" y="190.2" class="st0" width="29" height="376.8"/>
+<rect x="369.3" y="428.5" class="st0" width="29" height="138.5"/>
+<rect x="302.4" y="308" class="st0" width="29" height="259"/>
+<rect x="269" y="428.5" class="st0" width="29" height="138.5"/>
+<rect x="1071.2" y="262" class="st1" width="29" height="305"/>
+<rect x="970.9" y="179" class="st1" width="29" height="388"/>
+<rect x="803.8" y="407.6" class="st1" width="29" height="159.4"/>
+<rect x="670.1" y="256.3" class="st1" width="29" height="310.7"/>
+<rect x="536.4" y="273.4" class="st1" width="29" height="293.6"/>
+<rect x="436.1" y="326.8" class="st1" width="29" height="240.2"/>
+<rect x="335.8" y="337" class="st1" width="29" height="230"/>
 </svg>
