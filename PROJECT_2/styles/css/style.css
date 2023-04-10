@@ -167,9 +167,9 @@ nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 nav button {
@@ -186,6 +186,10 @@ nav button span {
 
 .container {
   width: 800px;
+}
+
+.articleHeading {
+  color: #709e88;
 }
 
 footer {
