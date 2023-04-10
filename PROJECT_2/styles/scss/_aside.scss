@@ -1,0 +1,28 @@
+.projectAuthor{
+    width: 300px;
+    float: right;
+    padding:10px;
+    color:$fontColor;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.projectAuthor h5 {
+    color:$headingsColor;
+    text-align: justify;
+}
+.photo{
+    width: 130px; 
+    border-radius: 20px;
+    padding:5px;
+    box-sizing: border-box;
+    border:1px solid $fontColor;
+    margin: auto;
+}
+.projectAuthorP{
+font-size:small;
+font-stretch: extra-expanded;
+font-style: italic;
+}

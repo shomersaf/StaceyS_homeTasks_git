@@ -1,0 +1,46 @@
+.articleHeading{
+    color:$headingsColor;
+}
+article button {
+    height:50px !important;
+    width: 70px !important;
+    margin: 5px;
+    background-color: transparent !important;
+}
+article button span{
+    opacity: 1;
+    color: $headingsColor;
+}
+article input{
+    height:45px;
+    border:none;
+    border-bottom: 1px solid $headingsColor;
+    background-color: transparent;
+    padding-left: 10px;
+    color: $headingsColor;
+    margin-right: 5px;
+}
+article input::placeholder{
+    color: $headingsColor;
+    opacity: 0.5;
+}
+#controllers {
+    width:fit-content;
+    margin:auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: #000;
+    padding: 10px;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+.projectDescP{
+    color:$fontColor;
+    font-size: larger;
+}
+article {
+    max-width: 1200px;
+    margin:auto;
+    text-align: justify;
+}
