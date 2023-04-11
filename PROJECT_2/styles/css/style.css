@@ -270,6 +270,69 @@ article {
   text-align: justify;
 }
 
+.currenciesAlert {
+  color: #429f72;
+  padding: 10px;
+  border: 1px solid #429f72;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 20px auto;
+  text-align: center;
+}
+.currenciesAlert span {
+  text-transform: uppercase;
+}
+
+.spinner-border {
+  color: #429f72;
+  margin: 10px auto !important;
+}
+
+.coinDiv {
+  color: #7c7c7c;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.currenciesList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.coinCard {
+  border: 1px solid #7c7c7c;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  min-width: 300px;
+  min-height: 100px;
+}
+
+.coinCard input {
+  float: right;
+}
+
 .projectAuthor {
   width: 300px;
   float: right;

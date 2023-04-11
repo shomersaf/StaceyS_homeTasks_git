@@ -56,7 +56,7 @@ function pinCard(){
       noteDate: document.querySelector("#dateInput").value,
       noteTime: document.querySelector("#timeInput").value,
     };
-    let notes = JSON.parse(localStorage.getItem("notes"));;
+    let notes = JSON.parse(localStorage.getItem("notes"));
     notes.push(newNote);
     localStorage.setItem("notes", JSON.stringify(notes));
     generateHTMLCard(newNote);

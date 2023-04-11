@@ -1,0 +1,41 @@
+.currenciesAlert{
+    color:$alertColor;
+    padding:10px;
+    border: 1px solid $alertColor;
+    width:fit-content;
+    margin: 20px auto;
+    text-align: center;
+    span{
+        text-transform: uppercase;
+    }
+}
+.spinner-border{
+    color:$alertColor;
+    margin:10px auto !important;
+
+}
+.coinDiv{
+color:$fontColor;
+display: flex;
+justify-content:space-around;
+align-items: center;
+width: 80%;
+flex-wrap: wrap;
+}
+.currenciesList{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.coinCard{
+    border: 1px solid $fontColor;
+    padding: 10px;
+    margin:10px;
+    border-radius: 10px;
+    min-width: 300px;
+    min-height: 100px;
+}
+.coinCard input{
+   float:right;
+}

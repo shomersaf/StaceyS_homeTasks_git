@@ -12,7 +12,7 @@ function getAbout(){
     const image = getImage("photo","authorImg",'./img/author.jpg');
     const projectAuthorP1 = document.createElement('p');
     projectAuthorP1.classList.add('projectAuthorP');
-    projectAuthorP1.innerHTML = "<strong>Stacey Steshin</strong> - BSc(Econ), MSc(Eng), CG artist and designer.She is a nowadays student of Full Stack Development Course in John Bryce College, Tel Aviv, Israel, group 4578/91.";
+    projectAuthorP1.innerHTML = "<strong>Stacey Steshin</strong> - BSc(Econ), MSc(Eng), CG artist and designer. She is a nowadays student of Full Stack Development Course in John Bryce College, Tel Aviv, Israel, group 4578/91.";
     const projectAuthorP2 = document.createElement('p');
     projectAuthorP2.classList.add('projectAuthorP');
     projectAuthorP2.innerText = "";
@@ -30,6 +30,5 @@ function getAbout(){
     container.append(about);
     $(function() {
         $('.projectAuthor').hide().fadeIn(1500); 
-        $('.projectDesc').hide().fadeIn(1500); 
     })
 }
