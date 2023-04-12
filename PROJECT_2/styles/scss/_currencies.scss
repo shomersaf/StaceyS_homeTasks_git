@@ -12,7 +12,12 @@
 .spinner-border{
     color:$alertColor;
     margin:10px auto !important;
-
+}
+.loaderDiv{
+        display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-direction: column;
 }
 .coinDiv{
 color:$fontColor;

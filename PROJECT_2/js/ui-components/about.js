@@ -13,10 +13,8 @@ function getAbout(){
     const projectAuthorP1 = document.createElement('p');
     projectAuthorP1.classList.add('projectAuthorP');
     projectAuthorP1.innerHTML = "<strong>Stacey Steshin</strong> - BSc(Econ), MSc(Eng), CG artist and designer. She is a nowadays student of Full Stack Development Course in John Bryce College, Tel Aviv, Israel, group 4578/91.";
-    const projectAuthorP2 = document.createElement('p');
-    projectAuthorP2.classList.add('projectAuthorP');
-    projectAuthorP2.innerText = "";
-    projectAuthor.append(image,projectAuthorH4,projectAuthorP1,projectAuthorP2);
+    
+    projectAuthor.append(image,projectAuthorH4,projectAuthorP1);
     const projectDesc = document.createElement('div');
     projectDesc.classList.add('projectDesc');
     const projectDescP1 = document.createElement('p');
@@ -25,9 +23,9 @@ function getAbout(){
     const projectDescP2 = document.createElement('p');
     projectDescP2.classList.add('projectDescP');
     projectDescP2.innerText ="Current application generates in UI the currencies data acquired from external API using fetch request. The application also provides tha ability to get an additional information about the chosen currency due to another external API reguest made. All the data is saving on client side only - in a cash memory of browser (Local Storage). Another ajax request gets all the information from the next external API according to currencies chosen by client. The grafs based on this information are to be generated in real-time every two minutes. The application is based on dynamic page layouts programming technologies.";
-    about.append(h2,projectAuthor,projectDesc);
+    about.append(projectAuthor,projectDesc);
     projectDesc.append(projectDescP1,projectDescP2);
-    container.append(about);
+    container.append(h2,about);
     $(function() {
         $('.projectAuthor').hide().fadeIn(1500); 
     })

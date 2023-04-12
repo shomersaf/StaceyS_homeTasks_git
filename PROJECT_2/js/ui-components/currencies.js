@@ -12,13 +12,22 @@ function getCurrencies(){
     const searchButton = getButton('<span>Search</span>',['btn','btn-secondary'],"searchButton",searchCurrencies);
     const clearButton = getButton('<span>Clear</span>',['btn','btn-secondary'],"clearButton",clearInput);
     controllers.append(searchInput,searchButton,clearButton);
-    currencies.append(h2,controllers);
-    container.append(currencies);
+    currencies.append(controllers);
+    container.append(h2,currencies);
 
     function searchCurrencies(){
         
     };
-    requestCurrencies();
+
+    showLoader(container); 
+       
+       setTimeout(requestCurrencies, 60000);
+   
+       
+     //requestCurrencies();
+  
+ 
+ 
    
     $(function() {
         $('#controllers').hide().fadeIn(1500); 
