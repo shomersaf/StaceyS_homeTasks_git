@@ -1,4 +1,5 @@
 function getNav(main){
+
 const nav = document.createElement('nav');
 nav.classList.add('nav');
 nav.innerHTML='<a name="navigation"></a>';

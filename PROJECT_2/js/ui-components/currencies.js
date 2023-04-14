@@ -21,10 +21,10 @@ function getCurrencies(){
 
     showLoader(container); 
        
-       setTimeout(requestCurrencies, 60000);
+       //setTimeout(requestCurrencies, 60000);
    
        
-     //requestCurrencies();
+     requestCurrencies();
   
  
  
