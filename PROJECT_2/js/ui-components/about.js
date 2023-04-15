@@ -9,12 +9,15 @@ function getAbout(){
     projectAuthor.classList.add("projectAuthor");
     const projectAuthorH4 = document.createElement('h5');
     projectAuthorH4.innerHTML ="Author &#9655;";
-    const image = getImage("photo","authorImg",'./img/author.jpg');
+    const image = getImage("photo",'./img/author.jpg');
     const projectAuthorP1 = document.createElement('p');
     projectAuthorP1.classList.add('projectAuthorP');
-    projectAuthorP1.innerHTML = "<strong>Stacey Steshin</strong> - BSc(Econ), MSc(Eng), CG artist and designer. She is a nowadays student of Full Stack Development Course in John Bryce College, Tel Aviv, Israel, group 4578/91.";
-    
-    projectAuthor.append(image,projectAuthorH4,projectAuthorP1);
+    const projectAuthorP2 = document.createElement('p');
+    projectAuthorP1.classList.add('projectAuthorP');
+    projectAuthorP2.classList.add('projectAuthorP2');
+    projectAuthorP1.innerHTML = "<strong>Stacey Steshin</strong> - BSc(Econ), MSc(Eng), CG artist and designer, student of Full Stack Development Course in John Bryce College, Tel Aviv.";
+    projectAuthorP2.innerHTML = `<a href="https://staceysteshin.artstation.com/" target="_blank">Personal page on Artstation</a>`;
+    projectAuthor.append(image,projectAuthorH4,projectAuthorP1,projectAuthorP2);
     const projectDesc = document.createElement('div');
     projectDesc.classList.add('projectDesc');
     const projectDescP1 = document.createElement('p');

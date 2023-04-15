@@ -14,10 +14,10 @@ function drawCurrenciesList(coinsArray, currenciesList) {
       coinCard.classList.add("coinCard");
       const coinId = document.createElement("div");
       coinId.classList.add("coinId");
-      coinId.innerHTML =`<span>Id:</span> ${coinsArray[i].id}`;
+      coinId.innerHTML= coinsArray[i].id;
       const coinSymbol = document.createElement("div");
       coinSymbol.classList.add("coinSymbol");
-      coinSymbol.innerHTML= `<span>symbol:</span> ${coinsArray[i].symbol}`;
+      coinSymbol.innerHTML= coinsArray[i].symbol;
       const coinName = document.createElement("div");
       coinName.classList.add("coinName");
       coinName.innerHTML= `<span>Name:</span> ${coinsArray[i].name}`;
@@ -30,8 +30,6 @@ function drawCurrenciesList(coinsArray, currenciesList) {
       toggle.setAttribute("role", "switch");
       toggle.classList.add("form-check-input");
       toggle.id = `flexSwitchCheckChecked${i}`;
-       //toggle.checked = false;
-      //toggle.removeAttribute('checked');
       const label = document.createElement("label");
       label.classList.add("form-check-label");
       label.htmlFor = `flexSwitchCheckChecked${i}`;
@@ -39,13 +37,14 @@ function drawCurrenciesList(coinsArray, currenciesList) {
       
       const details = document.createElement('details');
       const summary = document.createElement('summary');
-      summary.innerText = "More info...";
-      summary.setAttribute("title","more info");
+      summary.innerText = "info...";
+      summary.addEventListener("click", getMoreInfo);
+      summary.setAttribute("title","open/close");
       const summaryDiv = document.createElement('div');
-      summaryDiv.innerText = "OMG";
+      summaryDiv.classList.add("summaryDiv");
       details.append(summary,summaryDiv);
       toggleDiv.append(toggle, label);
-      coinCard.append(toggleDiv,coinId,coinName,coinSymbol,details);
+      coinCard.append(toggleDiv,coinId,coinSymbol,coinName,details);
       coinDiv.append(coinCard);
     }
     currenciesList.append(coinDiv);

@@ -3,7 +3,7 @@ function requestCurrencies() {
   const article = document.querySelector("article");
   const currenciesList = document.createElement("div");
   currenciesList.classList.add("currenciesList");
-  const currenciesAlert = document.createElement("div");
+  // const currenciesAlert = document.createElement("div");
   article.append(currenciesList);
   let coinsArray = [];
 
@@ -20,16 +20,12 @@ function requestCurrencies() {
       drawCurrenciesList(coinsArray, currenciesList);
       return coinsArray;
     } catch (error) {
-      showLoader(currenciesList);
+      showProgressBar(currenciesList);
+
       setTimeout(requestCurrencies, 5000)
     } finally {
-      removeLoader();
-    }
-    function removeLoader() {
-      const loader = document.querySelector(".spinner-border");
-      if (loader) {
-        loader.remove();
-      }
+      const elemId ="#Progress";
+      removeLoader(elemId);
     }
   }
 

@@ -338,24 +338,59 @@ article {
 
 .coinCard {
   border: 1px solid #7c7c7c;
+  border-right: 8px dotted rgb(6, 36, 17);
   padding: 10px;
   margin: 10px;
   border-radius: 10px;
   min-width: 300px;
   min-height: 100px;
+  text-transform: uppercase;
 }
 
 .coinCard input {
   float: right;
 }
 
+.coinSymbol {
+  color: rgb(83, 153, 244);
+}
+
 .coinCard span {
-  text-transform: uppercase;
+  text-transform: lowercase;
   font-weight: bold;
+  color: #7c7c7c;
 }
 
 summary {
   color: #709e88;
+}
+
+.coinSymbol span {
+  color: rgb(83, 153, 244);
+  color: #7c7c7c;
+}
+
+#Progress {
+  width: 100%;
+  background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #429f72;
+}
+
+.coinId {
+  opacity: 0;
+}
+
+.summaryDiv span {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #7c7c7c;
 }
 
 .projectAuthor {
@@ -370,12 +405,6 @@ summary {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
 }
 
 .projectAuthor h5 {
@@ -397,6 +426,15 @@ summary {
   font-size: small;
   font-stretch: extra-expanded;
   font-style: italic;
+}
+
+.projectAuthorP2 {
+  font-size: small;
+  text-align: right !important;
+}
+
+.projectAuthorP2 a {
+  color: #709e88;
 }
 
 footer {

@@ -5,8 +5,8 @@
     color:$fontColor;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    // justify-content: center;
+    // align-items: flex-start;
 }
 
 .projectAuthor h5 {
@@ -25,4 +25,11 @@
 font-size:small;
 font-stretch: extra-expanded;
 font-style: italic;
+}
+.projectAuthorP2{
+    font-size:small;
+    text-align: right !important;
+}
+.projectAuthorP2 a{
+    color: $headingsColor;
 }
