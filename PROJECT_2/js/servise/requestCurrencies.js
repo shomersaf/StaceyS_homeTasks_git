@@ -11,12 +11,9 @@ function requestCurrencies() {
     try {
       let response = await fetch(searchUrl, {
         method: "GET",
-        // headers: {
-        //   mode: "no-cors",
-        // },
       });
       result = await response.json();
-      for (let i = 0; i < 4; i++) {
+      for (let i = 0; i < 100; i++) {
         var rand = Math.floor(Math.random() * result.length);
         coinsArray.push(result[rand]);
       }

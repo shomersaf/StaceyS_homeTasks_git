@@ -14,30 +14,40 @@ function drawCurrenciesList(coinsArray, currenciesList) {
       coinCard.classList.add("coinCard");
       const coinId = document.createElement("div");
       coinId.classList.add("coinId");
-      coinId.innerText = coinsArray[i].id;
+      coinId.innerHTML =`<span>Id:</span> ${coinsArray[i].id}`;
       const coinSymbol = document.createElement("div");
       coinSymbol.classList.add("coinSymbol");
-      coinSymbol.innerText = coinsArray[i].symbol;
+      coinSymbol.innerHTML= `<span>symbol:</span> ${coinsArray[i].symbol}`;
       const coinName = document.createElement("div");
       coinName.classList.add("coinName");
-      coinName.innerText = coinsArray[i].name;
+      coinName.innerHTML= `<span>Name:</span> ${coinsArray[i].name}`;
+
       const toggleDiv = document.createElement("div");
       toggleDiv.classList.add("form-check", "form-switch");
       const toggle = document.createElement("input");
       toggle.type = "checkbox";
+      toggle.addEventListener("click", addToTheList);
       toggle.setAttribute("role", "switch");
       toggle.classList.add("form-check-input");
-      toggle.id = `flexSwitchCheckChecked_${i}`;
-      toggle.checked = "true";
+      toggle.id = `flexSwitchCheckChecked${i}`;
+       //toggle.checked = false;
+      //toggle.removeAttribute('checked');
       const label = document.createElement("label");
       label.classList.add("form-check-label");
-      label.htmlFor = `flexSwitchCheckChecked_${i}`;
+      label.htmlFor = `flexSwitchCheckChecked${i}`;
       label.innerText = "Add to MY LIST";
+      
+      const details = document.createElement('details');
+      const summary = document.createElement('summary');
+      summary.innerText = "More info...";
+      summary.setAttribute("title","more info");
+      const summaryDiv = document.createElement('div');
+      summaryDiv.innerText = "OMG";
+      details.append(summary,summaryDiv);
       toggleDiv.append(toggle, label);
-      coinCard.append(toggleDiv, coinId, coinSymbol, coinName);
+      coinCard.append(toggleDiv,coinId,coinName,coinSymbol,details);
       coinDiv.append(coinCard);
     }
     currenciesList.append(coinDiv);
-    //return coins;
   }
 }

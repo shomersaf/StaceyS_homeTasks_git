@@ -44,3 +44,10 @@ flex-wrap: wrap;
 .coinCard input{
    float:right;
 }
+.coinCard span{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+summary{
+   color:$headingsColor;
+}

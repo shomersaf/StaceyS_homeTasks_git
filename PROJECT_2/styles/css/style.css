@@ -349,6 +349,15 @@ article {
   float: right;
 }
 
+.coinCard span {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+summary {
+  color: #709e88;
+}
+
 .projectAuthor {
   width: 300px;
   float: right;
