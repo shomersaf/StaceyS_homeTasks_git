@@ -26,8 +26,27 @@ function drawCurrenciesList(coinsArray, currenciesList) {
       toggleDiv.classList.add("form-check", "form-switch");
       const toggle = document.createElement("input");
       toggle.type = "checkbox";
-      toggle.addEventListener("click",addToTheList);
+     
+
+      toggle.addEventListener("click",(event)=>{
+        if(event.target.checked){
+          // alert("adding");
+          addToTheList(event.target);
+        }
+        else{
+          alert("removing");
+          collection =JSON.parse(localStorage.getItem('collection'));
+          collection.forEach((item, index, array) => {
+            let searchTarget = coinId.innerText.toLowerCase();
+             if(item.id == searchTarget){
+              collection.splice(index,1);
+              localStorage.setItem("collection", JSON.stringify(collection));
+             }
+          });
+        }
+      });
    
+
       toggle.setAttribute("role", "switch");
       toggle.classList.add("form-check-input");
       toggle.id = `flexSwitchCheckChecked${i}`;

@@ -1,6 +1,6 @@
-function addToTheList(){
+function addToTheList(htmlObject){
 
-  const currentCoinCard = this.closest(".coinCard");
+  const currentCoinCard = htmlObject.closest(".coinCard");
   const currentCoinId = currentCoinCard.childNodes[1];
   const currentCoinSymbol = currentCoinCard.childNodes[2];
   const currentCoinName = currentCoinCard.childNodes[3];
@@ -21,10 +21,10 @@ function addToTheList(){
  
  if(collection.length<5){
   collection.push(myNewCoin);
-  console.log(collection);
+//   console.log(collection);
  }else{
-  //console.log("not an array");
   alert("You can not add more than 5 coins. Free the place for new one in your report befor adding");
+  htmlObject.checked = false;
  }
  
  localStorage.setItem("collection", JSON.stringify(collection));
