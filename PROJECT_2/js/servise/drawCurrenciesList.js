@@ -6,7 +6,7 @@ function drawCurrenciesList(coinsArray, currenciesList) {
       collection = [];
       localStorage.setItem("collection", JSON.stringify(collection));
     }
-drawCards(coinsArray, currenciesList,addToTheList,removeFromList);
+drawCards(coinsArray, currenciesList,addToTheList,removeFromList, "Add to REPORT", false);
 
   }
 }

@@ -23,7 +23,7 @@ function addToTheList(htmlObject){
   collection.push(myNewCoin);
 //   console.log(collection);
  }else{
-  alert("You can not add more than 5 coins. Free the place for new one in your report befor adding");
+  alert("You can not add more than 5 coins. Free the place for new one in your report before adding");
   htmlObject.checked = false;
  }
  

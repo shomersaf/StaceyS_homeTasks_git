@@ -1,4 +1,4 @@
-function drawCards(cArray, cList, checkedFn,uncheckedFn){ 
+function drawCards(cArray, cList, checkedFn,uncheckedFn,checkerText,checkerDefolt){ 
     const coinDiv = document.createElement("div");
       coinDiv.classList.add("coinDiv");
       for (i = 0; i < cArray.length; i++) {
@@ -18,16 +18,18 @@ function drawCards(cArray, cList, checkedFn,uncheckedFn){
         toggleDiv.classList.add("form-check", "form-switch");
         const toggle = document.createElement("input");
         toggle.type = "checkbox";
-  
+        toggle.checked = checkerDefolt;
         toggle.addEventListener("click", (event) => {
             let checker = event.target;
+            let cnId = coinId.innerText.toLowerCase();
           if (checker.checked) {
             // adding;
            
             checkedFn(checker);
           } else {
             //removing;
-            uncheckedFn(checker,coinId);
+            
+            uncheckedFn(checker,cnId,coinCard);
           
           }
         });
@@ -39,13 +41,13 @@ function drawCards(cArray, cList, checkedFn,uncheckedFn){
         const label = document.createElement("label");
         label.classList.add("form-check-label");
         label.htmlFor = `flexSwitchCheckChecked${i}`;
-        label.innerText = "Add to MY LIST";
+        label.innerText = checkerText;
   
         const details = document.createElement("details");
         const summary = document.createElement("summary");
         summary.innerText = "info...";
         summary.addEventListener("click", getMoreInfo);
-        summary.setAttribute("title", "open/close");
+       
         const summaryDiv = document.createElement("div");
         summaryDiv.classList.add("summaryDiv");
         details.append(summary, summaryDiv);
