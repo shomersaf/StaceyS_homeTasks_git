@@ -5,6 +5,7 @@ function getMoreInfo() {
   const currentCoinSymbol = currentCoinCard.childNodes[2].innerHTML;
   const currentDetails = currentCoinCard.lastChild;
   const currentSummaryDiv = currentDetails.lastChild;
+  currentSummaryDiv.classList.remove("errorDiv");
   showProgressBar(currentSummaryDiv);
   const searchUrl = `https://api.coingecko.com/api/v3/coins/${currentCoinId}`;
 
@@ -35,10 +36,10 @@ function getMoreInfo() {
        removeLoader(elemId);
 
     } catch (error) {
-    //   showProgressBar(currentSummaryDiv);
-    //   setTimeout(getMoreInfo, 5000);
+
     currentSummaryDiv.innerHTML = "";
-      currentSummaryDiv.innerHTML = `error on loading...`;
+      currentSummaryDiv.innerHTML = `Server request rate exceeded. Try later, please`;
+      currentSummaryDiv.classList.add("errorDiv");
     } finally {
       const elemId ="#Progress";
        removeLoader(elemId);

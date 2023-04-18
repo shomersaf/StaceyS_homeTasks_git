@@ -3,7 +3,7 @@ function requestCurrencies() {
   const article = document.querySelector("article");
   const currenciesList = document.createElement("div");
   currenciesList.classList.add("currenciesList");
-  // const currenciesAlert = document.createElement("div");
+ 
   article.append(currenciesList);
   let coinsArray = [];
 

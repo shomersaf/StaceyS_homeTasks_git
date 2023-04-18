@@ -393,6 +393,10 @@ summary {
   color: #7c7c7c;
 }
 
+.errorDiv {
+  color: #bb5892;
+}
+
 .projectAuthor {
   width: 300px;
   float: right;

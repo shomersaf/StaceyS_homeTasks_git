@@ -1,0 +1,70 @@
+.userProf img {
+    width: 56px;
+    height: 56px;
+}
+.suggestions img {
+    width: 32px;
+    height: 32px;
+}
+.sideBlock {
+    width: 319px;
+    margin-top:20px;
+}
+.profileBlock {
+    width: 319px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.user {
+    display: flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items: flext-start;
+}
+.user .userLogin {
+    margin:0;
+}
+.right_profileBlock {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.right_profileBlock img {
+    margin-right: 15px;
+    border-radius: 36px;
+    background-color: black;
+}
+.userName {
+    color: $timeColor;
+    font-size: 13px;
+    text-transform: capitalize;
+}
+.switch {
+    color: rgb(0, 217, 255);
+    font-size: 12px;
+    font-weight: 700;
+}
+.suggestionsHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: $timeColor;
+    height: 50px;
+}
+.headLine {
+    font-weight: 400;
+}
+.seeAll {
+    font-weight: 500;
+}
+.all_suggestions {
+    height: 206px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}

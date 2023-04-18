@@ -1,0 +1,110 @@
+* {
+    margin:0;
+    padding:0;
+    border:none;
+    text-decoration: none;
+    color: $fontColor;
+    font-family: $mainFont;
+}
+
+header {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    padding-left: 10px;
+    box-sizing: border-box;
+    width:246px;
+    height:100vh;
+    border-right: 1px solid rgb(161, 160, 160);
+    position: fixed;
+}
+
+h1 a,
+h1 a:active,
+h1 a:visited,
+h1 a:hover {
+    font-family: 'InstagramFont';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.mainMenu a
+ {
+    color: $fontColor;
+    font-weight:normal;
+}
+
+.mainMenu a:visited {
+    font-weight:bolder;
+}
+
+.icon,
+.icon:active,
+.icon:visited {
+    width:24px;
+    height:24px;
+}
+.icon:hover,
+.mainMenu img:last-of-type:hover{
+    width:26px;
+    height:26px;
+}
+
+.hiddenUpperMenu, .logoIcon {
+    display: none;
+}
+.mainMenu {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items:flex-start;
+}
+.mainMenu span, .moreMenu span {
+    padding-left:10px;
+    text-transform: capitalize;
+}
+
+.profile img {
+    border-radius: 18px;
+    width:24px;
+    height:24px;
+}
+.mainMenu div,
+.moreMenu div {
+    height: 55px;
+    padding-left: 10px;
+    border-radius: 25px;
+    width:200px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.mainMenu div:hover,
+.moreMenu div:hover {
+    background-color: #f1f1f1;
+}
+.searchForm {
+    display: none; 
+}
+
+.moreMenu {
+    display:flex;
+    justify-content: start;
+    align-items: center;
+    height:100px;
+    bottom: 0px;
+}
+
+.upperHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.logo {
+    padding-bottom: 20px;
+    padding-left: 10px;
+}
+

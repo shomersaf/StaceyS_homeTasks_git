@@ -1,0 +1,15 @@
+.wrapper {
+    display: flex;
+    padding-top: 30px;
+    width: 821px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+}
+.right {
+   width: 100%;
+   margin-left: 200px;
+   display: flex;
+   justify-content: center;
+}

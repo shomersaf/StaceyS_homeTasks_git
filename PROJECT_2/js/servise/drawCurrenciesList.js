@@ -1,7 +1,8 @@
 function drawCurrenciesList(coinsArray, currenciesList) {
   if (Array.isArray(coinsArray)) {
     currenciesList.innerHTML = "";
-
+    const collection =[];
+    localStorage.setItem("collection", JSON.stringify(collection));
       
       //coinsArray = JSON.parse(localStorage.getItem("coins"));
    
@@ -20,13 +21,14 @@ function drawCurrenciesList(coinsArray, currenciesList) {
       coinSymbol.innerHTML= coinsArray[i].symbol;
       const coinName = document.createElement("div");
       coinName.classList.add("coinName");
-      coinName.innerHTML= `<span>Name:</span> ${coinsArray[i].name}`;
+      coinName.innerHTML= `${coinsArray[i].name}`;
 
       const toggleDiv = document.createElement("div");
       toggleDiv.classList.add("form-check", "form-switch");
       const toggle = document.createElement("input");
       toggle.type = "checkbox";
-      toggle.addEventListener("click", addToTheList);
+      toggle.addEventListener("click",addToTheList);
+   
       toggle.setAttribute("role", "switch");
       toggle.classList.add("form-check-input");
       toggle.id = `flexSwitchCheckChecked${i}`;
@@ -46,6 +48,10 @@ function drawCurrenciesList(coinsArray, currenciesList) {
       toggleDiv.append(toggle, label);
       coinCard.append(toggleDiv,coinId,coinSymbol,coinName,details);
       coinDiv.append(coinCard);
+    //  function addToTheList2(){
+    //   const blabla = addToTheList();
+    //   console.log(blabla);
+    //  }
     }
     currenciesList.append(coinDiv);
   }
