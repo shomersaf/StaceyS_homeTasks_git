@@ -60,7 +60,7 @@ summary{
    color:$headingsColor;
 }
 .coinSymbol span{
-    color:rgb(83, 153, 244);
+    color:$symbolColor;
     color:$fontColor;
 }
 #Progress {
@@ -80,5 +80,25 @@ summary{
     color:$fontColor;
 }
 .errorDiv{
-    color: #bb5892;
+    color:$errorColor
+}
+.intro{
+    color:$symbolColor;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+.intro span {
+    text-transform: uppercase;
+    font-weight: bold;
+    display: inline-block;
+    border: 1px solid $symbolColor;
+    padding-left:5px;
+    padding-right:5px;
+    border-left:none;
+    border-right:none;
+    border-radius: 5px;
+}
+.intro span:first-of-type {
+border:none;
+padding: 0;
 }

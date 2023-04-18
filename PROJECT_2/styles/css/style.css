@@ -397,6 +397,29 @@ summary {
   color: #bb5892;
 }
 
+.intro {
+  color: rgb(83, 153, 244);
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+.intro span {
+  text-transform: uppercase;
+  font-weight: bold;
+  display: inline-block;
+  border: 1px solid rgb(83, 153, 244);
+  padding-left: 5px;
+  padding-right: 5px;
+  border-left: none;
+  border-right: none;
+  border-radius: 5px;
+}
+
+.intro span:first-of-type {
+  border: none;
+  padding: 0;
+}
+
 .projectAuthor {
   width: 300px;
   float: right;
