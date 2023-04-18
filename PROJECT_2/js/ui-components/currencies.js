@@ -36,5 +36,6 @@ function getCurrencies() {
 
   $(function () {
     $("#controllers").hide().fadeIn(1500);
+    $(".intro").hide().fadeIn(3000);
   });
 }
