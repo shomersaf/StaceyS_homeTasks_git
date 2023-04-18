@@ -19,11 +19,12 @@ function addToTheList(){
 
  const collection =JSON.parse(localStorage.getItem('collection'));
  
- if(Array.isArray(collection)){
+ if(collection.length<5){
   collection.push(myNewCoin);
   console.log(collection);
  }else{
-  console.log("not an array");
+  //console.log("not an array");
+  alert("You can not add more than 5 coins. Free the place for new one in your report befor adding");
  }
  
  localStorage.setItem("collection", JSON.stringify(collection));
