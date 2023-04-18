@@ -35,7 +35,7 @@ function getCurrencies() {
   requestCurrencies();
 
   $(function () {
-    $("#controllers").hide().fadeIn(1500);
+    //$("#controllers").hide().fadeIn(1500);
     $(".intro").hide().fadeIn(3000);
   });
 }

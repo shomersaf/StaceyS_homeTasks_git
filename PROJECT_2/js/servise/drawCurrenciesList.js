@@ -1,13 +1,12 @@
 function drawCurrenciesList(coinsArray, currenciesList) {
   if (Array.isArray(coinsArray)) {
     currenciesList.innerHTML = "";
-    const collection =[];
-    localStorage.setItem("collection", JSON.stringify(collection));
-      
-      //coinsArray = JSON.parse(localStorage.getItem("coins"));
-   
-  
-
+    let collection =JSON.parse(localStorage.getItem('collection'));
+    if(collection == null){
+      collection = [];
+      localStorage.setItem("collection", JSON.stringify(collection));
+    }
+    
     const coinDiv = document.createElement("div");
     coinDiv.classList.add("coinDiv");
     for (i = 0; i < coinsArray.length; i++) {
