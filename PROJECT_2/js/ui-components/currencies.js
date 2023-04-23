@@ -13,11 +13,12 @@ function getCurrencies() {
   controllers.id = "controllers";
 
   const searchInput = getInput("searchInput", "enter the currency...");
+  
   const searchButton = getButton(
-    "<span>Search</span>",
+    "<span>Search by Symbol</span>",
     ["btn", "btn-secondary"],
     "searchButton",
-    searchCurrencies
+    searchCoin
   );
   const clearButton = getButton(
     "<span>Clear</span>",
@@ -29,7 +30,7 @@ function getCurrencies() {
   currencies.append(controllers, intro);
   container.append(h2, currencies);
 
-  function searchCurrencies() {}
+  
   showProgressBar(container);
 
   requestCurrencies();

@@ -13,6 +13,16 @@ function requestCurrencies() {
         method: "GET",
       });
       result = await response.json();
+      let allCoins = JSON.parse(localStorage.getItem("allCoins"));
+      
+      
+     
+      if (allCoins.length ==0) {
+        allCoins = [...result];
+        localStorage.setItem("allCoins", JSON.stringify(allCoins));
+      }
+
+     
       for (let i = 0; i < 100; i++) {
         var rand = Math.floor(Math.random() * result.length);
         coinsArray.push(result[rand]);

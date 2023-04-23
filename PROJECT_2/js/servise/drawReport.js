@@ -4,6 +4,8 @@ function drawReport (container){
     if (crds.length>0) {
         document.getElementById("reportIntro").remove();
         drawCards(crds, container,removeFromReport,removeFromReport, "Remove from REPORT",true);
+       console.log(crds);
+        //drawGraph(crds);
     }
 
 }
