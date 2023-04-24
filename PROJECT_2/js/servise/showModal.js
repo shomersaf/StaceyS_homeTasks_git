@@ -11,6 +11,7 @@ function showModal(modalData) {
   closePopup.innerText = "x";
   closePopup.addEventListener("click", () => {
     popupBg.remove("active");
+    clearInput();
   });
 
   popup.append(closePopup, popupBody);

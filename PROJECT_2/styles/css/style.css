@@ -403,7 +403,6 @@ summary {
 }
 
 .coinName {
-  color: rgba(83, 153, 244, 0.753);
   font-weight: bold;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;

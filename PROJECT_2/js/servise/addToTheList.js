@@ -24,11 +24,11 @@ function addToTheList(htmlObject) {
   if (collection.length < 5 && !includesCoin) {
     collection.push(myNewCoin);
   } else if (includesCoin) {
-    alert("You can't add it, 'cause it already exsists in your report!");
+    swal("ALERT:","You can't add it, 'cause it already exsists in your report!");
     htmlObject.checked = false;
   } else {
-    alert(
-      "You can not add more than 5 coins. Free the place for new one in your report before adding"
+    swal(
+      "ALERT:","You can not add more than 5 coins. Free the place for new one in your report before adding"
     );
     htmlObject.checked = false;
   }
