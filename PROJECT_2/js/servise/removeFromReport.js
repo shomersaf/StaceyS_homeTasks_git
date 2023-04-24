@@ -9,7 +9,9 @@ function removeFromReport(checker, cId,cCard){
           collection.splice(index, 1);
           localStorage.setItem("collection", JSON.stringify(collection));
           cCard.remove();
-        } 
+        } else{
+          checker.checked = true;
+        }
       }
     });
     if(collection.length==0){
