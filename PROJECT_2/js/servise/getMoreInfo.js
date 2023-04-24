@@ -2,6 +2,7 @@ function getMoreInfo() {
     
   const currentCoinCard = this.closest(".coinCard");
   const currentCoinId = currentCoinCard.childNodes[1].innerHTML;
+  // console.log(currentCoinId);
   const currentCoinSymbol = currentCoinCard.childNodes[2].innerHTML;
   const currentDetails = currentCoinCard.lastChild;
   const currentSummaryDiv = currentDetails.lastChild;

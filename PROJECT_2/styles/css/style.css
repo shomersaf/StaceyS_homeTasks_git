@@ -275,6 +275,15 @@ article {
   text-align: justify;
 }
 
+.reports {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .currenciesAlert {
   color: #429f72;
   padding: 10px;

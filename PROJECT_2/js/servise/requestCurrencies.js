@@ -13,14 +13,16 @@ function requestCurrencies() {
         method: "GET",
       });
       result = await response.json();
-      let allCoins = JSON.parse(localStorage.getItem("allCoins"));
-      
-      
+      let allCoins = [...result];
+      localStorage.setItem("allCoins", JSON.stringify(allCoins));
+      // console.log(allCoins);
      
-      if (allCoins.length ==0) {
-        allCoins = [...result];
-        localStorage.setItem("allCoins", JSON.stringify(allCoins));
-      }
+      // if (allCoins.length ==0 && !allCoins) {
+      //   let allCoins = [...result];
+      //   localStorage.setItem("allCoins", JSON.stringify(allCoins));
+      // }else{
+      //   allCoins = JSON.parse(localStorage.getItem("allCoins"));
+      // }
 
      
       for (let i = 0; i < 100; i++) {

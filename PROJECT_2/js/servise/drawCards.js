@@ -6,7 +6,7 @@ function drawCards(cArray, cList, checkedFn,uncheckedFn,checkerText,checkerDefol
         coinCard.classList.add("coinCard");
         const coinId = document.createElement("div");
         coinId.classList.add("coinId");
-        coinId.innerHTML = cArray[i].symbol;
+        coinId.innerHTML = cArray[i].id;
         const coinSymbol = document.createElement("div");
         coinSymbol.classList.add("coinSymbol");
         coinSymbol.innerHTML = cArray[i].symbol;
@@ -56,4 +56,7 @@ function drawCards(cArray, cList, checkedFn,uncheckedFn,checkerText,checkerDefol
         coinDiv.append(coinCard);
       
       }
-      cList.append(coinDiv);}
+      cList.append(coinDiv);
+    
+    
+    }
