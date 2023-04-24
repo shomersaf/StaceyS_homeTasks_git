@@ -73,6 +73,12 @@ summary{
   }
 .coinId{
     opacity: 0;
+    color: $nameColor;
+}
+.coinName{
+    color: $nameColor;
+    font-weight: bold;
+    flex-wrap: wrap;
 }
 .summaryDiv span{
     text-transform: uppercase;

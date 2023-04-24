@@ -6,13 +6,13 @@ function drawCards(cArray, cList, checkedFn,uncheckedFn,checkerText,checkerDefol
         coinCard.classList.add("coinCard");
         const coinId = document.createElement("div");
         coinId.classList.add("coinId");
-        coinId.innerHTML = cArray[i].id;
+        coinId.innerHTML = cArray[i].symbol;
         const coinSymbol = document.createElement("div");
         coinSymbol.classList.add("coinSymbol");
         coinSymbol.innerHTML = cArray[i].symbol;
         const coinName = document.createElement("div");
         coinName.classList.add("coinName");
-        coinName.innerHTML = `${cArray[i].name}`;
+        coinName.innerHTML = cArray[i].name;
   
         const toggleDiv = document.createElement("div");
         toggleDiv.classList.add("form-check", "form-switch");

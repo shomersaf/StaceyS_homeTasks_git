@@ -390,6 +390,14 @@ summary {
 
 .coinId {
   opacity: 0;
+  color: rgba(83, 153, 244, 0.753);
+}
+
+.coinName {
+  color: rgba(83, 153, 244, 0.753);
+  font-weight: bold;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .summaryDiv span {
@@ -450,17 +458,19 @@ summary {
 
 .popup {
   position: absolute;
+  color: #7c7c7c;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%) scale(0);
       -ms-transform: translate(-50%, -50%) scale(0);
           transform: translate(-50%, -50%) scale(0);
-  background: #fff;
+  background: rgb(3, 45, 57);
   width: 400px;
   padding: 25px;
   -webkit-transition: 0.5s all;
   -o-transition: 0.5s all;
   transition: 0.5s all;
+  border-radius: 15px;
 }
 
 .popup.active {
@@ -477,6 +487,10 @@ summary {
   top: 10px;
   right: 10px;
   cursor: pointer;
+  border: 1px solid #7c7c7c;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 3px;
 }
 
 .projectAuthor {

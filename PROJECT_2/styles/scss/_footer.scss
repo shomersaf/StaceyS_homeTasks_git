@@ -1,7 +1,7 @@
 footer {
     width: 100%;
     min-height: 150px;
-    background-color: rgb(3, 45, 57);
+    background-color: $footerColor;
     position: sticky; 
     z-index: 100;
     bottom: 0;
