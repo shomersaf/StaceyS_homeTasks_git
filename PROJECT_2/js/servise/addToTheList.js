@@ -19,7 +19,7 @@ function addToTheList(htmlObject) {
 
   let includesCoin = collection.find((item) => item.symbol == myNewCoin.symbol);
 
-  console.log(includesCoin);
+  // console.log(includesCoin);
 
   if (collection.length < 5 && !includesCoin) {
     collection.push(myNewCoin);
