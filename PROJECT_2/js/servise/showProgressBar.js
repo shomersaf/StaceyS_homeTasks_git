@@ -16,7 +16,7 @@ function showProgressBar(container) {
       var elem = document.getElementById("progressBar");
       var elem2 = document.getElementById("Progress");
       var width = 10;
-      var id = setInterval(frame, 10);
+      var id = setInterval(frame, 5000);
       function frame() {
         if (width >= 100) {
           clearInterval(id);
@@ -25,7 +25,7 @@ function showProgressBar(container) {
           width++;
           elem.style.width = width + "%";
           elem.innerHTML = width + "%";
-          // elem2.innerHTML = width  + "%";
+          //elem2.innerHTML = width  + "%";
         }
       }
     }

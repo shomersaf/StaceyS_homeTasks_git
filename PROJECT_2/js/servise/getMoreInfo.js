@@ -12,7 +12,7 @@ async function getMoreInfo() {
     infoObj = await GetInfo(currentCoinId)
   } catch (error) {
     currentSummaryDiv.innerHTML = "";
-    currentSummaryDiv.innerHTML = `Server request rate exceeded. Try later, please`;
+    currentSummaryDiv.innerHTML = `Server request rate exceeded. Try in 1 min, please`;
     currentSummaryDiv.classList.add("errorDiv");
     return
   } finally {

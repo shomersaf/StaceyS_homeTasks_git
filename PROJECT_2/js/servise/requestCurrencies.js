@@ -1,4 +1,5 @@
 function requestCurrencies() {
+ 
   const searchUrl = `https://api.coingecko.com/api/v3/coins/list`;
   const article = document.querySelector("article");
   const currenciesList = document.createElement("div");
@@ -33,6 +34,7 @@ function requestCurrencies() {
       return coinsArray;
     } catch (error) {
       showProgressBar(currenciesList);
+     
 
       setTimeout(requestCurrencies, 5000)
     } finally {
