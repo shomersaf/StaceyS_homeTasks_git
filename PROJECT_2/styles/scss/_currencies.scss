@@ -24,8 +24,9 @@ color:$fontColor;
 display: flex;
 justify-content:space-around;
 align-items: center;
-width: 80%;
+width: 100%;
 flex-wrap: wrap;
+margin-bottom: 60px;
 }
 .currenciesList{
     display: flex;
@@ -108,4 +109,13 @@ summary{
 .intro span:first-of-type {
 border:none;
 padding: 0;
+}
+.reports{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-end;
+}
+#rateButton{
+    height:fit-content !important;
 }
