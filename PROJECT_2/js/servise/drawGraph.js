@@ -1,8 +1,7 @@
 function drawGraph(myArr, wrapper) {
-
+  
   const canvas = document.createElement("canvas");
   canvas.id = "reportCanvas";
-  canvas.innerText = "!!!!";
   wrapper.append(canvas);
 
   let colors = ["orange", "green", "red", "blue", "yellow"];
@@ -79,5 +78,5 @@ function drawGraph(myArr, wrapper) {
       },
     },
   };
-  new Chart(canvas, coinsConfig);
+  const myLineChart = new Chart(canvas, coinsConfig);
 }

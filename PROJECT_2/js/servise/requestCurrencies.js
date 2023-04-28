@@ -16,15 +16,6 @@ function requestCurrencies() {
       result = await response.json();
       let allCoins = [...result];
       localStorage.setItem("allCoins", JSON.stringify(allCoins));
-      // console.log(allCoins);
-     
-      // if (allCoins.length ==0 && !allCoins) {
-      //   let allCoins = [...result];
-      //   localStorage.setItem("allCoins", JSON.stringify(allCoins));
-      // }else{
-      //   allCoins = JSON.parse(localStorage.getItem("allCoins"));
-      // }
-
      
       for (let i = 0; i < 100; i++) {
         var rand = Math.floor(Math.random() * result.length);
