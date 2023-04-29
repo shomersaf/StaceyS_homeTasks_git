@@ -13,17 +13,19 @@ function drawReport(reports) {
       "Remove from REPORT",
       true
     );
-
+     
+    const rateButtonsDiv = document.createElement('div');
     const rateButton = getButton(
       "<span>start rating</span>",
       ["btn", "btn-secondary"],
       "rateButton",
       () => {
-        getCurrentCourse(crds, reports);
+        getCurrentCourse(crds, rateButtonsDiv);
       }
     );
 
     drawGraph(crds, reports);
-    reports.append(rateButton);
+    rateButtonsDiv.append(rateButton);
+    reports.append(rateButtonsDiv);
   }
 }
