@@ -11,6 +11,6 @@ function getReports(){
     intro.id = "reportIntro";
     intro.innerHTML =`Your personal real-time report is empty. Nothing added.`;
     intro.style.cssText = 'text-align: center;'
-    container.append(h2,reports,intro);
+    container.append(h2,intro,reports);
     drawReport(reports);
 }

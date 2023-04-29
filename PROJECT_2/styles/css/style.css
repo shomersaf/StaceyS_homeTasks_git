@@ -450,12 +450,6 @@ summary {
           align-items: flex-end;
 }
 
-#rateButton {
-  height: -webkit-fit-content !important;
-  height: -moz-fit-content !important;
-  height: fit-content !important;
-}
-
 .popup__bg {
   position: fixed;
   top: 0;

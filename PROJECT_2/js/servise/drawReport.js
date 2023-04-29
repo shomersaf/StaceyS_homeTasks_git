@@ -1,12 +1,29 @@
-function drawReport (reports){
-   // let cnSymbol = 'symbolPlaceholder';
-    let crds = JSON.parse(localStorage.getItem("collection"));
-    if (crds.length>0) {
-        document.getElementById("reportIntro").remove();
-        drawCards(crds, reports,removeFromReport,removeFromReport, "Remove from REPORT",true);
-        const rateButton = getButton('<span>get current rate</span>',['btn','btn-secondary'],"rateButton",()=>{getCurrentCourse(crds,reports)});
-        //drawGraph(crds, reports);
-        reports.append(rateButton);
-    }
- 
+function drawReport(reports) {
+  // let cnSymbol = 'symbolPlaceholder';
+  let crds = JSON.parse(localStorage.getItem("collection"));
+  if (crds.length > 0) {
+    const intro = document.getElementById("reportIntro");
+
+    intro.innerHTML = `Get the current rate to USD for every coin in your list by click on START RATING button and stop the graph running by use the STOP button. If some of your coins aren't presented in graph rating, it means that the there is no its rate data on server used.`;
+    drawCards(
+      crds,
+      reports,
+      removeFromReport,
+      removeFromReport,
+      "Remove from REPORT",
+      true
+    );
+
+    const rateButton = getButton(
+      "<span>start rating</span>",
+      ["btn", "btn-secondary"],
+      "rateButton",
+      () => {
+        getCurrentCourse(crds, reports);
+      }
+    );
+
+    drawGraph(crds, reports);
+    reports.append(rateButton);
+  }
 }
