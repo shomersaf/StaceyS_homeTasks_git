@@ -1,14 +1,9 @@
 function getCurrentCourse(coins, buttonsContainer) {
-  const stopButton = getButton(
-    "<span>stop rating</span>",
-    ["btn", "btn-secondary"],
-    "stopButton",
-    () => {
-        clearInterval(myInterval);
-        stopButton.remove();
-    }
-  );
-  buttonsContainer.prepend(stopButton);
+  buttonsContainer.lastChild.removeEventListener("click", () => {});
+  buttonsContainer.lastChild.addEventListener("click", () => {
+    clearInterval(myInterval);
+
+});
   let symbols = [];
   let symbolsList = "";
   coins.forEach((element) => {
