@@ -1,5 +1,4 @@
 function drawReport(reports) {
-  // let cnSymbol = 'symbolPlaceholder';
   let crds = JSON.parse(localStorage.getItem("collection"));
   if (crds.length > 0) {
     const intro = document.getElementById("reportIntro");
@@ -13,25 +12,24 @@ function drawReport(reports) {
       "Remove from REPORT",
       true
     );
-     
-    const rateButtonsDiv = document.createElement('div');
+
+    const rateButtonsDiv = document.createElement("div");
     const rateButton = getButton(
       "<span>START</span>",
       ["btn", "btn-secondary"],
       "rateButton",
       () => {
-        getCurrentCourse(crds, rateButtonsDiv);
+        getCurrentCourse(crds, rateButtonsDiv, reports);
       }
     );
     const stopButton = getButton(
-        "<span>STOP</span>",
-        ["btn", "btn-secondary"],
-        "stopButton",
-        () => {}
-      );
-      
+      "<span>STOP</span>",
+      ["btn", "btn-secondary"],
+      "stopButton",
+      () => {}
+    );
 
-    drawGraph(crds, reports);
+    // drawGraph(crds, reports);
     rateButtonsDiv.append(rateButton, stopButton);
     reports.append(rateButtonsDiv);
   }

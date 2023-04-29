@@ -1,6 +1,10 @@
-function drawGraph(myArr, wrapper) {
-  
-  const canvas = document.createElement("canvas");
+function drawGraph(myArr, wrapper, smth) {
+  console.log(smth);
+  let canvas = document.getElementById('reportCanvas');
+  if(canvas){
+    canvas.remove();
+  }
+   canvas = document.createElement("canvas");
   canvas.id = "reportCanvas";
   wrapper.append(canvas);
 
@@ -79,4 +83,5 @@ function drawGraph(myArr, wrapper) {
     },
   };
   const myLineChart = new Chart(canvas, coinsConfig);
+  //console.log(rateResult);
 }
