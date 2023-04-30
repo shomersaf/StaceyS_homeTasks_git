@@ -1,4 +1,4 @@
-function drawGraph(wrapper, rate, times, store, store2, store3, store4, store5) {
+function drawGraph(wrapper, rate, times, store, store2, store3, store4, store5, smth) {
   
   let canvas = document.getElementById("reportCanvas");
   if (canvas) {
@@ -12,15 +12,15 @@ function drawGraph(wrapper, rate, times, store, store2, store3, store4, store5) 
   const labels = Object.keys(rate).map((element) => {
     return element;
   });
-  const TimeStamps = Object.values(times).map((element) => {
+  const timeStamps = Object.values(times).map((element) => {
     return element;
   });
-  const dataArr = Object.values(rate["BTC"]).map((element) => {
+  const dataArr = Object.values(rate["ETH"]).map((element) => {
     store.push(element);
     //console.log(store);
     return store; 
   });
-  const dataArr2 = Object.values(rate["ETH"]).map((element) => {
+  const dataArr2 = Object.values(rate["BTC"]).map((element) => {
     store2.push(element);
     //console.log(store2);
     return store2; 
@@ -37,47 +37,70 @@ function drawGraph(wrapper, rate, times, store, store2, store3, store4, store5) 
   });
   const dataArr5 = Object.values(rate["AVA"]).map((element) => {
     store5.push(element);
-    console.log(store5);
+    //console.log(store5);
     return store5; 
   });
 
-  //console.log(`Object.values(rate["BTC"]): ${Object.values(rate["BTC"])},Object.values(rate["ETH"]): ${Object.values(rate["ETH"])}`);
+
+
+ //console.log(`Object.values(rate["ETH"]): ${Object.values(rate["ETH"])}, Object.keys(rate)[0]: ${Object.keys(rate)[0]}`);
+ for (let key in rate) {
+ // console.log(`${key} : ${rate[key]["USD"]}`);////yeeees!!!!!
+ //console.log(rate.BTC["USD"]);
+
+  const dataObj ={
+    label: key,
+        data:rate[key]["USD"],
+        borderColor: colors,
+        yAxisID: "y",
+  };
+ 
+ smth.push(dataObj);
+
+console.log(smth[0].data);
+}
 
 //console.log(dataArr[0]);
 
   const data = {
-    labels: TimeStamps,
-    datasets: [
+    labels: timeStamps,
+    datasets:
+    // datasets: smth.map((element) => {
+    //     return element;
+    //     }),
+    [
+      
       {
-        label: labels[0],
+        label: smth[0].label,
         data: store,
         borderColor: colors,
         yAxisID: "y",
       },
       {
-        label: labels[1],
+        label: smth[1].label,
         data: store2,
         borderColor: colors,
         yAxisID: "y",
       },
       {
-        label: labels[2],
+        label: smth[2].label,
         data: store3,
         borderColor: colors,
         yAxisID: "y",
       },
       {
-        label: labels[3],
+        label: smth[3].label,
         data: store4,
         borderColor: colors,
         yAxisID: "y",
       },
       {
-        label: labels[4],
+        label: smth[4].label,
         data: store5,
         borderColor: colors,
         yAxisID: "y",
       },
+   
     ],
   };
 
@@ -88,8 +111,9 @@ function drawGraph(wrapper, rate, times, store, store2, store3, store4, store5) 
   const myLineChart = new Chart(canvas, config);
 
 }
-//let's catch the 3d,4th and the 5th coin
-//let's make it dynamic in 3 points: 
+
+//let's make it dynamic in such points: 
+// rate["ETH"] - must become dynamic
 //1. the labels
 //2. the coins number
 //3. the coins data
