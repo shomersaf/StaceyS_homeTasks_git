@@ -1,0 +1,85 @@
+function drawGraph(myArr, wrapper, rate,times,store) {
+  // console.log(Object.keys(rate)[0]);
+  store.push(rate);
+  let canvas = document.getElementById('reportCanvas');
+  if(canvas){
+    canvas.remove();
+  }
+   canvas = document.createElement("canvas");
+  canvas.id = "reportCanvas";
+  wrapper.append(canvas);
+
+  let colors = ["orange", "green", "red", "blue", "yellow"];
+  const labels = Object.keys(rate).map((element) => {
+    // console.log(element);
+ return element;
+  });
+  const TimeStamps = Object.values(times).map((element) => {
+    // console.log(element);
+ return element;
+  });
+  const dataArr = Object.values(rate).map((element) => {
+    
+     //console.log(element["USD"]);
+ return element["USD"];
+  });
+  
+  const rateArr = Object.values(store).map((element) => {
+    
+    //console.log(element);
+return element;
+ });
+ console.log(dataArr[0]);
+
+const data = {
+  labels: TimeStamps,
+  datasets: [
+    {
+      label: labels,
+      data:dataArr[0],
+      borderColor: colors,
+      yAxisID: 'y',
+    },
+    // {
+    //   label: labels,
+    //   data:dataArr[0],
+    //   borderColor: colors,
+    //   yAxisID: 'y',
+    // }
+  ]
+};
+  // const responseExample ={tipeStamp,Symbol:price, Symbol:price....  }
+
+  // const coinsData = {//yhis is for data in config
+  //   labels: labels, //here will be timeStamps from array
+  //   datasets: dataSetsArr.map((element) => {
+  //       return element;
+  //        }),
+  // };
+
+  const config = {
+    type: 'line',
+    data: data,
+    options: {
+      responsive: true,
+      interaction: {
+        mode: 'index',
+        intersect: false,
+      },
+      stacked: true,
+      plugins: {
+        
+      },
+      scales: {
+        y: {
+          type: 'linear',
+          display: true,
+          position: 'left',
+        },
+     
+      }
+    },
+  };
+  const myLineChart = new Chart(canvas, config);
+  //console.log(rateResult);
+}
