@@ -7,6 +7,9 @@ function getCurrentCourse(coins, buttonsContainer,reports) {
   let timeStamps = [];
   let rateStack = [];
   let rateStack2 = [];
+  let rateStack3 = [];
+  let rateStack4 = [];
+  let rateStack5 = [];
   let symbolsList = "";
   coins.forEach((element) => {
     symbols.push(element.symbol.toUpperCase());
@@ -25,7 +28,7 @@ function getCurrentCourse(coins, buttonsContainer,reports) {
     } finally {
       timeStamps.push(new Date().toISOString());
       //rateStack.push(rateResult);
-      drawGraph(reports, rateResult, timeStamps,rateStack, rateStack2);
+      drawGraph(reports, rateResult, timeStamps,rateStack, rateStack2, rateStack3, rateStack4, rateStack5);
      //console.log(rateResult);
     }
   }

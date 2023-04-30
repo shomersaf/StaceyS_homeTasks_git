@@ -412,7 +412,7 @@ summary {
 
 .intro {
   color: rgb(83, 153, 244);
-  text-align: justify;
+  text-align: justify !important;
   margin-bottom: 20px;
   margin-top: 10px;
 }
