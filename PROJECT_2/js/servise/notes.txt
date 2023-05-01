@@ -83,3 +83,5 @@ const data = {
   const myLineChart = new Chart(canvas, config);
   //console.log(rateResult);
 }
+// console.log(`${key} : ${rate[key]["USD"]}`);////yeeees!!!!!
+  //console.log(`Object.values(rate["ETH"]): ${Object.values(rate["ETH"])}, Object.keys(rate)[0]: ${Object.keys(rate)[0]}`);

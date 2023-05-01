@@ -10,7 +10,7 @@ function getCurrentCourse(coins, buttonsContainer,reports) {
   let rateStack3 = [];
   let rateStack4 = [];
   let rateStack5 = [];
-  let smth = [];
+
   let symbolsList = "";
   coins.forEach((element) => {
     symbols.push(element.symbol.toUpperCase());
@@ -28,15 +28,11 @@ function getCurrentCourse(coins, buttonsContainer,reports) {
     } catch (error) {
     } finally {
       timeStamps.push(new Date().toISOString());
-      //rateStack.push(rateResult);
-      drawGraph(reports, rateResult, timeStamps,rateStack, rateStack2, rateStack3, rateStack4, rateStack5, smth);
-     //console.log(rateResult);
+      drawGraph(reports, rateResult, timeStamps,rateStack, rateStack2, rateStack3, rateStack4, rateStack5);
     }
   }
-
   myInterval = setInterval(function () {
     getRateFromAPI(rateURL);
   }, 2000);
-
-  // drawGraph(coins, reports);
 }
+ 
