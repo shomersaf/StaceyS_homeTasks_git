@@ -1,4 +1,6 @@
+
 function getAbout(){
+    
     const container = document.querySelector('.container');
     container.innerHTML="";
     const about=document.createElement('article');

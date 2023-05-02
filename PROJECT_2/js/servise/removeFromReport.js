@@ -9,6 +9,8 @@ function removeFromReport(checker, cId,cCard){
           collection.splice(index, 1);
           localStorage.setItem("collection", JSON.stringify(collection));
           cCard.remove();
+          //window.location.reload();
+         
         } else{
           checker.checked = true;
         }
