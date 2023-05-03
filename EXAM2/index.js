@@ -7,7 +7,8 @@ const DOM = {
   totPop:[],
 };
 
- 
+  const searchUrlAll = `https://restcountries.com/v3.1/all`;
+    const searchUrl= `https://restcountries.com/v3.1/name`;
 
 function init() {
   generateControllers();
@@ -21,7 +22,13 @@ function generateControllers() {
   DOM.clearButton = genButton("clear", ["btn", "btn-danger"]);
   DOM.searchButton.addEventListener("click", () => {
     const searchValue = DOM.searchInput.value;
-    getCountriesByName(searchValue);
+   
+    getCountriesByName(searchValue, searchUrl);
+  });
+  DOM.allButton.addEventListener("click", () => {
+    const searchValueAll = "no";
+   
+    getCountriesByName(searchValueAll, searchUrlAll);
   });
   DOM.clearButton.addEventListener("click", clearInput);
   controllersUI.push(
@@ -45,10 +52,10 @@ function generateControllers() {
 
 init();
 
-async function getCountriesByName(value) {
+async function getCountriesByName(value, url) {
   try {
     DOM.content.innerHTML = `<p>Searching for <b>${value}...</b></p>`;
-    const result = await searchInCountriesAPI(value);
+    const result = await searchInCountriesAPI(value, url);
   } catch (error) {
     console.log(error);
   }

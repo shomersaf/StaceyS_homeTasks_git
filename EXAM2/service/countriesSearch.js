@@ -1,13 +1,19 @@
 
-const searchUrl = `https://restcountries.com/v3.1/name/`;
+//const searchUrl = `https://restcountries.com/v3.1/name/`;
 
-async function searchInCountriesAPI(searchParam){
+async function searchInCountriesAPI(searchParam, searchUrl){
+    console.log(searchUrl);
+    let result;
  if (!searchParam) throw new Error ("No data entered");
- let result = await fetch (`${searchUrl}${searchParam}`);
+if (searchParam =="no"){
+     result = await fetch (`${searchUrl}`);
+}else
+ result = await fetch (`${searchUrl}/${searchParam}`);
  if(result.ok){
     result = await result.json();
     clearInput();
     const countriesTable = generateTable(result);
+    
     DOM.content.innerHTML = " ";
   // console.log(result);
     DOM.content.append(countriesTable);
