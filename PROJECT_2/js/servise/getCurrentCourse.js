@@ -1,20 +1,24 @@
 function getCurrentCourse(coins, buttonsContainer,reports) {
   buttonsContainer.lastChild.removeEventListener("click", () => {});
   buttonsContainer.lastChild.addEventListener("click", () => {
-    clearInterval(myInterval);
+    controller.abort();
+   clearInterval(myInterval);
+ 
   });
  
-
+  const controller = new AbortController();
+  const signal = controller.signal;
   async function getRateFromAPI(rateURL) {
     try {
       let rateResponse = await fetch(rateURL, {
         method: "GET",
+        signal: signal, // <------ This is our AbortSignal
       });
       rateResult = await rateResponse.json();
       return rateResult;
     } catch (error) {
     } finally {
-      drawGraph(reports, rateResult, new Date().toISOString(),myInterval);
+      drawGraph(controller,reports, rateResult, new Date().toISOString(),myInterval);
     }
   }
   myInterval = setInterval(function () {

@@ -1,11 +1,12 @@
 var coinsLineChart = null;
 
 function drawGraph(
+  controller,
   wrapper,
   rate,
   time
 ) {
-  
+  controller.abort();
   let canvas = document.getElementById("reportCanvas");
 
   // if(coinsLineChart != null){
@@ -40,7 +41,7 @@ function drawGraph(
 
   if (coinsLineChart === null){
     let colors = ["orange", "green", "red", "blue", "yellow"];
-
+    
     const config = {
       type: "line",
       data: {
@@ -66,7 +67,7 @@ function drawGraph(
     })
     coinsLineChart.update()
   }
-  
+ 
 }
 
 // function drawGraph(
