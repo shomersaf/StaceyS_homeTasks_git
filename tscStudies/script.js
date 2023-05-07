@@ -1,14 +1,15 @@
+"use strict";
 console.log("Where am I?");
-var a = 1;
-var b = "omg";
-var c = false;
-var d = null;
-var e = undefined;
+let a = 1;
+let b = "omg";
+let c = false;
+let d = null;
+let e = undefined;
 //let f:object ={}
-var f = { text: "Hello" };
+let f = { text: "Hello" };
 //------------------
 //data type "any" - is a standard default type of JS
-var g;
+let g;
 g = 1;
 g = "hello";
 g = null;
@@ -17,13 +18,13 @@ g = undefined;
 g = {};
 g = function () { };
 //or:
-var g1;
+let g1;
 function func(x, y) {
     return x + y;
 }
-var func2 = function (x, y) { return x + y; };
+let func2 = (x, y) => x + y;
 //data type below is so called signature of function
-var func3;
+let func3;
 //here is how we can use this dada type:
 func3 = function (x, y) {
     return x + y;
@@ -41,9 +42,10 @@ function func6(x, y) {
         return x + y;
     }
     else {
-        return "".concat(x, " + ").concat(y, " ");
+        return `${x} + ${y} `;
     }
 }
 console.log(func6(1, 2));
 console.log(func6('Answer is', 2));
 console.log("OOOOOHHHHH");
+//# sourceMappingURL=script.js.map

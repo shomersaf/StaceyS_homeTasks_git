@@ -1,3 +1,3 @@
 "use strict";
-console.log("ffffff");
+console.log("ssss");
 //# sourceMappingURL=index.js.map
