@@ -12,25 +12,28 @@ function drawReport(reports) {
       "Remove from REPORT",
       true
     );
-
+    const controller = new AbortController();
     const rateButtonsDiv = document.createElement("div");
     const rateButton = getButton(
       "<span>START</span>",
       ["btn", "btn-secondary"],
       "rateButton",
       () => {
-        getCurrentCourse(crds, rateButtonsDiv, reports);
+        getCurrentCourse(crds, rateButtonsDiv, reports, controller);
       }
     );
     const stopButton = getButton(
       "<span>STOP</span>",
       ["btn", "btn-secondary"],
       "stopButton",
-      () => {}
+      () => {
+         controller.abort();}
     );
 
     // drawGraph(crds, reports);
-    rateButtonsDiv.append(rateButton, stopButton);
+    //rateButtonsDiv.append(rateButton, stopButton);
     reports.append(rateButtonsDiv);
+    getCurrentCourse(crds, rateButtonsDiv, reports, controller);
   }
+
 }
