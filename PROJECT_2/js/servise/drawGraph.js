@@ -3,7 +3,8 @@ var coinsLineChart = null;
 function drawGraph(
   wrapper,
   rate,
-  time
+  time,
+  controller
 ) {
   
   let canvas = document.getElementById("reportCanvas");

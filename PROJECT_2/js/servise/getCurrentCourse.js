@@ -1,18 +1,11 @@
 function getCurrentCourse(coins, buttonsContainer,reports,controller) {
-  // buttonsContainer.lastChild.removeEventListener("click", () => {});
-  // buttonsContainer.lastChild.addEventListener("click", () => {
-  //   //controller.abort();
-  //   clearInterval(myInterval);
  
-  // });
  const aboutButton = document.querySelector("#aboutButton");
  aboutButton.addEventListener("click",()=>{
-  console.log("it works");
   controller.abort();
 } );
 const currenciesButton = document.querySelector("#currenciesButton");
 currenciesButton.addEventListener("click",()=>{
- console.log("it works");
  controller.abort();
 } );
 
@@ -26,8 +19,11 @@ currenciesButton.addEventListener("click",()=>{
       rateResult = await rateResponse.json();
       return rateResult;
     } catch (error) {
+      controller.abort();
+      clearInterval(myInterval);
+      console.log('graph request is cancelled by user');
     } finally {
-      drawGraph(reports, rateResult, new Date().toISOString(),myInterval);
+      drawGraph(reports, rateResult, new Date().toISOString(),myInterval, controller);
     }
   }
   myInterval = setInterval(function () {
