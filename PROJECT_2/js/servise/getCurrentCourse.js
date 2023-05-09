@@ -3,10 +3,12 @@ function getCurrentCourse(coins, buttonsContainer,reports,controller) {
  const aboutButton = document.querySelector("#aboutButton");
  aboutButton.addEventListener("click",()=>{
   controller.abort();
+  clearInterval(myInterval);
 } );
 const currenciesButton = document.querySelector("#currenciesButton");
 currenciesButton.addEventListener("click",()=>{
  controller.abort();
+ clearInterval(myInterval);
 } );
 
   const signal = controller.signal;
@@ -19,9 +21,10 @@ currenciesButton.addEventListener("click",()=>{
       rateResult = await rateResponse.json();
       return rateResult;
     } catch (error) {
-      //controller.abort();
-      //clearInterval(myInterval);
-      console.log('graph cancelled by user');
+      // controller.abort();
+      // clearInterval(myInterval);
+      console.log(error);
+
     } finally {
       drawGraph(reports, rateResult, new Date().toISOString(),myInterval, controller);
     }
