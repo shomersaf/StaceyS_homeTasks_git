@@ -1,1 +1,0 @@
-https://min-api.cryptocompare.com/data/price?fsym=${coinSymbol}&tsyms=USD

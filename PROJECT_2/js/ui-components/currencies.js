@@ -12,10 +12,10 @@ function getCurrencies() {
   const controllers = document.createElement("div");
   controllers.id = "controllers";
 
-  const searchInput = getInput("searchInput", "enter the currency...");
+  const searchInput = getInput("searchInput", " enter coin SYMBOL...");
   
   const searchButton = getButton(
-    "<span>Search by Symbol</span>",
+    "<span>Search on server</span>",
     ["btn", "btn-secondary"],
     "searchButton",
     searchCoin

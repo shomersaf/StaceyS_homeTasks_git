@@ -21,7 +21,7 @@ function removeFromReport(checker, cId,cCard){
       const intro = document.createElement('div');
     intro.classList.add('intro');
     intro.id = "reportIntro";
-    intro.innerHTML =`Your personal real-time report is empty. Nothing added.`;
+    intro.innerHTML =`YOUR REPORT IS EMPTY FOR NOW. NOTHING ADDED.`;
     intro.style.cssText = 'text-align: center;'
     container.append(intro);
     }

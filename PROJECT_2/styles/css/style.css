@@ -450,6 +450,10 @@ summary {
           align-items: flex-end;
 }
 
+#reportIntro {
+  text-align: center !important;
+}
+
 .popup__bg {
   position: fixed;
   top: 0;

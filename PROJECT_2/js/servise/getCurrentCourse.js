@@ -19,9 +19,9 @@ currenciesButton.addEventListener("click",()=>{
       rateResult = await rateResponse.json();
       return rateResult;
     } catch (error) {
-      controller.abort();
-      clearInterval(myInterval);
-      console.log('graph request is cancelled by user');
+      //controller.abort();
+      //clearInterval(myInterval);
+      console.log('graph cancelled by user');
     } finally {
       drawGraph(reports, rateResult, new Date().toISOString(),myInterval, controller);
     }

@@ -4,6 +4,7 @@ function drawGraph(
   wrapper,
   rate,
   time,
+  myInterval,
   controller
 ) {
   
@@ -55,7 +56,10 @@ function drawGraph(
     })
     coinsLineChart.update()
   }
- 
+ if(rate.Response){
+  clearInterval(myInterval);
+  canvas.remove()
+ }
 }
 
 
