@@ -1,6 +1,6 @@
 function removeLoader(elemId) {
-    const loader = document.querySelector(elemId);
-    if (loader) {
-      loader.remove();
-    }
+  const loader = document.querySelector(elemId);
+  if (loader) {
+    loader.remove();
   }
+}

@@ -1,15 +1,14 @@
-function getCurrentCourse(coins, buttonsContainer,reports,controller) {
- 
- const aboutButton = document.querySelector("#aboutButton");
- aboutButton.addEventListener("click",()=>{
-  controller.abort();
-  clearInterval(myInterval);
-} );
-const currenciesButton = document.querySelector("#currenciesButton");
-currenciesButton.addEventListener("click",()=>{
- controller.abort();
- clearInterval(myInterval);
-} );
+function getCurrentCourse(coins, buttonsContainer, reports, controller) {
+  const aboutButton = document.querySelector("#aboutButton");
+  aboutButton.addEventListener("click", () => {
+    controller.abort();
+    clearInterval(myInterval);
+  });
+  const currenciesButton = document.querySelector("#currenciesButton");
+  currenciesButton.addEventListener("click", () => {
+    controller.abort();
+    clearInterval(myInterval);
+  });
 
   const signal = controller.signal;
   async function getRateFromAPI(rateURL) {
@@ -21,12 +20,15 @@ currenciesButton.addEventListener("click",()=>{
       rateResult = await rateResponse.json();
       return rateResult;
     } catch (error) {
-      // controller.abort();
-      // clearInterval(myInterval);
       console.log(error);
-
     } finally {
-      drawGraph(reports, rateResult, new Date().toISOString(),myInterval, controller);
+      drawGraph(
+        reports,
+        rateResult,
+        new Date().toISOString(),
+        myInterval,
+        controller
+      );
     }
   }
   myInterval = setInterval(function () {
@@ -40,6 +42,4 @@ currenciesButton.addEventListener("click",()=>{
     const rateURL = `https://min-api.cryptocompare.com/data/pricemulti?fsyms=${symbolsList}&tsyms=USD`;
     getRateFromAPI(rateURL);
   }, 2000);
-  
 }
-

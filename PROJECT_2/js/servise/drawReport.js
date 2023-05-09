@@ -27,12 +27,11 @@ function drawReport(reports) {
       ["btn", "btn-secondary"],
       "stopButton",
       () => {
-         controller.abort();}
+        controller.abort();
+      }
     );
 
-  
     reports.append(rateButtonsDiv);
     getCurrentCourse(crds, rateButtonsDiv, reports, controller);
   }
-
 }

@@ -6,7 +6,6 @@ function drawCards(
   checkerText,
   checkerDefolt
 ) {
-
   const coinDiv = document.createElement("div");
   coinDiv.classList.add("coinDiv");
   for (i = 0; i < cArray.length; i++) {

@@ -13,7 +13,7 @@ function getCurrencies() {
   controllers.id = "controllers";
 
   const searchInput = getInput("searchInput", " enter coin SYMBOL...");
-  
+
   const searchButton = getButton(
     "<span>Search on server</span>",
     ["btn", "btn-secondary"],
@@ -30,13 +30,11 @@ function getCurrencies() {
   currencies.append(controllers, intro);
   container.append(h2, currencies);
 
-  
   showProgressBar(container);
 
   requestCurrencies();
 
   $(function () {
-    //$("#controllers").hide().fadeIn(1500);
     $(".intro").hide().fadeIn(3000);
   });
 }

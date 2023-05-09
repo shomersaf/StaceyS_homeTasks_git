@@ -1,4 +1,4 @@
-function clearInput(){
-   const input = document.querySelector('#searchInput');
-   input.value ="";
-};
+function clearInput() {
+  const input = document.querySelector("#searchInput");
+  input.value = "";
+}
