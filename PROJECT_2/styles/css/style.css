@@ -450,6 +450,10 @@ summary {
           align-items: flex-end;
 }
 
+.reports > .currenciesList, .about > .currenciesList {
+  display: none;
+}
+
 #reportIntro {
   text-align: center !important;
 }

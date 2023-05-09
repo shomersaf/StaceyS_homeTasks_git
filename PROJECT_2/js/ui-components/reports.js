@@ -11,6 +11,6 @@ function getReports(){
     intro.id = "reportIntro";
     intro.innerHTML =`YOUR REPORT IS EMPTY FOR NOW. NOTHING ADDED.`
     intro.style.cssText = 'text-align: center;'
-    container.append(h2,reports,intro);
+    container.append(h2,intro,reports);
     drawReport(reports);
 }

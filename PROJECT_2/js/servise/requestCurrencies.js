@@ -27,7 +27,7 @@ function requestCurrencies() {
       showProgressBar(currenciesList);
      
 
-      setTimeout(requestCurrencies, 5000)
+      setTimeout(requestCurrencies, 120000)
     } finally {
       const elemId ="#Progress";
       removeLoader(elemId);
