@@ -3,7 +3,7 @@ function showProgressBar(container) {
   bar.id = "Progress";
   const progressBar = document.createElement("progress");
   progressBar.id = "progressBar";
-  bar.innerHTML = `Loading in progress...`;
+  bar.innerHTML = `Waiting for server response...`;
 
   bar.append(progressBar);
   container.append(bar);
