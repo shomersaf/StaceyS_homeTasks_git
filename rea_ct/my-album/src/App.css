@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+.cardsContainer{
+  display: flex !important;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 0 auto;
+}

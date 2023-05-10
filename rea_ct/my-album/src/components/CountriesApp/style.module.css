@@ -1,0 +1,24 @@
+.countriesCard{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    width:fit-content;
+    background: rgb(201, 187, 187);
+    
+}
+*{
+    background: rgb(124, 115, 115);
+}
+.cardsContainer{
+    display: flex !important;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+}
+h4,p, img{
+    background: rgb(201, 187, 187);
+}
+h1{
+    text-align: center;
+}
