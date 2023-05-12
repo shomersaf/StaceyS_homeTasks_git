@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #025248;
+  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,16 +35,26 @@
   to {
     transform: rotate(360deg);
   }
- 
 }
-
-.myBtn{
-  width: 350px;
-  min-height: 80px;
-  margin-top: 50px;
-  border-radius: 20px;
-  font-size: 30px;
+*{
+  background: #011a20;
+  color:#919799;
+  text-align: center;
+  
 }
-.active{
-  background: #ff9901;
+.test{
+  background: #ff7b00;
+  width: 200px;
+  height: 200px;
+  margin: 10px auto;
+}
+.test2{
+  background: #00ffa2;
+  width: 200px;
+  height: 200px;
+  margin: 10px auto;
+}
+.superInput{
+  background: #6e6b6b;
+  color:white;
 }
