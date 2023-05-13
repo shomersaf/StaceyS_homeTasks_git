@@ -1,0 +1,12 @@
+.sidebarDiv{
+    border: 1px solid black;
+    background: #31695f;
+    padding:10px;
+    grid-area: s;
+}
+nav, ul,li, a{
+    background: inherit;
+}
+li{
+    margin:10px;
+}

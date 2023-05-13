@@ -1,0 +1,6 @@
+.footerDiv{
+    border: 1px solid black;
+    background: #458092;
+    padding: 10px;
+    grid-area: f;
+}

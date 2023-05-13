@@ -1,0 +1,6 @@
+.headerDiv{
+    border: 1px solid black;
+    background: #045973;
+    padding:10px;
+    grid-area: h;
+}

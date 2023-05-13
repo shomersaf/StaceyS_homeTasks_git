@@ -1,0 +1,10 @@
+.mainDiv{
+    border: 1px solid black;
+    background: #4b8b80;
+    padding:10px;
+    grid-area: m;
+}
+section {
+    padding: 10px;
+    margin: 5px;
+}
