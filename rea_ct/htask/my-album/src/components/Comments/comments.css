@@ -1,0 +1,11 @@
+.commentsDiv{
+  background-color: rgb(214, 191, 162);
+  margin-bottom:10px;
+  padding:10px;
+  border-radius: 10px;
+}
+.textButton button{
+ min-width: 10px !important;
+ height: 10px;
+  margin-left:5px;
+}
