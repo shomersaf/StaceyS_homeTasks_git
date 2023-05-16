@@ -1,10 +1,13 @@
-
 import { useState } from "react";
 import "./App.css";
 import AlbumCard from "./components/AlbumCard";
 import "./container.css";
 import css from "./app.module.css";
 import AlbumEvent from "./components/AlbumEvent";
+import Users from "./components/Users";
+
+
+
 const dummyDataAlbums = [
   {
     imageUrl:
@@ -74,7 +77,9 @@ function App() {
   return (
     <div className={theme === "light" ? css.lightTheme : css.darkTheme}>
       <MyHeader text="My Album Application" />
+      <Users />
       {`current State of theme is: ${theme}`}
+      
       <button
         onClick={() => {
           if (theme === "light") {

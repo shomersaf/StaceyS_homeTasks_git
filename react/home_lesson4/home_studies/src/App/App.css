@@ -1,0 +1,35 @@
+*{
+    background: #5f5454;
+    color:rgb(160, 148, 131);
+    font-family:cursive;
+}
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+h1, h2{
+    text-align:center;
+}
+.inputDiv{
+    width:fit-content;
+    margin: 20px auto;
+}
+input{
+    height: 50px;
+    width:250px;
+    font-size: 20px;
+    border-radius: 10px;
+    background: rgb(183, 157, 157);
+    padding-left: 10px;
+    color:black;
+}
+.theme{
+    margin: 20px auto;
+    width:500px;
+    height:500px;
+}
+.theme>button{
+    padding: 10px;
+    background: orangered;
+    color:antiquewhite;
+}
