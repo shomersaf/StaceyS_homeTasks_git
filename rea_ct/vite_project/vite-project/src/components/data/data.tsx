@@ -1,4 +1,4 @@
-export const data = [
+ const data =[
     { date: new Date(), amount: 250, name: "Buy Books", category: "Other" },
     {
       date: new Date(new Date().setFullYear(2022)),
@@ -25,3 +25,4 @@ export const data = [
       category: "Other",
     },
   ];
+  export default data;

@@ -3,40 +3,69 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  border:none;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.junk img{
+  width:50px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.expensesListItem{
+  width: 1280px;
+  min-width: fit-content;
+ max-width: 1280px;
+ text-align: left;
+ background: rgb(121, 114, 114);
+ padding:20px;
+ margin:10px;
+ font-size: large;
+ border-bottom-right-radius: 20px;
+ border-top-right-radius: 20px;
+border-bottom: 5px solid black;
 }
+.dataDiv{
+  margin-top: 10px;
+  display: flex;
+  max-width: inherit;
+ justify-content: space-between;
+ align-items: center;
+ background: rgb(121, 114, 114);
 
-.card {
-  padding: 2em;
 }
+.leftDiv{
+  width:fit-content;
 
-.read-the-docs {
-  color: #888;
+}
+.rightDiv{
+  width:fit-content;
+  text-align: center;
+
+}
+.expensesListItem h3{
+margin:0;
+display:inline-block;
+border-bottom: 5px dotted rgb(72, 68, 68);
+width:inherit;
+padding-bottom: 5px;
+}
+.category{
+  background: rgb(67, 60, 60);
+  width:fit-content;
+  padding:5px 15px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+.highExpense{
+  background: rgb(94, 41, 41);
+  width:fit-content;
+  padding:5px 15px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+.lowExpense{
+  background: rgb(5, 82, 60);
+  width:fit-content;
+  padding:5px 15px;
+  border-radius: 10px;
+  margin-top: 10px;
 }

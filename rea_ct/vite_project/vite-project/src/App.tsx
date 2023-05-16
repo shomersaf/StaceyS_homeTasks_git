@@ -4,9 +4,9 @@ import Controls from './components/Controls'
 import AddExpense from './components/Add-expense'
 import Reports from './components/Reports'
 import ExpensesList from './components/Expenses-list'
-import { data } from "./data"
+
 import './App.css'
-export type Expense = typeof data[0]
+// export type Expense = typeof data[0]
 // const newExpense:Expense = {
 //   date:new Date(),
 //   amount:111,
